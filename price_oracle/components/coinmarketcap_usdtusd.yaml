@@ -1,0 +1,19 @@
+version: v1
+metadata:
+  label: coinmarketcap_usdtusd
+  type: snapshot_json_rpc
+  description: ''
+  tags:
+  - coinmarketcap
+  - USDT
+  - USD
+datasource:
+  url: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest
+  headers:
+    Content-Type: application/json
+    X-CMC_PRO_API_KEY: YOUR_API_KEY
+  queries:
+    slug: tether
+storage:
+  with_timestamp: true
+interval: 20

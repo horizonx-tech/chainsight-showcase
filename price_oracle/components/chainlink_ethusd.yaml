@@ -1,0 +1,23 @@
+version: v1
+metadata:
+  label: chainlink_ethusd
+  type: snapshot_indexer
+  description: ''
+  tags:
+  - ERC-20
+  - Ethereum
+  - DAI
+datasource:
+  type: contract
+  location:
+    id: 9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+    args:
+      network_id: 31337
+      rpc_url: https://3c6d-240f-77-2850-3117-a1d5-f465-ee68-f75b.ngrok-free.app
+  method:
+    identifier: latestAnswer():(uint256)
+    interface: AggregatorWrapper.json
+    args: []
+storage:
+  with_timestamp: true
+interval: 3600

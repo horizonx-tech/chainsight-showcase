@@ -1,0 +1,27 @@
+[workspace]
+members = [
+	"coinmarketcap_usdtusd",
+	"coingecko_usdtusd",
+	"binance_usdtusd",
+	"aggregator_lens_usdtusd",
+	"relayer_usdtusd",
+	"chainlink_ethusd",
+	"aggregator_lens_ethusd",
+	"relayer_ethusd",
+]
+
+[workspace.dependencies]
+candid = "0.8"
+ic-cdk = "0.8"
+ic-cdk-macros = "0.6.10"
+ic-cdk-timers = "0.1"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+serde_json = "1.0.104"
+hex = "0.4.3"
+
+ic-web3-rs = { version = "0.1.1" }
+ic-solidity-bindgen = { version = "0.1.5" }
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "3329af7bfc2644908f47db04020716614e69858b" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "3329af7bfc2644908f47db04020716614e69858b" }

@@ -1,0 +1,11 @@
+version: v1
+label: oracle
+components:
+- component_path: components/coinmarketcap_usdtusd.yaml
+- component_path: components/coingecko_usdtusd.yaml
+- component_path: components/binance_usdtusd.yaml
+- component_path: components/aggregator_lens_usdtusd.yaml
+- component_path: components/relayer_usdtusd.yaml
+- component_path: components/chainlink_ethusd.yaml
+- component_path: components/aggregator_lens_ethusd.yaml
+- component_path: components/relayer_ethusd.yaml

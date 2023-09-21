@@ -1,0 +1,21 @@
+version: v1
+metadata:
+  label: coingecko_usdtusd
+  type: snapshot_json_rpc
+  description: ''
+  tags:
+  - coingecko
+  - USDT
+  - USD
+datasource:
+  url: https://api.coingecko.com/api/v3/simple/price
+  headers:
+    Content-Type: application/json
+  queries:
+    ids: tether
+    vs_currencies: usd
+    include_24hr_vol: true
+    precision: 18
+storage:
+  with_timestamp: true
+interval: 20

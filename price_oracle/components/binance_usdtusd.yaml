@@ -1,0 +1,18 @@
+version: v1
+metadata:
+  label: binance_usdtusd
+  type: snapshot_json_rpc
+  description: ''
+  tags:
+  - binance
+  - USDT
+  - USD
+datasource:
+  url: https://www.binance.com/bapi/composite/v1/public/promo/cmc/cryptocurrency/quotes/latest
+  headers:
+    Content-Type: application/json
+  queries:
+    id: 825
+storage:
+  with_timestamp: true
+interval: 20

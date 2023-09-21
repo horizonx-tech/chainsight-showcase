@@ -1,0 +1,36 @@
+version: v1
+metadata:
+  label: relayer_usdtusd
+  type: relayer
+  description: ''
+  tags:
+  - Oracle
+  - snapshot
+datasource:
+  type: canister
+  location:
+    id: aggregator_lens_usdtusd
+    args:
+      id_type: canister_name
+  method:
+    identifier: 'get_result : (vec text) -> (nat)'
+    interface: null
+    args: [
+    ]
+destination:
+  network_id: 31337
+  type: uint128
+  # Oracle USDT
+  oracle_address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+  # must be https
+  rpc_url: https://3c6d-240f-77-2850-3117-a1d5-f465-ee68-f75b.ngrok-free.app
+interval: 30
+lens_targets:
+  identifiers:
+    # binance_usdtusd
+    - br5f7-7uaaa-aaaaa-qaaca-cai
+    # coingecko_usdtusd
+    - b77ix-eeaaa-aaaaa-qaada-cai
+    # coinmarketcap_usdtusd
+    - by6od-j4aaa-aaaaa-qaadq-cai
+
