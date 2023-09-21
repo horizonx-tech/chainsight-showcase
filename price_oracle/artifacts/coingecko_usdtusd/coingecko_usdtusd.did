@@ -9,7 +9,7 @@ type InitError = variant {
 type Inner = record { usd : float64; usd_24h_vol : float64 };
 type Result = variant { Ok; Err : InitError };
 type Snapshot = record { value : SnapshotValue; timestamp : nat64 };
-type SnapshotValue = record { oasys : Inner };
+type SnapshotValue = record { tether : Inner };
 service : {
   get_last_snapshot : () -> (Snapshot) query;
   get_last_snapshot_value : () -> (SnapshotValue) query;
