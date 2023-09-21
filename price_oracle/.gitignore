@@ -1,7 +1,5 @@
 artifacts/__interfaces
 artifacts/artifacts/
-artifacts/**/*.did
-artifacts/**/src/lib.rs
 artifacts/target
 artifacts/Makefile.toml
 artifacts/dfx.json
