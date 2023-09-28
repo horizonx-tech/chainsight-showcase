@@ -1,0 +1,1 @@
+use chainlink_ethusd_bindings :: get_chainlink_ethusd ; pub async fn calculate (targets : Vec < String > ,) -> u128 { let _result = get_chainlink_ethusd (targets . get (0) . unwrap () . clone ()) . await ; todo ! () }

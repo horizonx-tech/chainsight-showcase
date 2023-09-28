@@ -1,22 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
   label: aggregator_lens_usdtusd
   type: algorithm_lens
-  description: ''
+  description: ""
   tags:
-  - Ethereum
-  - Account
+    - Ethereum
+    - Account
 datasource:
   methods:
-  - label: binance_usdtusd
-    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-    candid_file_path: artifacts/binance_usdtusd/binance_usdtusd.did
-  - label: coingecko_usdtusd
-    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-    candid_file_path: artifacts/coingecko_usdtusd/coingecko_usdtusd.did
-  - label: coinmarketcap_usdtusd
-    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-    candid_file_path: artifacts/coinmarketcap_usdtusd/coinmarketcap_usdtusd.did
+    - label: binance_usdtusd
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/binance_usdtusd/binance_usdtusd.did
+    - label: coingecko_usdtusd
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/coingecko_usdtusd/coingecko_usdtusd.did
+    - label: coinmarketcap_usdtusd
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/coinmarketcap_usdtusd/coinmarketcap_usdtusd.did
 output:
   type: primitive
   type_name: u128

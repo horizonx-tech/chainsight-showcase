@@ -1,12 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
   label: coinmarketcap_usdtusd
-  type: snapshot_json_rpc
-  description: ''
+  type: snapshot_indexer_https
+  description: ""
   tags:
-  - coinmarketcap
-  - USDT
-  - USD
+    - coinmarketcap
+    - USDT
+    - USD
 datasource:
   url: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest
   headers:

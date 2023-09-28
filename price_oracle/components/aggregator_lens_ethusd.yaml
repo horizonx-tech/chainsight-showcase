@@ -1,16 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
   label: aggregator_lens_ethusd
   type: algorithm_lens
-  description: ''
+  description: ""
   tags:
-  - Ethereum
-  - Account
+    - Ethereum
+    - Account
 datasource:
   methods:
-  - label: chainlink_ethusd
-    identifier: 'get_last_snapshot_value : () -> (text)'
-    candid_file_path: artifacts/chainlink_ethusd/chainlink_ethusd.did
+    - label: chainlink_ethusd
+      identifier: "get_last_snapshot_value : () -> (text)"
+      candid_file_path: artifacts/chainlink_ethusd/chainlink_ethusd.did
 output:
   type: primitive
   type_name: u128
