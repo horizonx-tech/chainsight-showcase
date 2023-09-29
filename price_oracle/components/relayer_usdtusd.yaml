@@ -1,11 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
   label: relayer_usdtusd
   type: relayer
-  description: ''
+  description: ""
   tags:
-  - Oracle
-  - snapshot
+    - Oracle
+    - snapshot
 datasource:
   type: canister
   location:
@@ -13,15 +14,14 @@ datasource:
     args:
       id_type: canister_name
   method:
-    identifier: 'get_result : (vec text) -> (nat)'
+    identifier: "get_result : (vec text) -> (nat)"
     interface: null
-    args: [
-    ]
+    args: []
 destination:
   network_id: 31337
   type: uint128
   # Oracle USDT
-  oracle_address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+  oracle_address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
   # must be https
   rpc_url: https://3c6d-240f-77-2850-3117-a1d5-f465-ee68-f75b.ngrok-free.app
 interval: 30
@@ -33,4 +33,3 @@ lens_targets:
     - b77ix-eeaaa-aaaaa-qaada-cai
     # coinmarketcap_usdtusd
     - by6od-j4aaa-aaaaa-qaadq-cai
-

@@ -1,12 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
   label: coingecko_usdtusd
-  type: snapshot_json_rpc
-  description: ''
+  type: snapshot_indexer_https
+  description: ""
   tags:
-  - coingecko
-  - USDT
-  - USD
+    - coingecko
+    - USDT
+    - USD
 datasource:
   url: https://api.coingecko.com/api/v3/simple/price
   headers:

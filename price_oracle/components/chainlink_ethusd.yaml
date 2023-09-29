@@ -1,12 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer.json
 version: v1
 metadata:
   label: chainlink_ethusd
   type: snapshot_indexer
-  description: ''
+  description: ""
   tags:
-  - ERC-20
-  - Ethereum
-  - DAI
+    - ERC-20
+    - Ethereum
+    - DAI
 datasource:
   type: contract
   location:

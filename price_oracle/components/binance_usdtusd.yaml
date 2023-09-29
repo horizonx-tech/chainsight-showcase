@@ -1,12 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
   label: binance_usdtusd
-  type: snapshot_json_rpc
-  description: ''
+  type: snapshot_indexer_https
+  description: ""
   tags:
-  - binance
-  - USDT
-  - USD
+    - binance
+    - USDT
+    - USD
 datasource:
   url: https://www.binance.com/bapi/composite/v1/public/promo/cmc/cryptocurrency/quotes/latest
   headers:
