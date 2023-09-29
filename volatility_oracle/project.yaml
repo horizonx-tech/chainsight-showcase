@@ -1,10 +1,6 @@
 version: v1
 label: volatility_oracle
 components:
-- component_path: components/sample_event_indexer.yaml
-- component_path: components/sample_algorithm_indexer.yaml
-- component_path: components/sample_snapshot_indexer_chain.yaml
-- component_path: components/sample_snapshot_indexer_icp.yaml
-- component_path: components/sample_relayer.yaml
-- component_path: components/sample_algorithm_lens.yaml
-- component_path: components/sample_snapshot_indexer_https.yaml
+- component_path: components/uniswap_snapshotter_mainnet.yaml
+- component_path: components/uniswap_snapshotter_polygon_mumbai.yaml
+- component_path: components/calculator.yaml

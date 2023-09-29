@@ -1,25 +1,26 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer.json
 version: v1
 metadata:
-  label: sample_snapshot_indexer_chain
+  label: uniswap_snapshotter_polygon_mumbai
   type: snapshot_indexer
-  description: ''
+  description: ""
   tags:
-  - ERC-20
-  - Ethereum
-  - DAI
+    - USDC
+    - WETH
+    - Polygon
+    - Uniswap
+    - Realized_Volatility
 datasource:
   type: contract
   location:
-    id: 6b175474e89094c44da98b954eedeac495271d0f
+    id: "0xE5f0DA5761B82e14E45021246EE657D07a9BBd23"
     args:
       network_id: 1
       rpc_url: https://eth-mainnet.g.alchemy.com/v2/<YOUR_KEY>
   method:
-    identifier: totalSupply():(uint256)
-    interface: ERC20.json
+    identifier: slot0():(uint160,int24,uint16,uint16,uint16,uint8,bool)
+    interface: UniswapV3Pool.json
     args: []
 storage:
   with_timestamp: true
 interval: 3600
-lens_targets: null
