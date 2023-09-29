@@ -8,14 +8,16 @@ metadata:
     - Realized_Volatility
 datasource:
   methods:
-    - label: uniswap_snapshotter_mainnet
+    - label: mainnet
       identifier: "get_top_snapshots : (nat64) -> (vec Snapshot)"
       candid_file_path: src/canisters/uniswap_snapshotter_mainnet/uniswap_snapshotter_mainnet.did
-    - label: uniswap_snapshotter_polygon_mumbai
+    - label: polygon_mumbai
       identifier: "get_top_snapshots : (nat64) -> (vec Snapshot)"
       candid_file_path: src/canisters/uniswap_snapshotter_polygon_mumbai/uniswap_snapshotter_polygon_mumbai.did
 output:
-  name: Account
+  name: Price
   fields:
-    address: String
+    observation_index: u16
+    sqrt_price_x96: u128
+    block_timestamp: u64
   type: struct
