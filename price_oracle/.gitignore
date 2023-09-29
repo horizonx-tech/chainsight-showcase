@@ -1,8 +1,5 @@
-artifacts/__interfaces
-artifacts/artifacts/
-artifacts/target
-artifacts/Makefile.toml
-artifacts/dfx.json
-artifacts/.dfx/
-artifacts/scripts
-**/.env
+artifacts
+src/__interfaces
+src/bindings
+src/canisters
+src/target

@@ -1,12 +1,5 @@
 {
-    "rust-analyzer.trace.server": "verbose",
-    "editor.formatOnSave": true,
-    "rust-analyzer.linkedProjects": [
-        "./artifacts/coingecko_usdtusd/Cargo.toml",
-        "./artifacts/coinmarketcap_usdtusd/Cargo.toml",
-        "./artifacts/binance_usdtusd/Cargo.toml",
-        "./artifacts/aggregator_lens_usdtusd/Cargo.toml",
-        "./artifacts/relayer_usdtusd/Cargo.toml",
-    ],
-    "solidity.compileUsingRemoteVersion": "v0.8.9+commit.e5eed63a"
+  "rust-analyzer.trace.server": "verbose",
+  "editor.formatOnSave": true,
+  "solidity.compileUsingRemoteVersion": "v0.8.9+commit.e5eed63a"
 }
