@@ -444,7 +444,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=7fdf04d636c11ab7796fefc40d0e9ee92a3183fa#7fdf04d636c11ab7796fefc40d0e9ee92a3183fa"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=8d9dedc7edf2675be433b757bfb6136e5574b814#8d9dedc7edf2675be433b757bfb6136e5574b814"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -464,7 +464,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk-macros"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=7fdf04d636c11ab7796fefc40d0e9ee92a3183fa#7fdf04d636c11ab7796fefc40d0e9ee92a3183fa"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=8d9dedc7edf2675be433b757bfb6136e5574b814#8d9dedc7edf2675be433b757bfb6136e5574b814"
 dependencies = [
  "candid",
  "chainsight-cdk",

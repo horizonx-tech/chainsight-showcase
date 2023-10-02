@@ -1,11 +1,11 @@
-use binance_usdtusd_bindings::get_binance_usdtusd;
-use coingecko_usdtusd_bindings::get_coingecko_usdtusd;
-use coinmarketcap_usdtusd_bindings::get_coinmarketcap_usdtusd;
+pub type LensValue = u128;
+
 const PRECISION: u64 = 18;
 const WEIGHT_BINANCE: u128 = 1;
 const WEIGHT_COINGECKO: u128 = 10;
 const WEIGHT_COINMARKETCAP: u128 = 2;
-pub async fn calculate(targets: Vec<String>) -> u128 {
+
+pub async fn calculate(targets: Vec<String>) -> LensValue {
     targets.iter().for_each(|t| ic_cdk::println!("{}", t));
     let future_1 = get_binance_usdtusd(targets.get(0).unwrap().clone());
     let future_2 = get_coingecko_usdtusd(targets.get(1).unwrap().clone());
@@ -45,4 +45,30 @@ pub mod tests {
         let p = calc_price(price_binance, price_coingecko, price_coinmarketcap);
         assert_eq!(p, 52921450274675532);
     }
+}
+
+use binance_usdtusd_bindings::SnapshotValue as SnapshotValue_binance_usdtusd;
+algorithm_lens_finder!(
+    "binance_usdtusd",
+    "proxy_get_last_snapshot_value",
+    SnapshotValue_binance_usdtusd
+);
+use coingecko_usdtusd_bindings::SnapshotValue as SnapshotValue_coingecko_usdtusd;
+algorithm_lens_finder!(
+    "coingecko_usdtusd",
+    "proxy_get_last_snapshot_value",
+    SnapshotValue_coingecko_usdtusd
+);
+use coinmarketcap_usdtusd_bindings::SnapshotValue as SnapshotValue_coinmarketcap_usdtusd;
+algorithm_lens_finder!(
+    "coinmarketcap_usdtusd",
+    "proxy_get_last_snapshot_value",
+    SnapshotValue_coinmarketcap_usdtusd
+);
+use chainsight_cdk::lens::LensFinder;
+use chainsight_cdk_macros::algorithm_lens_finder;
+async fn _get_target_proxy(target: candid::Principal) -> candid::Principal {
+    let out: ic_cdk::api::call::CallResult<(candid::Principal,)> =
+        ic_cdk::api::call::call(target, "get_proxy", ()).await;
+    out.unwrap().0
 }
