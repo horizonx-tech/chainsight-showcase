@@ -8,10 +8,10 @@ metadata:
     - Realized_Volatility
 datasource:
   methods:
-    - label: mainnet
+    - label: uniswap_snapshotter_mainnet
       identifier: "get_top_snapshots : (nat64) -> (vec Snapshot)"
       candid_file_path: src/canisters/uniswap_snapshotter_mainnet/uniswap_snapshotter_mainnet.did
-    - label: polygon_mumbai
+    - label: uniswap_snapshotter_polygon_mumbai
       identifier: "get_top_snapshots : (nat64) -> (vec Snapshot)"
       candid_file_path: src/canisters/uniswap_snapshotter_polygon_mumbai/uniswap_snapshotter_polygon_mumbai.did
 output:

@@ -22,4 +22,4 @@ chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
 uniswap_snapshotter_mainnet_bindings = { path = "../../bindings/uniswap_snapshotter_mainnet_bindings" }
-primitive-types = "0.12.1"
+uniswap_snapshotter_polygon_mumbai_bindings = { path = "../../bindings/uniswap_snapshotter_polygon_mumbai_bindings" }
