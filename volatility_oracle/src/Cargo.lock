@@ -195,6 +195,7 @@ dependencies = [
  "ic-solidity-bindgen",
  "ic-stable-structures",
  "ic-web3-rs",
+ "primitive-types 0.12.1",
  "serde",
  "serde_bytes",
  "uniswap_snapshotter_mainnet_bindings",
