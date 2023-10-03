@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: calculator
+  type: algorithm_lens
+  description: ""
+  tags:
+    - Realized_Volatility
+datasource:
+  methods:
+    - label: uniswap_snapshotter_mainnet
+      identifier: "get_top_snapshots : (nat64) -> (vec Snapshot)"
+      candid_file_path: src/canisters/uniswap_snapshotter_mainnet/uniswap_snapshotter_mainnet.did
