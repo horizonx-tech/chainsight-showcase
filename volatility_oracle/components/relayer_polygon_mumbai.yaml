@@ -20,9 +20,9 @@ datasource:
 destination:
   network_id: 80001
   type: uint256
-  oracle_address: 0539a0EF8e5E60891fFf0958A059E049e43020d9
+  oracle_address: 0x0B306BF915C4d645ff596e518fAf3F9669b97016
   rpc_url: https://polygon-mumbai.g.alchemy.com/v2/<YOUR_KEY>
 interval: 3600
 lens_targets:
   identifiers:
-    - bw4dl-smaaa-aaaaa-qaacq-cai
+    - be2us-64aaa-aaaaa-qaabq-cai

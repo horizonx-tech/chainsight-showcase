@@ -1,4 +1,4 @@
-import { HardhatUserConfig } from 'hardhat/config';
+import { HardhatUserConfig, task } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
 import 'hardhat-abi-exporter';
 import { config as dotenvConfig } from 'dotenv';
@@ -13,6 +13,22 @@ const etherscanOptimismKey: string =
   process.env.ETHERSCAN_OPTIMISM_KEY || 'test t';
 const etherscanArbitrumKey: string =
   process.env.ETHERSCAN_ARBITRUM_KEY || 'test t';
+
+task('send_ether', 'Send ether to an address')
+.addParam('address', 'The address to send ether to')
+.setAction(async (taskArgs, hre) => {
+  const { address } = taskArgs;
+  const [deployer] = await hre.ethers.getSigners();
+
+  const tx = await deployer.sendTransaction({
+    to: address,
+    value: hre.ethers.utils.parseEther('1.0'),
+  });
+
+  console.log(`Sent 1 ETH to ${address}`);
+  console.log(`Transaction hash: ${tx.hash}`);
+}
+);
 
 const config: HardhatUserConfig = {
   solidity: {
