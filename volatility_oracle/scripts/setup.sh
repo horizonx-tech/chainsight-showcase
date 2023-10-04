@@ -38,7 +38,7 @@ fi
 
 $(dfx start --background --clean) & 
 sleep 5
-
+export REPLICA_PORT=$(ps aux |grep icx-proxy| grep -oP '(?<=replica http://localhost:)\d+')
 
 echo "deploy chainsight-management-canisters"
 if [ ! -d "chainsight-management-canisters" ];
@@ -46,7 +46,7 @@ then
   git clone https://github.com/horizonx-tech/chainsight-management-canisters.git
 fi
 cd chainsight-management-canisters
-make local port=4943
+make local port=$REPLICA_PORT
 cd ..
 
 
@@ -80,10 +80,8 @@ csx exec
 echo "send ether to relayer"
 cd artifacts
 export RELAYER_MAINNET_ADDRESS=$(dfx canister call relayer_mainnet get_ethereum_address)
-# remove '(' and ')'
 export RELAYER_MAINNET_ADDRESS=${RELAYER_MAINNET_ADDRESS:1:${#RELAYER_MAINNET_ADDRESS}-2}
 export RELAYER_POLYGON_MUMBAI_ADDRESS=$(dfx canister call relayer_polygon_mumbai get_ethereum_address)
-# remove '(' and ')'
 export RELAYER_POLYGON_MUMBAI_ADDRESS=${RELAYER_POLYGON_MUMBAI_ADDRESS:1:${#RELAYER_POLYGON_MUMBAI_ADDRESS}-2}
 cd ..
 cd oracle
