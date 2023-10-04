@@ -292,7 +292,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "chainsight-cdk"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=ae048cef12bb992ecfaf707c628f758302692bdb#ae048cef12bb992ecfaf707c628f758302692bdb"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=89903de343354f1303e6da3aa2a15f1263439099#89903de343354f1303e6da3aa2a15f1263439099"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -312,7 +312,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk-macros"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=ae048cef12bb992ecfaf707c628f758302692bdb#ae048cef12bb992ecfaf707c628f758302692bdb"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=89903de343354f1303e6da3aa2a15f1263439099#89903de343354f1303e6da3aa2a15f1263439099"
 dependencies = [
  "candid",
  "chainsight-cdk",
@@ -1582,6 +1582,104 @@ name = "regex-syntax"
 version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb408a9627d14d451bae12da"
+
+[[package]]
+name = "relayer_mainnet"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_mainnet_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_mainnet_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "relayer_mainnet",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_polygon_mumbai"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_polygon_mumbai_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_polygon_mumbai_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "relayer_polygon_mumbai",
+ "serde",
+ "serde_bytes",
+]
 
 [[package]]
 name = "rlp"

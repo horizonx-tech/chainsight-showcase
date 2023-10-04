@@ -1,12 +1,7 @@
-#[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
-pub struct LensValue {
-    pub rvol: f64,
-}
+pub type LensValue = u128;
 pub async fn calculate(targets: Vec<String>) -> LensValue {
     let prices = get_prices(targets.get(0).unwrap().to_string(), 100).await;
-    LensValue {
-        rvol: to_rvol(prices),
-    }
+    to_rvol(prices)
 }
 
 async fn get_prices(target: String, size: u64) -> Vec<Snapshot_uniswap_snapshotter_mainnet> {
@@ -15,9 +10,10 @@ async fn get_prices(target: String, size: u64) -> Vec<Snapshot_uniswap_snapshott
     result
 }
 
-fn to_rvol(prices: Vec<Snapshot_uniswap_snapshotter_mainnet>) -> f64 {
+fn to_rvol(prices: Vec<Snapshot_uniswap_snapshotter_mainnet>) -> u128 {
     let exchange_rates = calc_exchange_rates(prices);
-    calc_realized_volatility(exchange_rates)
+    let rvol = calc_realized_volatility(exchange_rates);
+    (rvol * 1000000000000000000.0) as u128
 }
 
 fn calc_exchange_rates(prices: Vec<Snapshot_uniswap_snapshotter_mainnet>) -> Vec<U256> {
