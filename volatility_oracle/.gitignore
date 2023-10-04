@@ -4,3 +4,6 @@ src/canisters
 src/target
 artifacts
 .env
+addresses.json
+chainsight-management-canisters
+.dfx
