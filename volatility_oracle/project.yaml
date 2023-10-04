@@ -1,6 +1,8 @@
 version: v1
 label: volatility_oracle
 components:
-  - component_path: components/uniswap_snapshotter_mainnet.yaml
-  - component_path: components/uniswap_snapshotter_polygon_mumbai.yaml
-  - component_path: components/calculator.yaml
+- component_path: components/uniswap_snapshotter_mainnet.yaml
+- component_path: components/uniswap_snapshotter_polygon_mumbai.yaml
+- component_path: components/calculator.yaml
+- component_path: components/relayer_mainnet.yaml
+- component_path: components/relayer_polygon_mumbai.yaml
