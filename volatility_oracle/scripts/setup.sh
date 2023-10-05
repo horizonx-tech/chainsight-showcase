@@ -91,7 +91,8 @@ yq '.destination.oracle_address = env(CONTRACT_ADDRESS)' ./components/relayer_ma
 
 echo "modify .env"
 # update LOCAL_RPC_URL
-yq '.LOCAL_RPC_URL = env(LOCAL_RPC_URL)' .env > .env.tmp && mv .env.tmp .env
+cat .env | sed "s|LOCAL_RPC_URL=.*|LOCAL_RPC_URL=$LOCAL_RPC_URL|g" > .env.tmp && mv .env.tmp .env
+
 
 echo "install canisters"
 csx build

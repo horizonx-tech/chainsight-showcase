@@ -6,7 +6,7 @@ import "../interfaces/IOraclePutter.sol";
 contract Oracle is IOraclePutter {
     mapping(address => uint256) public values;
 
-    function updateState(uint128 _values) external override {
+    function updateState(uint256 _values) external override {
         values[msg.sender] = _values;
     }
 

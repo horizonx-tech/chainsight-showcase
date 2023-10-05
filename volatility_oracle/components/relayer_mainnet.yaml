@@ -18,9 +18,9 @@ datasource:
     interface: null
     args: []
 destination:
-  network_id: 80001
+  network_id: 31337
   type: uint256
-  oracle_address: 0x0165878A594ca255338adfa4d48449f69242Eb8F
+  oracle_address: 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
   rpc_url: https://${LOCAL_RPC_URL}
 interval: 60
 lens_targets:
