@@ -26,20 +26,21 @@ then
   npx hardhat node &
   sleep 5
 fi
+cd ..
 echo "ensure ngrok is running"
+if [ -f "ngrok.log" ];
+then
+  rm ngrok.log
+fi
 if ! nc -z localhost 4040 ;
 then
   echo "ngrok not running, starting"
-  if [ -f "ngrok.log" ];
-  then
-    rm ngrok.log
-  fi
-  ngrok http 8845 --log=stdout > ngrok.log &
+  ngrok http 8545 --log=stdout > ngrok.log &
   sleep 5
 fi
 export NGROK_URL=$(cat ngrok.log | grep "started tunnel"|grep -oP '(?<=url=https://)\S+')
 export LOCAL_RPC_URL=$NGROK_URL
-
+cd oracle
 echo "deploy contracts"
 yarn deploy
 # capture the address of the deployed contract
