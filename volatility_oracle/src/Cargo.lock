@@ -199,7 +199,6 @@ dependencies = [
  "serde",
  "serde_bytes",
  "uniswap_snapshotter_mainnet_bindings",
- "uniswap_snapshotter_polygon_mumbai_bindings",
 ]
 
 [[package]]
@@ -1651,37 +1650,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "relayer_polygon_mumbai_bindings"
-version = "0.1.0"
-dependencies = [
- "candid",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.8.1",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "relayer_polygon_mumbai_canister"
-version = "0.1.0"
-dependencies = [
- "candid",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.8.1",
- "ic-cdk-macros",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "relayer_polygon_mumbai",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
 name = "rlp"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2090,37 +2058,6 @@ dependencies = [
  "ic-web3-rs",
  "serde",
  "serde_bytes",
-]
-
-[[package]]
-name = "uniswap_snapshotter_polygon_mumbai_bindings"
-version = "0.1.0"
-dependencies = [
- "candid",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.8.1",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "uniswap_snapshotter_polygon_mumbai_canister"
-version = "0.1.0"
-dependencies = [
- "candid",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.8.1",
- "ic-cdk-macros",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "uniswap_snapshotter_polygon_mumbai",
 ]
 
 [[package]]

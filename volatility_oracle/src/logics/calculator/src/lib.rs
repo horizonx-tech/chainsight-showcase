@@ -49,13 +49,7 @@ algorithm_lens_finder!(
     Vec<Snapshot_uniswap_snapshotter_mainnet>,
     u64
 );
-use uniswap_snapshotter_polygon_mumbai_bindings::Snapshot as Snapshot_uniswap_snapshotter_polygon_mumbai;
-algorithm_lens_finder!(
-    "uniswap_snapshotter_polygon_mumbai",
-    "proxy_get_top_snapshots",
-    Vec<Snapshot_uniswap_snapshotter_polygon_mumbai>,
-    u64
-);
+
 use chainsight_cdk::lens::LensFinder;
 use chainsight_cdk_macros::algorithm_lens_finder;
 async fn _get_target_proxy(target: candid::Principal) -> candid::Principal {

@@ -7,3 +7,4 @@ artifacts
 addresses.json
 chainsight-management-canisters
 .dfx
+*.log

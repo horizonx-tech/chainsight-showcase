@@ -18,6 +18,7 @@ task('send_ether', 'Send ether to an address')
 .addParam('address', 'The address to send ether to')
 .setAction(async (taskArgs, hre) => {
   const { address } = taskArgs;
+  console.log(`Sending 1 ETH to ${address}`);
   const [deployer] = await hre.ethers.getSigners();
 
   const tx = await deployer.sendTransaction({
@@ -29,7 +30,6 @@ task('send_ether', 'Send ether to an address')
   console.log(`Transaction hash: ${tx.hash}`);
 }
 );
-
 const config: HardhatUserConfig = {
   solidity: {
     compilers: [{ version: '0.8.9' }],
