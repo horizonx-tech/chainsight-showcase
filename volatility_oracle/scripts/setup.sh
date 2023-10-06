@@ -32,14 +32,16 @@ if [ -f "ngrok.log" ];
 then
   rm ngrok.log
 fi
-if ! nc -z localhost 4040 ;
-then
-  echo "ngrok not running, starting"
-  ngrok http 8545 --log=stdout > ngrok.log &
-  sleep 5
-fi
+ngrok http 8545 --log=stdout > ngrok.log &
+sleep 5
+
+echo "modify .env"
+# update LOCAL_RPC_URL
 export NGROK_URL=$(cat ngrok.log | grep "started tunnel"|grep -oP '(?<=url=https://)\S+')
 export LOCAL_RPC_URL=$NGROK_URL
+cat .env | sed "s|LOCAL_RPC_URL=.*|LOCAL_RPC_URL=$LOCAL_RPC_URL|g" > .env.tmp && mv .env.tmp .env
+
+
 cd oracle
 echo "deploy contracts"
 yarn deploy
@@ -89,10 +91,6 @@ yq '.lens_targets.identifiers[0] = env(UNISWAP_SNAPSHOTTER_MAINNET_CANISTER_ID)'
 yq '.destination.oracle_address = env(CONTRACT_ADDRESS)' ./components/relayer_mainnet.yaml > ./components/relayer_mainnet.yaml.tmp && mv ./components/relayer_mainnet.yaml.tmp ./components/relayer_mainnet.yaml
 #yq '.destination.oracle_address = env(CONTRACT_ADDRESS)' ./components/relayer_polygon_mumbai.yaml > ./components/relayer_polygon_mumbai.yaml.tmp && mv ./components/relayer_polygon_mumbai.yaml.tmp ./components/relayer_polygon_mumbai.yaml
 
-echo "modify .env"
-# update LOCAL_RPC_URL
-cat .env | sed "s|LOCAL_RPC_URL=.*|LOCAL_RPC_URL=$LOCAL_RPC_URL|g" > .env.tmp && mv .env.tmp .env
-
 
 echo "install canisters"
 csx build
@@ -110,5 +108,6 @@ export RELAYER_MAINNET_ADDRESS=${RELAYER_MAINNET_ADDRESS:2:${#RELAYER_MAINNET_AD
 cd ..
 cd oracle
 echo $RELAYER_MAINNET_ADDRESS
-npx hardhat send_ether --address $RELAYER_MAINNET_ADDRESS
+npx hardhat send_ether --address $RELAYER_MAINNET_ADDRESS --network localhost
 #npx hardhat send_ether --address $RELAYER_POLYGON_MUMBAI_ADDRESS
+

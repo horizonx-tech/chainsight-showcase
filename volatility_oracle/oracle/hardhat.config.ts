@@ -25,6 +25,7 @@ task('send_ether', 'Send ether to an address')
     to: address,
     value: hre.ethers.utils.parseEther('1.0'),
   });
+  await tx.wait();
 
   console.log(`Sent 1 ETH to ${address}`);
   console.log(`Transaction hash: ${tx.hash}`);
@@ -63,6 +64,14 @@ const config: HardhatUserConfig = {
           browserURL: 'https://blockscout.scroll.io/',
         },
       },
+      {
+        network: "localhost",
+        chainId: 31337,
+        urls:{
+          apiURL: "http://localhost:8545",
+          browserURL: ""
+        }
+      }
     ],
   },
   networks: {
@@ -89,8 +98,7 @@ const config: HardhatUserConfig = {
         mnemonic,
         path: "m/44'/60'/0'/0",
       },
-    },
-
+    }
   },
   abiExporter: {
     path: './abi',
@@ -99,6 +107,8 @@ const config: HardhatUserConfig = {
     only: ['contracts/interfaces/*'],
     flat: true,
   },
+  
+  
 };
 
 export default config;

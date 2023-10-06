@@ -20,7 +20,7 @@ datasource:
 destination:
   network_id: 31337
   type: uint256
-  oracle_address: 0xc6e7DF5E7b4f2A278906862b61205850344D4e7d
+  oracle_address: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
   rpc_url: https://${LOCAL_RPC_URL}
 interval: 60
 lens_targets:
