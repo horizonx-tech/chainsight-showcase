@@ -38,8 +38,10 @@ then
   ngrok http 8545 --log=stdout > ngrok.log &
   sleep 5
 fi
-export NGROK_URL=$(cat ngrok.log | grep "started tunnel"|grep -oP '(?<=url=https://)\S+')
+export NGROK_URL=$(cat ngrok.log | grep "started tunnel" | grep "https" | sed -e "s/.*url=\(https:\/\/.*app\)/\1/")
 export LOCAL_RPC_URL=$NGROK_URL
+echo "LOCAL_RPC_URL: ${LOCAL_RPC_URL}"
+
 cd oracle
 echo "deploy contracts"
 yarn deploy
@@ -57,7 +59,8 @@ fi
 
 $(dfx start --background --clean) & 
 sleep 5
-export REPLICA_PORT=$(ps aux |grep icx-proxy| grep -oP '(?<=replica http://localhost:)\d+')
+export REPLICA_PORT=$(ps aux | grep icx-proxy | sed -e "s/.*localhost:\([0-9]*\).*/\1/")
+echo "REPLICA_PORT: ${REPLICA_PORT}"
 
 echo "deploy chainsight-management-canisters"
 if [ ! -d "chainsight-management-canisters" ];
