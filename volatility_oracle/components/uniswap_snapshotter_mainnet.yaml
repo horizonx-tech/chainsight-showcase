@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
 version: v1
 metadata:
   label: uniswap_snapshotter_mainnet
-  type: snapshot_indexer
+  type: snapshot_indexer_evm
   description: ""
   tags:
     - USDC
@@ -23,4 +23,5 @@ datasource:
     args: []
 storage:
   with_timestamp: true
-interval: 60
+interval: 3600
+
