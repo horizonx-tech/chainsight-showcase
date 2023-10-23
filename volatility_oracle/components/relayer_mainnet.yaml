@@ -18,10 +18,10 @@ datasource:
     interface: null
     args: []
 destination:
-  network_id: 31337
+  network_id: 534351
   type: uint256
-  oracle_address: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
-  rpc_url: https://${LOCAL_RPC_URL}
+  oracle_address: 0x02Bbb202eF0b44d44e9DC5c10C4F6174F1E92b37
+  rpc_url: https://sepolia-rpc.scroll.io
 interval: 3600
 lens_targets:
   identifiers:
