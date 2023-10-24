@@ -1,12 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: relayer_mainnet
+  label: WETH/USDC price volatility relayer for Scroll Sepolia
   type: relayer
-  description: ""
+  description: "Relayer to write the price of the WETH/USDC pair for the last 24 hours to an oracle deployed on Scroll Sepolia every hour."
   tags:
-    - Oracle
-    - snapshot
+    - WETH/USDC
+    - Price Volatility
+    - Hourly
+    - Scroll Sepolia
+    - Testnet
 datasource:
   type: canister
   location:

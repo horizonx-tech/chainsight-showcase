@@ -1,11 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: calculator
+  label: Price volatility calculator 24h
   type: algorithm_lens
-  description: ""
+  description: "Lens component to keep calculating the price volatility for the last 24 hours based on the data accumulated on another indexer."
   tags:
-    - Realized_Volatility
+    - Price Volatility
+    - Daily
 datasource:
   methods:
     - label: uniswap_snapshotter_mainnet

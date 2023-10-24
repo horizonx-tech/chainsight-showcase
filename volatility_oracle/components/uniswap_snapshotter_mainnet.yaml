@@ -1,15 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
 version: v1
 metadata:
-  label: uniswap_snapshotter_mainnet
+  label: Uniswap WETH/USDC price indexer for Mainnet
   type: snapshot_indexer_evm
-  description: ""
+  description: "Indexer to take snapshots of the price data of WETH/USDC from Uniswap running on the Ethereum mainnet every hour."
   tags:
-    - USDC
-    - WETH
-    - Mainnet
+    - WETH/USDC
+    - Price
     - Uniswap
-    - Realized_Volatility
+    - Ethereum Mainnet
+    - Hourly
 datasource:
   type: contract
   location:
