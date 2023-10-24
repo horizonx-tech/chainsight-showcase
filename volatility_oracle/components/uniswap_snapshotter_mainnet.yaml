@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: Uniswap WETH/USDC price indexer for Mainnet
   type: snapshot_indexer_evm
-  description: "Indexer to take snapshots of the price data of WETH/USDC from Uniswap running on the Ethereum mainnet every hour."
+  description: "Indexer to take snapshots of the price data of WETH/USDC from Uniswap running on the Ethereum mainnet and accumulate the data every hour."
   tags:
     - WETH/USDC
     - Price
