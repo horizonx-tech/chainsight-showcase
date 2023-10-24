@@ -60,8 +60,8 @@ const config: HardhatUserConfig = {
         network: 'scrollAlpha',
         chainId: 534353,
         urls: {
-          apiURL: 'https://blockscout.scroll.io/api',
-          browserURL: 'https://blockscout.scroll.io/',
+          apiURL: 'https://api-sepolia.scrollscan.com/',
+          browserURL: 'https://sepolia.scrollscan.dev/',
         },
       },
       {

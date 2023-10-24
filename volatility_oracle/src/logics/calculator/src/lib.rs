@@ -1,6 +1,6 @@
 pub type LensValue = u128;
 pub async fn calculate(targets: Vec<String>) -> LensValue {
-    let prices = get_prices(targets.get(0).unwrap().to_string(), 100).await;
+    let prices = get_prices(targets.get(0).unwrap().to_string(), 24).await;
     to_rvol(prices)
 }
 
