@@ -1,5 +1,5 @@
 [workspace]
-members = ["bindings/*", "canisters/*", "logics/*"]
+members = ["canisters/uniswap_snapshotter_mainnet", "logics/uniswap_snapshotter_mainnet", "canisters/calculator", "logics/calculator", "canisters/relayer_mainnet", "logics/relayer_mainnet", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"
@@ -17,5 +17,5 @@ hex = "0.4.3"
 
 ic-web3-rs = { version = "0.1.2" }
 ic-solidity-bindgen = { version = "0.1.8" }
-chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "070c82c1776470bec52247cae3f7f4ba9abf4e84" }
-chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "070c82c1776470bec52247cae3f7f4ba9abf4e84" }
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "be946fac8b9f1adff3a59827f26f2bab90926f4f" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "be946fac8b9f1adff3a59827f26f2bab90926f4f" }

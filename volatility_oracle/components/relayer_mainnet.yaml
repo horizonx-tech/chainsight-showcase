@@ -28,4 +28,4 @@ destination:
 interval: 3600
 lens_targets:
   identifiers:
-    - asrmz-lmaaa-aaaaa-qaaeq-cai
+    - uniswap_snapshotter_mainnet

@@ -8,7 +8,8 @@ metadata:
     - Price Volatility
     - Daily
 datasource:
+  with_args: false
   methods:
-    - label: uniswap_snapshotter_mainnet
+    - id: uniswap_snapshotter_mainnet
       identifier: "get_top_snapshots : (nat64) -> (vec Snapshot)"
       candid_file_path: src/canisters/uniswap_snapshotter_mainnet/uniswap_snapshotter_mainnet.did

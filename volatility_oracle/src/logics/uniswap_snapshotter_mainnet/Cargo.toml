@@ -1,7 +1,7 @@
 [package]
 name = "uniswap_snapshotter_mainnet"
-version = "0.1.0"
-edition = "2021"
+version.workspace = true
+edition.workspace = true
 
 [lib]
 crate-type = ["rlib"]
@@ -20,5 +20,6 @@ ic-web3-rs.workspace = true
 ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
+
 
 
