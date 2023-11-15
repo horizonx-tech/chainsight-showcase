@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: relayer_oasyshub_testnet
+  type: relayer
+  description: "It relays USDT/USD price to Oasys Hub Testnet"
+  tags:
+    - USDT/USD
+    - Price
+    - Oasys Hub Testnet
+    - Hourly
+datasource:
+  type: canister
+  location:
+    id: lens_usdtusd
+    args:
+      id_type: canister_name
+  method:
+    identifier: "get_result : (vec text) -> (nat)"
+    interface: null
+    args: []
+lens_targets:
+  identifiers:
+    - chainlink_usdtusd
+destination:
+  network_id: 9372 # Oasys Hub Testnet
+  type: uint256
+  oracle_address: 0x4aB6b26b2baDCB932b237484292Ae34775Ea7070
+  rpc_url: https://rpc.testnet.oasys.games/
+interval: 3600
