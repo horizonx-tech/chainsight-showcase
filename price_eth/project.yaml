@@ -1,5 +1,5 @@
 version: v1
-label: price_wethusd
+label: price_eth
 components:
 - component_path: components/chainlink_ethusd.yaml
 - component_path: components/lens_ethusd.yaml

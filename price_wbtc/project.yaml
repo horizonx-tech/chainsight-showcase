@@ -1,5 +1,5 @@
 version: v1
-label: price_wbtcusd
+label: price_wbtc
 components:
 - component_path: components/chainlink_btcusd.yaml
 - component_path: components/chainlink_wbtcbtc.yaml
