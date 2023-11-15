@@ -1,0 +1,7 @@
+version: v1
+label: price_oas
+components:
+- component_path: components/coingecko_oasusd.yaml
+- component_path: components/coinmarketcap_oasusd.yaml
+- component_path: components/lens_oasusd.yaml
+- component_path: components/relayer_oasyshub_testnet.yaml

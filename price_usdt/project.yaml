@@ -1,0 +1,6 @@
+version: v1
+label: price_usdt
+components:
+- component_path: components/chainlink_usdtusd.yaml
+- component_path: components/lens_usdtusd.yaml
+- component_path: components/relayer_oasyshub_testnet.yaml

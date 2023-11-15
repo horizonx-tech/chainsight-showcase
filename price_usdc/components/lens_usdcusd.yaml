@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: lens_usdcusd
+  type: algorithm_lens
+  description: "USDC/USD price."
+  tags:
+    - USDC/USD
+    - Price
+    - Ethereum Mainnet
+datasource:
+  methods:
+    - id: chainlink_usdcusd
+      identifier: 'get_last_snapshot_value : () -> (text)'
+      candid_file_path: artifacts/chainlink_usdcusd/chainlink_usdcusd.did

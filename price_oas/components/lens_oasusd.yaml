@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: lens_oasusd
+  type: algorithm_lens
+  description: "OAS/USD price."
+  tags:
+    - OAS/USD
+    - Price
+    - Ethereum Mainnet
+datasource:
+  methods:
+    - id: coingecko_oasusd
+      identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+      candid_file_path: src/canisters/coingecko_oasusd/coingecko_oasusd.did
+    - id: coinmarketcap_oasusd
+      identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+      candid_file_path: src/canisters/coinmarketcap_oasusd/coinmarketcap_oasusd.did
+

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: lens_wbtcusd
+  type: algorithm_lens
+  description: "It calculates the WBTC/USD price from the BTC/USD price and the WBTC/BTC price."
+  tags:
+    - WBTC/USD
+    - Price
+    - Ethereum Mainnet
+datasource:
+  methods:
+    - id: chainlink_btcusd
+      identifier: 'get_last_snapshot_value : () -> (text)'
+      candid_file_path: artifacts/chainlink_btcusd/chainlink_btcusd.did
+    - id: chainlink_wbtcbtc
+      identifier: 'get_last_snapshot_value : () -> (text)'
+      candid_file_path: artifacts/chainlink_wbtcbtc/chainlink_wbtcbtc.did
