@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: chainlink_usdcusd
+  type: snapshot_indexer_evm
+  description: "Indexer to take snapshots of USDC/USD price from Chainlink every hour."
+  tags:
+    - USDC/USD
+    - Price
+    - Chainlink
+    - Ethereum Mainnet
+    - Hourly
+datasource:
+  type: contract
+  location:
+    id: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6
+    args:
+      network_id: 1
+      rpc_url: https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}
+  method:
+    identifier: latestAnswer():(uint256)
+    interface: AggregatorWrapper.json
+    args: []
+storage:
+  with_timestamp: true
+interval: 3600
