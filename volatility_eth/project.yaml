@@ -1,0 +1,5 @@
+version: v1
+label: volatility_eth
+components:
+- component_path: components/lens_vol_ethusd.yaml
+- component_path: components/relayer_jolnir.yaml
