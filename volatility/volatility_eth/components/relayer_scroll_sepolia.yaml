@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: relayer_scroll_sepolia
+  label: ETH/USD price volatility relayer for Scroll Sepolia
   type: relayer
   description: "It relays ETH/USD volatility to Scroll Sepolia."
   tags:
@@ -21,10 +21,10 @@ datasource:
     args: []
 lens_targets:
   identifiers:
-    - chainlink_ethusd
+    - lxsg5-vqaaa-aaaao-a2oza-cai
 destination:
-  network_id: 534351 # Jolnir (Taiko Testnet)
+  network_id: 534351 # Scroll Sepolia
   type: uint256
-  oracle_address: 0xCB15eE58220C0A0f24892C5D2A2a5FadBe747732
+  oracle_address: 0xB5Ef491939A6dBf17287666768C903F03602c550
   rpc_url: https://sepolia-rpc.scroll.io
 interval: 3600

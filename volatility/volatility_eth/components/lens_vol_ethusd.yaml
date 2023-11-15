@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: lens_vol_ethusd
+  label: Price volatility calculator 24h
   type: algorithm_lens
   description: "It calculates the volatility based on ETH/USD price in 24 hours."
   tags:
@@ -12,4 +12,4 @@ datasource:
   methods:
     - id: chainlink_ethusd
       identifier: 'get_top_snapshots : (nat64) -> (vec Snapshot)'
-      candid_file_path: ../price_ethusd/src/canisters/chainlink_ethusd/chainlink_ethusd.did
+      candid_file_path: ../../price_feed/price_eth/src/canisters/chainlink_ethusd/chainlink_ethusd.did

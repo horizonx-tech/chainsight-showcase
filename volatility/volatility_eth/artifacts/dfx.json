@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "canisters": {
+    "lens_vol_ethusd": {
+      "type": "custom",
+      "candid": "./lens_vol_ethusd.did",
+      "wasm": "./lens_vol_ethusd.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "relayer_jolnir": {
+      "type": "custom",
+      "candid": "./relayer_jolnir.did",
+      "wasm": "./relayer_jolnir.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "relayer_scroll_sepolia": {
+      "type": "custom",
+      "candid": "./relayer_scroll_sepolia.did",
+      "wasm": "./relayer_scroll_sepolia.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}

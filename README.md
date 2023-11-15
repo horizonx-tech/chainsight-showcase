@@ -4,3 +4,10 @@ This repository is an implementation of the data processing components available
 
 Implemented components will be added to the UI as they become available.
 https://beta.chainsight.network/
+
+## Oracle
+
+| Network | Address |
+| --- | --- |
+| Scroll Sepolia | [0xB5Ef491939A6dBf17287666768C903F03602c550](https://sepolia.scrollscan.dev/address/0xB5Ef491939A6dBf17287666768C903F03602c550) | 
+| Taiko Jolnir | [0xB5Ef491939A6dBf17287666768C903F03602c550](https://explorer.jolnir.taiko.xyz/address/0xB5Ef491939A6dBf17287666768C903F03602c550) |

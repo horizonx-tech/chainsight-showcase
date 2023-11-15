@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: relayer_jolnir
+  label: ETH/USD price volatility relayer for Taiko Jolnir L2
   type: relayer
-  description: "It relays ETH/USD volatility to Jolnir (Taiko Testnet)"
+  description: "It relays ETH/USD volatility to Taiko Jolnir L2"
   tags:
     - ETH/USD
     - Price Volatility
-    - Jolnir
+    - Taiko Jolnir L2
     - Hourly
 datasource:
   type: canister
@@ -21,10 +21,10 @@ datasource:
     args: []
 lens_targets:
   identifiers:
-    - chainlink_ethusd
+    - lxsg5-vqaaa-aaaao-a2oza-cai
 destination:
   network_id: 167007 # Jolnir (Taiko Testnet)
   type: uint256
-  oracle_address: 0xCB15eE58220C0A0f24892C5D2A2a5FadBe747732
-  rpc_url: https://rpc.jolnir.taiko.xyz
+  oracle_address: 0xB5Ef491939A6dBf17287666768C903F03602c550
+  rpc_url: https://taiko-jolnir.blockpi.network/v1/rpc/public
 interval: 3600
