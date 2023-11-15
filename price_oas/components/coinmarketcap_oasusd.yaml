@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: coinmarketcap_oasusd
+  type: snapshot_indexer_https
+  description: ""
+  tags:
+    - OAS/USD
+    - Price
+    - Coinmarketcap
+    - Ethereum Mainnet
+    - Hourly
+datasource:
+  url: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest
+  headers:
+    Content-Type: application/json
+    X-CMC_PRO_API_KEY: ${CMC_PRO_API_KEY}
+  queries:
+    slug: oasys
+storage:
+  with_timestamp: true
+interval: 60

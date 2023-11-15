@@ -1,0 +1,21 @@
+[workspace]
+members = ["canisters/coingecko_oasusd", "logics/coingecko_oasusd", "canisters/coinmarketcap_oasusd", "logics/coinmarketcap_oasusd", "canisters/lens_oasusd", "logics/lens_oasusd", "canisters/relayer_oasyshub_testnet", "logics/relayer_oasyshub_testnet", "bindings/*", "accessors/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+candid = "0.8"
+ic-cdk = "0.8"
+ic-cdk-macros = "0.6.10"
+ic-cdk-timers = "0.1"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+hex = "0.4.3"
+
+ic-web3-rs = { version = "0.1.2" }
+ic-solidity-bindgen = { version = "0.1.8" }
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "7e57e5ce9e32c2c9c029b13c3ebc47309c3bf7ac" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "7e57e5ce9e32c2c9c029b13c3ebc47309c3bf7ac" }
