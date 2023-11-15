@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/lens_vol_ethusd", "logics/lens_vol_ethusd", "canisters/relayer_jolnir", "logics/relayer_jolnir", "bindings/*", "accessors/*"]
+members = ["canisters/lens_vol_ethusd", "logics/lens_vol_ethusd", "canisters/relayer_jolnir", "logics/relayer_jolnir", "canisters/relayer_scroll_sepolia", "logics/relayer_scroll_sepolia", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"

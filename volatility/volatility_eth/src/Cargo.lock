@@ -1744,6 +1744,58 @@ dependencies = [
 ]
 
 [[package]]
+name = "relayer_scroll_sepolia"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "relayer_scroll_sepolia_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_scroll_sepolia_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_scroll_sepolia_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "relayer_scroll_sepolia",
+ "relayer_scroll_sepolia_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
 name = "rlp"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
