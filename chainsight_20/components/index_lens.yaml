@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Index Lens
+  type: algorithm_lens
+  description: ""
+  tags:
+    - Chainsight 20
+    - INdex
+datasource:
+  methods:
+    - id: ada_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: avax_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: bch_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: bnb_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: btc_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: dai_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: doge_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: dot_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: eth_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: leo_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: link_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: ltc_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: matic_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: aokbindexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: shib_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: sol_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: ton_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: tron_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: tusd_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: uni_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: usdc_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: usdt_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: xlm_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: xmr_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+    - id: xrp_indexer_coingecko
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: artifacts/ada_indexer_coingecko.did
+cycles: null

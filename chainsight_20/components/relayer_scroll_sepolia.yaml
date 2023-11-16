@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Relayer Scroll Seolia
+  type: relayer
+  description: ""
+  tags:
+    - Chainsight 20
+    - snapshot
+datasource:
+  location:
+    id: uint256_lens
+  method:
+    identifier: "get_result : (vec text) -> (U256)"
+    interface: null
+    args: []
+destination:
+  network_id: 534351 # Scroll Sepolia
+  type: uint256
+  oracle_address: "0xB5Ef491939A6dBf17287666768C903F03602c550"
+  rpc_url: https://sepolia-rpc.scroll.io
+interval: 3600
+lens_targets:
+  identifiers:
+    - index_indexer
+cycles: null

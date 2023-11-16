@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: xlm_indexer_coingecko
+  type: snapshot_indexer_https
+  description: ""
+  tags:
+    - coingecko
+    - XLM
+datasource:
+  url: https://api.coingecko.com/api/v3/coins/stellar
+  headers:
+    Content-Type: application/json
+  queries:
+    tickers: false
+    market_data: true
+    community_data: false
+interval: ${INTERVAL}
+cycles: null

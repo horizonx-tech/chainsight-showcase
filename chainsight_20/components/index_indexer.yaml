@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: Index Indexer
+  type: snapshot_indexer_icp
+  description: ""
+  tags:
+    - ERC-20
+    - Ethereum
+    - DAI
+datasource:
+  location:
+    id: index_lens
+  method:
+    identifier: "get_result : (vec text) -> (LensValue)"
+    interface: null
+    args: []
+lens_targets:
+  identifiers:
+    - ada_indexer_coingecko
+    - avax_indexer_coingecko
+    - bch_indexer_coingecko
+    - bnb_indexer_coingecko
+    - btc_indexer_coingecko
+    - dai_indexer_coingecko
+    - doge_indexer_coingecko
+    - dot_indexer_coingecko
+    - eth_indexer_coingecko
+    - leo_indexer_coingecko
+    - link_indexer_coingecko
+    - ltc_indexer_coingecko
+    - matic_indexer_coingecko
+    - okb_indexer_coingecko
+    - shib_indexer_coingecko
+    - sol_indexer_coingecko
+    - ton_indexer_coingecko
+    - tron_indexer_coingecko
+    - tusd_indexer_coingecko
+    - uni_indexer_coingecko
+    - usdc_indexer_coingecko
+    - usdt_indexer_coingecko
+    - xlm_indexer_coingecko
+    - xmr_indexer_coingecko
+    - xrp_indexer_coingecko
+interval: ${INTERVAL}
+cycles: null
