@@ -1,0 +1,4 @@
+version: v1
+label: chainsight_20
+components:
+  - component_path: components/btc_indexer_coingecko.yaml
