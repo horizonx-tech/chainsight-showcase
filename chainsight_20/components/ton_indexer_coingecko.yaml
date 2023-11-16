@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: btc_indexer_coingecko
+  label: ton_indexer_coingecko
   type: snapshot_indexer_https
   description: ""
   tags:
     - coingecko
-    - BTC
+    - TON
 datasource:
-  url: https://api.coingecko.com/api/v3/coins/bitcoin
+  url: https://api.coingecko.com/api/v3/coins/the-open-network
   headers:
     Content-Type: application/json
   queries:

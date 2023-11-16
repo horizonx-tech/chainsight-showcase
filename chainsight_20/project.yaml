@@ -1,4 +1,27 @@
 version: v1
 label: chainsight_20
 components:
+  - component_path: components/ada_indexer_coingecko.yaml
+  - component_path: components/avax_indexer_coingecko.yaml
+  - component_path: components/bch_indexer_coingecko.yaml
   - component_path: components/btc_indexer_coingecko.yaml
+  - component_path: components/dai_indexer_coingecko.yaml
+  - component_path: components/doge_indexer_coingecko.yaml
+  - component_path: components/dot_indexer_coingecko.yaml
+  - component_path: components/eth_indexer_coingecko.yaml
+  - component_path: components/leo_indexer_coingecko.yaml
+  - component_path: components/link_indexer_coingecko.yaml
+  - component_path: components/ltc_indexer_coingecko.yaml
+  - component_path: components/matic_indexer_coingecko.yaml
+  - component_path: components/okb_indexer_coingecko.yaml
+  - component_path: components/shib_indexer_coingecko.yaml
+  - component_path: components/sol_indexer_coingecko.yaml
+  - component_path: components/ton_indexer_coingecko.yaml
+  - component_path: components/tron_indexer_coingecko.yaml
+  - component_path: components/tusd_indexer_coingecko.yaml
+  - component_path: components/uni_indexer_coingecko.yaml
+  - component_path: components/usdc_indexer_coingecko.yaml
+  - component_path: components/usdt_indexer_coingecko.yaml
+  - component_path: components/xlm_indexer_coingecko.yaml
+  - component_path: components/xmr_indexer_coingecko.yaml
+  - component_path: components/xrp_indexer_coingecko.yaml
