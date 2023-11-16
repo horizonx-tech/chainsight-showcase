@@ -50,7 +50,6 @@ mod tests {
         let tokens = vec![
             SnapshotValue {
                 id: "bitcoin".to_string(),
-                last_updated: "".to_string(),
                 symbol: "BTC".to_string(),
                 market_data: MarketData {
                     circulating_supply: 19543531.0,
@@ -60,7 +59,6 @@ mod tests {
             },
             SnapshotValue {
                 id: "ethereum".to_string(),
-                last_updated: "".to_string(),
                 symbol: "ETH".to_string(),
                 market_data: MarketData {
                     circulating_supply: 120254695.0,
