@@ -5,6 +5,7 @@ components:
   - component_path: components/avax_indexer_coingecko.yaml
   - component_path: components/bch_indexer_coingecko.yaml
   - component_path: components/btc_indexer_coingecko.yaml
+  - component_path: components/bnb_indexer_coingecko.yaml
   - component_path: components/dai_indexer_coingecko.yaml
   - component_path: components/doge_indexer_coingecko.yaml
   - component_path: components/dot_indexer_coingecko.yaml
