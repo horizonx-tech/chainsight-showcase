@@ -49,8 +49,6 @@ mod tests {
     fn test_calculate_index_value() {
         let tokens = vec![
             SnapshotValue {
-                id: "bitcoin".to_string(),
-                symbol: "BTC".to_string(),
                 market_data: MarketData {
                     circulating_supply: 19543531.0,
                     market_cap: MarketCap { usd: 731891164608 },
@@ -58,8 +56,6 @@ mod tests {
                 },
             },
             SnapshotValue {
-                id: "ethereum".to_string(),
-                symbol: "ETH".to_string(),
                 market_data: MarketData {
                     circulating_supply: 120254695.0,
                     market_cap: MarketCap { usd: 247012763906 },

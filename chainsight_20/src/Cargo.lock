@@ -284,6 +284,44 @@ dependencies = [
 ]
 
 [[package]]
+name = "bnb_indexer_coingecko"
+version = "0.1.0"
+dependencies = [
+ "btc_indexer_coingecko",
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "bnb_indexer_coingecko_canister"
+version = "0.1.0"
+dependencies = [
+ "bnb_indexer_coingecko",
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
 name = "btc_indexer_coingecko"
 version = "0.1.0"
 dependencies = [

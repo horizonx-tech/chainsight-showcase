@@ -11,8 +11,6 @@ use candid::{Decode, Encode};
     chainsight_cdk_macros::StableMemoryStorable,
 )]
 pub struct SnapshotValue {
-    pub id: String,
-    pub symbol: String,
     pub market_data: MarketData,
 }
 
