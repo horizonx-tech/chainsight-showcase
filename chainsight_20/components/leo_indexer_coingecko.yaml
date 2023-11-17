@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: leo_indexer_coingecko
   type: snapshot_indexer_https
-  description: ""
+  description: "This canister indexes the performance of LEO from Coingecko."
   tags:
     - coingecko
     - LEO

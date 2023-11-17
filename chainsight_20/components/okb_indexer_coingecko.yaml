@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: okb_indexer_coingecko
   type: snapshot_indexer_https
-  description: ""
+  description: "This canister indexes the performance of OKB from Coingecko."
   tags:
     - coingecko
     - OKB

@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: Index Lens
   type: algorithm_lens
-  description: ""
+  description: "Chainsight 20 calculator"
   tags:
     - Chainsight 20
-    - INdex
+    - Index
 datasource:
   methods:
     - id: ada_indexer_coingecko

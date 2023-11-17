@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: doge_indexer_coingecko
   type: snapshot_indexer_https
-  description: ""
+  description: "This canister indexes the performance of DOGE from Coingecko."
   tags:
     - coingecko
     - DOGE
