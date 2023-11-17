@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: dot_indexer_coingecko
   type: snapshot_indexer_https
-  description: ""
+  description: "This canister indexes the performance of DOT from Coingecko."
   tags:
     - coingecko
     - DOT

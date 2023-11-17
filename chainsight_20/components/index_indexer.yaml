@@ -1,13 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
 version: v1
 metadata:
-  label: Index Indexer
+  label: Chainsight 20 Snapshot
   type: snapshot_indexer_icp
-  description: ""
+  description: "This canister indexex Chainsight 20, a criptocurrency index."
   tags:
-    - ERC-20
-    - Ethereum
-    - DAI
+    - Chainsight 20
+    - Index
 datasource:
   location:
     id: index_lens

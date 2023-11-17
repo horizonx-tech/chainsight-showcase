@@ -3,10 +3,9 @@ version: v1
 metadata:
   label: Uint256 Lens
   type: algorithm_lens
-  description: ""
+  description: "Get the latest Chainsight20 index from indexer and convert it into uint256 so as to be used by EVM contracts."
   tags:
-    - Ethereum
-    - Account
+    - Chainsight 20
 datasource:
   methods:
     - id: index_indexer

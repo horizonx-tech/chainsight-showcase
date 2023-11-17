@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: xrp_indexer_coingecko
   type: snapshot_indexer_https
-  description: ""
+  description: "This canister indexes the performance of XRP from Coingecko."
   tags:
     - coingecko
     - XRP

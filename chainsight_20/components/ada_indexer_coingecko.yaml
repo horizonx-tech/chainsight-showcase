@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: ada_indexer_coingecko
   type: snapshot_indexer_https
-  description: ""
+  description: "This canister indexes the performance of ADA from Coingecko."
   tags:
     - coingecko
     - ADA
