@@ -1047,6 +1047,130 @@ dependencies = [
 ]
 
 [[package]]
+name = "index_indexer"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_indexer_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_indexer_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_indexer_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_indexer",
+ "index_indexer_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_lens"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_lens_accessors",
+ "index_lens_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_lens_accessors"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_lens_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_lens_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_lens_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_lens",
+ "index_lens_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
 name = "indexmap"
 version = "2.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1261,7 +1385,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "market_indexer_coingecko"
+name = "market_indexer_coinmarketcap"
 version = "0.1.0"
 dependencies = [
  "candid",
@@ -1280,7 +1404,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "market_indexer_coingecko_canister"
+name = "market_indexer_coinmarketcap_canister"
 version = "0.1.0"
 dependencies = [
  "candid",
@@ -1293,7 +1417,7 @@ dependencies = [
  "ic-solidity-bindgen",
  "ic-stable-structures",
  "ic-web3-rs",
- "market_indexer_coingecko",
+ "market_indexer_coinmarketcap",
  "serde",
  "serde_bytes",
 ]
@@ -1657,6 +1781,58 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
 
 [[package]]
+name = "relayer_scroll_sepolia"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "relayer_scroll_sepolia_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_scroll_sepolia_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "relayer_scroll_sepolia_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "relayer_scroll_sepolia",
+ "relayer_scroll_sepolia_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
 name = "rlp"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1980,6 +2156,78 @@ dependencies = [
  "crunchy",
  "hex",
  "static_assertions",
+]
+
+[[package]]
+name = "uint256_lens"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "uint256_lens_accessors",
+ "uint256_lens_bindings",
+]
+
+[[package]]
+name = "uint256_lens_accessors"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "uint256_lens_bindings",
+]
+
+[[package]]
+name = "uint256_lens_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.8.1",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "uint256_lens_canister"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.8.1",
+ "ic-cdk-macros",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "uint256_lens",
+ "uint256_lens_bindings",
 ]
 
 [[package]]

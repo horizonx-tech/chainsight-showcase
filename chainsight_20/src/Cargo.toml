@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/market_indexer_coingecko", "logics/market_indexer_coingecko"]
+members = ["canisters/market_indexer_coinmarketcap", "logics/market_indexer_coinmarketcap", "canisters/index_lens", "logics/index_lens", "canisters/index_indexer", "logics/index_indexer", "canisters/uint256_lens", "logics/uint256_lens", "canisters/relayer_scroll_sepolia", "logics/relayer_scroll_sepolia", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"

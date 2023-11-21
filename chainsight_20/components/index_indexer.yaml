@@ -16,6 +16,6 @@ datasource:
     args: []
 lens_targets:
   identifiers:
-    - market_indexer_coingecko
+    - market_indexer_coinmarketcap
 interval: ${INTERVAL}
 cycles: null

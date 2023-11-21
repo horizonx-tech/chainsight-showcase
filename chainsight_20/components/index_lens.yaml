@@ -9,7 +9,7 @@ metadata:
     - Index
 datasource:
   methods:
-    - id: market_indexer_coingecko
+    - id: market_indexer_coinmarketcap
       identifier: "get_last_snapshot : () -> (Snapshot)"
-      candid_file_path: artifacts/market_indexer_coingecko.did
+      candid_file_path: artifacts/market_indexer_coinmarketcap.did
 cycles: null

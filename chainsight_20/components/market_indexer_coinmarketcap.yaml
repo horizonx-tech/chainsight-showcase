@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: market_indexer_coinmarketcap
+  type: snapshot_indexer_https
+  description: "This canister indexes the performance of the components of the Chainsight 20 from Coinmarketcap."
+  tags:
+    - coinmarketcap
+    - Chainsight 20
+datasource:
+  url: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest
+  headers:
+    Content-Type: application/json
+    X-CMC_PRO_API_KEY: 449b4e6b-48b0-4a59-849a-71b76d6c23de
+  queries:
+    slug: avalanche,cardano,bitcoin-cash,bnb,bitcoin,multi-collateral-dai,dogecoin,polkadot,ethereum,chainlink,litecoin,matic-network,shiba-inu,solana,toncoin,tron,uniswap,usd-coin,tether,ripple
+interval: ${INTERVAL}
+cycles: null
