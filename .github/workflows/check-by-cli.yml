@@ -12,13 +12,12 @@ jobs:
         id: set-matrix
         run: |
           FOLDERS=$(find . -type f -name ".chainsight"  -not \( -path './old/*' -o -path './oracle/*' \) -exec dirname {} \; | jq -R -s -c 'split("\n")[:-1]')
-          echo "matrix={\"include\":$FOLDERS}" >> $GITHUB_OUTPUT
+          echo "matrix={\"target\":$FOLDERS}" >> $GITHUB_OUTPUT
   check:
     needs: generate_pj_root_matrix
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        value: ${{ fromJson(needs.generate_pj_root_matrix.outputs.matrix) }}
+      matrix: ${{ fromJson(needs.generate_pj_root_matrix.outputs.matrix) }}
     steps:
       - name: Processing for each pull request
-        run: echo ${{ matrix.value }}
+        run: echo ${{ matrix.target }}
