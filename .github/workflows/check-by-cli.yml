@@ -1,6 +1,5 @@
 name: Check by CLI
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 jobs:
   generate_pj_root_matrix:
     runs-on: ubuntu-latest
