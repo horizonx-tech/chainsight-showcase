@@ -1,5 +1,17 @@
 name: Check by CLI
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      cli_repo_hash:
+        description: 'The hash of chainsight-cli repository'
+        type: string
+      dfx_version:
+        required: true
+        description: 'The version of dfx'
+        default: 'latest'
+        type: string
+env:
+  RUST_VERSION: 1.73.0
 jobs:
   generate_pj_root_matrix:
     runs-on: ubuntu-latest
@@ -13,11 +25,87 @@ jobs:
         run: |
           FOLDERS=$(find . -type f -name ".chainsight"  -not \( -path './old/*' -o -path './oracle/*' \) -exec dirname {} \; | jq -R -s -c 'split("\n")[:-1]')
           echo "matrix={\"target\":$FOLDERS}" >> $GITHUB_OUTPUT
+  prepare_cli:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v4
+        with:
+          repository: horizonx-tech/chainsight-cli
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.cli_repo_hash }}
+      - name: Cache Cargo
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}-${{ env.RUST_VERSION }}
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ env.RUST_VERSION }}
+      - name: Build
+        run: |
+          cargo clean --release
+          cargo build --locked --release
+      - name: Copy csx to bin folder
+        run: cp target/release/csx /usr/local/bin
+      - name: Out csx version
+        id: csx-version
+        run: |
+          csx --version
+          echo "value=$(csx --version | sed -n 2P | awk '{print $NF}')" >> $GITHUB_OUTPUT
+      - name: Install dfx
+        uses: dfinity/setup-dfx@main
+        with:
+          dfx-version: ${{ github.event.inputs.dfx_version }}
+      - name: Out dfx version
+        id: dfx-version
+        run: |
+          dfx --version
+          echo "value=$(dfx --version | sed "s/ /-/g")" >> $GITHUB_OUTPUT
+      - name: Save executable files
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            /usr/local/bin/csx
+            /usr/local/bin/dfx
+          key: executable-files-key
   check:
-    needs: generate_pj_root_matrix
+    needs: [generate_pj_root_matrix, prepare_cli]
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix: ${{ fromJson(needs.generate_pj_root_matrix.outputs.matrix) }}
     steps:
-      - name: Processing for each pull request
-        run: echo ${{ matrix.target }}
+      - name: Checkout the source code
+        uses: actions/checkout@v3
+      - name: Restore executable files
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            /usr/local/bin/csx
+            /usr/local/bin/dfx
+          key: executable-files-key
+      - name: Generate
+        working-directory: ${{ matrix.target }}
+        run: |
+          OUTPUT=$(csx generate 2>&1)
+          echo "$OUTPUT"
+          if [[ "$OUTPUT" == *"ERRO"* ]]; then
+            echo "Error detected in csx generate output"
+            exit 1
+          fi
+      - name: Build
+        working-directory: ${{ matrix.target }}
+        run: |
+          OUTPUT=$(csx build 2>&1)
+          echo "$OUTPUT"
+          if [[ "$OUTPUT" == *"ERRO"* ]]; then
+            echo "Error detected in csx generate output"
+            exit 1
+          fi
+
