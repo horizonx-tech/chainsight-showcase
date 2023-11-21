@@ -16,30 +16,6 @@ datasource:
     args: []
 lens_targets:
   identifiers:
-    - ada_indexer_coingecko
-    - avax_indexer_coingecko
-    - bch_indexer_coingecko
-    - bnb_indexer_coingecko
-    - btc_indexer_coingecko
-    - dai_indexer_coingecko
-    - doge_indexer_coingecko
-    - dot_indexer_coingecko
-    - eth_indexer_coingecko
-    - leo_indexer_coingecko
-    - link_indexer_coingecko
-    - ltc_indexer_coingecko
-    - matic_indexer_coingecko
-    - okb_indexer_coingecko
-    - shib_indexer_coingecko
-    - sol_indexer_coingecko
-    - ton_indexer_coingecko
-    - tron_indexer_coingecko
-    - tusd_indexer_coingecko
-    - uni_indexer_coingecko
-    - usdc_indexer_coingecko
-    - usdt_indexer_coingecko
-    - xlm_indexer_coingecko
-    - xmr_indexer_coingecko
-    - xrp_indexer_coingecko
+    - market_indexer_coingecko
 interval: ${INTERVAL}
 cycles: null
