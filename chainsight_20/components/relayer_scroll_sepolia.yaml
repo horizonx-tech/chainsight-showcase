@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: Relayer Scroll Seolia
   type: relayer
-  description: ""
+  description: "A relayer that sends the Chainsight 20 index to the Scroll Seolia network."
   tags:
     - Chainsight 20
     - snapshot

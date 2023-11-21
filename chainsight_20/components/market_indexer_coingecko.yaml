@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: market_indexer_coingecko
+  type: snapshot_indexer_https
+  description: "This canister indexes the performance of the components of the Chainsight 20 from Coingecko."
+  tags:
+    - coingecko
+    - Chainsight 20
+datasource:
+  url: https://api.coingecko.com/api/v3/coins/markets
+  headers:
+    accept: application/json
+  queries:
+    vs_currency: usd
+    ids: avalanche-2,cardano,bitcoin-cash,binancecoin,bitcoin,dai,dogecoin,polkadot,ethereum,leo-token,chainlink,litecoin,matic-network,okb,shiba-inu,solana,the-open-network,tron,true-usd,uniswap,usd-coin,tether,stellar,kaspa,ripple
+    sparkline: false
+    locale: en
+    precision: 0
+interval: ${INTERVAL}
+cycles: null
