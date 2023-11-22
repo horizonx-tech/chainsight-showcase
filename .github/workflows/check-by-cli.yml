@@ -27,6 +27,9 @@ jobs:
           echo "matrix={\"target\":$FOLDERS}" >> $GITHUB_OUTPUT
   prepare_cli:
     runs-on: ubuntu-latest
+    outputs:
+      csx-version: ${{ steps.csx-version.outputs.value }}
+      dfx-version: ${{ steps.dfx-version.outputs.value }}
     steps:
       - name: Checkout the source code
         uses: actions/checkout@v4
@@ -67,13 +70,16 @@ jobs:
         run: |
           dfx --version
           echo "value=$(dfx --version | sed "s/ /-/g")" >> $GITHUB_OUTPUT
-      - name: Save executable files
+      - name: Save csx to cache
         uses: actions/cache/save@v3
         with:
-          path: |
-            /usr/local/bin/csx
-            /usr/local/bin/dfx
-          key: executable-files-key
+          path: /usr/local/bin/csx
+          key: csx-key-${{ steps.csx-version.outputs.value }}-${{ env.RUST_VERSION }}
+      - name: Save dfx to cache
+        uses: actions/cache/save@v3
+        with:
+          path: /usr/local/bin/dfx
+          key: dfx-key-${{ steps.dfx-version.outputs.value }}
   check:
     needs: [generate_pj_root_matrix, prepare_cli]
     runs-on: ubuntu-latest
@@ -83,29 +89,16 @@ jobs:
     steps:
       - name: Checkout the source code
         uses: actions/checkout@v3
-      - name: Restore executable files
+      - name: Restore csx from cache
         uses: actions/cache/restore@v3
         with:
-          path: |
-            /usr/local/bin/csx
-            /usr/local/bin/dfx
-          key: executable-files-key
-      - name: Generate
+          path: /usr/local/bin/csx
+          key: csx-key-${{ needs.prepare_cli.outputs.csx-version }}-${{ env.RUST_VERSION }}
+      - name: Restore dfx from cache
+        uses: actions/cache/restore@v3
+        with:
+          path: /usr/local/bin/dfx
+          key: dfx-key-${{ needs.prepare_cli.outputs.dfx-version }}
+      - name: Generate / Build
         working-directory: ${{ matrix.target }}
-        run: |
-          OUTPUT=$(csx generate 2>&1)
-          echo "$OUTPUT"
-          if [[ "$OUTPUT" == *"ERRO"* ]]; then
-            echo "Error detected in csx generate output"
-            exit 1
-          fi
-      - name: Build
-        working-directory: ${{ matrix.target }}
-        run: |
-          OUTPUT=$(csx build 2>&1)
-          echo "$OUTPUT"
-          if [[ "$OUTPUT" == *"ERRO"* ]]; then
-            echo "Error detected in csx generate output"
-            exit 1
-          fi
-
+        run: csx build
