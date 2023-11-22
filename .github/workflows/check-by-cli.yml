@@ -93,8 +93,7 @@ jobs:
       - name: Check exit status
         working-directory: ${{ matrix.target }}
         run: |
-          csx build
-          echo "Exit status: $?"
+          csx build || echo "csx build failed with exit status $?"
       - name: Generate / Build (check status by exit_code)
         working-directory: ${{ matrix.target }}
         run: |
@@ -105,6 +104,6 @@ jobs:
           OUTPUT=$(csx build 2>&1)
           echo "$OUTPUT"
           if [[ "$OUTPUT" == *"ERRO"* ]]; then
-            echo "Error detected in csx generate output"
+            echo "Error detected in csx build output"
             exit 1
           fi
