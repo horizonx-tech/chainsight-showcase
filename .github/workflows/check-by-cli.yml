@@ -99,20 +99,6 @@ jobs:
         with:
           path: /usr/local/bin/dfx
           key: dfx-key-${{ needs.prepare_cli.outputs.dfx-version }}
-      - name: Check exit status
+      - name: Generate / Build
         working-directory: ${{ matrix.target }}
-        run: |
-          csx build || echo "csx build failed with exit status $?"
-      - name: Generate / Build (check status by exit_code)
-        working-directory: ${{ matrix.target }}
-        run: |
-          csx build
-      - name: Generate / Build (check status by stdout)
-        working-directory: ${{ matrix.target }}
-        run: |
-          OUTPUT=$(csx build 2>&1)
-          echo "$OUTPUT"
-          if [[ "$OUTPUT" == *"ERRO"* ]]; then
-            echo "Error detected in csx build output"
-            exit 1
-          fi
+        run: csx build
