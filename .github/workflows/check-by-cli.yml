@@ -90,16 +90,16 @@ jobs:
             /usr/local/bin/csx
             /usr/local/bin/dfx
           key: executable-files-key
-      - name: Generate
+      - name: Check exit status
         working-directory: ${{ matrix.target }}
         run: |
-          OUTPUT=$(csx generate 2>&1)
-          echo "$OUTPUT"
-          if [[ "$OUTPUT" == *"ERRO"* ]]; then
-            echo "Error detected in csx generate output"
-            exit 1
-          fi
-      - name: Build
+          csx build
+          echo "Exit status: $?"
+      - name: Generate / Build (check status by exit_code)
+        working-directory: ${{ matrix.target }}
+        run: |
+          csx build
+      - name: Generate / Build (check status by stdout)
         working-directory: ${{ matrix.target }}
         run: |
           OUTPUT=$(csx build 2>&1)
@@ -108,4 +108,3 @@ jobs:
             echo "Error detected in csx generate output"
             exit 1
           fi
-
