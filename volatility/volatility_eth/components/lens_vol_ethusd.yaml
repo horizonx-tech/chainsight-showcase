@@ -13,3 +13,4 @@ datasource:
     - id: chainlink_ethusd
       identifier: 'get_top_snapshots : (nat64) -> (vec Snapshot)'
       candid_file_path: interfaces/chainlink_ethusd.did
+      func_name_alias: chainlink_ethusd
