@@ -12,7 +12,7 @@ datasource:
   methods:
     - id: chainlink_btcusd
       identifier: 'get_last_snapshot_value : () -> (text)'
-      candid_file_path: artifacts/chainlink_btcusd/chainlink_btcusd.did
+      func_name_alias: chainlink_btcusd
     - id: chainlink_wbtcbtc
       identifier: 'get_last_snapshot_value : () -> (text)'
-      candid_file_path: artifacts/chainlink_wbtcbtc/chainlink_wbtcbtc.did
+      func_name_alias: chainlink_wbtcbtc

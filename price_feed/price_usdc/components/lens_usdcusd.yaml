@@ -12,4 +12,4 @@ datasource:
   methods:
     - id: chainlink_usdcusd
       identifier: 'get_last_snapshot_value : () -> (text)'
-      candid_file_path: artifacts/chainlink_usdcusd/chainlink_usdcusd.did
+      func_name_alias: chainlink_usdcusd

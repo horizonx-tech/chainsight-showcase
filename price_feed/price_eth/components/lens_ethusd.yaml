@@ -13,3 +13,4 @@ datasource:
     - id: chainlink_ethusd
       identifier: 'get_last_snapshot_value : () -> (text)'
       candid_file_path: src/canisters/chainlink_ethusd/chainlink_ethusd.did
+      func_name_alias: chainlink_ethusd
