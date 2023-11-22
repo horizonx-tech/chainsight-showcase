@@ -99,6 +99,18 @@ jobs:
         with:
           path: /usr/local/bin/dfx
           key: dfx-key-${{ needs.prepare_cli.outputs.dfx-version }}
+      - name: Create .env file
+        working-directory: ${{ matrix.target }}
+        run: |
+          if [ -f .env.template ]; then
+            cp .env.template .env
+            echo ".env created from .env.template"
+          elif [ -f .env.example ]; then
+            cp .env.example .env
+            echo ".env created from .env.example"
+          else
+            echo "No .env template found, proceeding without .env file"
+          fi
       - name: Generate / Build
         working-directory: ${{ matrix.target }}
         run: csx build
