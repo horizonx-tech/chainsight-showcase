@@ -12,8 +12,7 @@ datasource:
   methods:
     - id: coingecko_oasusd
       identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-      candid_file_path: src/canisters/coingecko_oasusd/coingecko_oasusd.did
+      func_name_alias: coingecko_oasusd
     - id: coinmarketcap_oasusd
       identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-      candid_file_path: src/canisters/coinmarketcap_oasusd/coinmarketcap_oasusd.did
-
+      func_name_alias: coinmarketcap_oasusd
