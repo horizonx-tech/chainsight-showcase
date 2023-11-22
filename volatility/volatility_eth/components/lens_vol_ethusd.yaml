@@ -12,4 +12,4 @@ datasource:
   methods:
     - id: chainlink_ethusd
       identifier: 'get_top_snapshots : (nat64) -> (vec Snapshot)'
-      candid_file_path: ../../price_feed/price_eth/src/canisters/chainlink_ethusd/chainlink_ethusd.did
+      candid_file_path: interfaces/chainlink_ethusd.did
