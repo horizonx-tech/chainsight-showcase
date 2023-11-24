@@ -10,5 +10,4 @@ datasource:
   methods:
     - id: index_indexer
       identifier: "get_last_snapshot_value : () -> (LensValue)"
-      candid_file_path: null
 cycles: null
