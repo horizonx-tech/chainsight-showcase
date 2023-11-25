@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: S&P 500 Relayer Sepolia
+  type: relayer
+  description: "This canister relays the S&P 500 index to Sepolia."
+  tags:
+    - Oracle
+    - snapshot
+datasource:
+  location:
+    id: sp500_uint256_lens
+  method:
+    identifier: "get_result : (vec text) -> (U256)"
+    interface: null
+    args: []
+destination:
+  network_id: 11155111
+  type: uint256
+  oracle_address: "0x4aB6b26b2baDCB932b237484292Ae34775Ea7070"
+  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+interval: ${INTERVAL}
+lens_targets:
+  identifiers:
+    - sp500_indexer_https
+cycles: null

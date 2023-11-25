@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: S&P 500 uint256 Lens
+  type: algorithm_lens
+  description: "Converts the S&P 500 index from yahoo.com to uint256."
+  tags:
+    - S&P 500
+datasource:
+  methods:
+    - id: sp500_indexer_https
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: null
+cycles: null

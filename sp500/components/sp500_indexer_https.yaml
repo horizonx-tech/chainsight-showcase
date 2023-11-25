@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: S&P 500 Indexer
+  type: snapshot_indexer_https
+  description: "This canister indexes the S&P 500 index from yahoo.com."
+  tags:
+    - S&P 500
+    - Index
+datasource:
+  url: https://query2.finance.yahoo.com/v8/finance/chart/%5EGSPC
+  headers:
+    Content-Type: application/json
+  queries:
+interval: ${INTERVAL}
+cycles: null
