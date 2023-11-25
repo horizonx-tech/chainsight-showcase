@@ -1,7 +1,7 @@
 version: v1
 label: chainsight_20
 components:
-  #  - component_path: components/market_indexer_coingecko.yaml
+  #- component_path: components/market_indexer_coingecko.yaml
   - component_path: components/market_indexer_coinmarketcap.yaml
   - component_path: components/index_lens.yaml
   - component_path: components/index_indexer.yaml
