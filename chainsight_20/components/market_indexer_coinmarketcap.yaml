@@ -8,10 +8,11 @@ metadata:
     - coinmarketcap
     - Chainsight 20
 datasource:
-  url: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest
+  url: https://${COINMARKETCAP_GATEWAY}/v2/cryptocurrency/quotes/latest
   headers:
     Content-Type: application/json
-    X-CMC_PRO_API_KEY: 449b4e6b-48b0-4a59-849a-71b76d6c23de
+    X-CMC_PRO_API_KEY: ${CMC_PRO_API_KEY}
+    APIKEY: ${APIKEY}
   queries:
     slug: avalanche,cardano,bitcoin-cash,bnb,bitcoin,multi-collateral-dai,dogecoin,polkadot,ethereum,chainlink,litecoin,matic-network,shiba-inu,solana,toncoin,tron,uniswap,usd-coin,tether,ripple
 interval: ${INTERVAL}
