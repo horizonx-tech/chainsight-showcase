@@ -1,0 +1,6 @@
+version: v1
+label: sp500
+components:
+- component_path: components/sp500_indexer_https.yaml
+- component_path: components/sp500_uint256_lens.yaml
+- component_path: components/sp500_relayer_sepolia.yaml
