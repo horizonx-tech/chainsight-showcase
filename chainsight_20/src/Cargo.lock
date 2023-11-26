@@ -237,7 +237,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "chainsight-cdk"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=f1a86eeebf63ee9cafc5be37b3257a665211a6c6#f1a86eeebf63ee9cafc5be37b3257a665211a6c6"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=9c41c78133059052b77e9d177ed1a22c6a5d863f#9c41c78133059052b77e9d177ed1a22c6a5d863f"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -263,7 +263,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk-macros"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=f1a86eeebf63ee9cafc5be37b3257a665211a6c6#f1a86eeebf63ee9cafc5be37b3257a665211a6c6"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=9c41c78133059052b77e9d177ed1a22c6a5d863f#9c41c78133059052b77e9d177ed1a22c6a5d863f"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -272,6 +272,7 @@ dependencies = [
  "darling 0.20.3",
  "ethabi 18.0.0",
  "futures",
+ "hex",
  "ic-cdk 0.8.1",
  "ic-cdk-macros",
  "ic-cdk-timers",

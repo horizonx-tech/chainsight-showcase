@@ -1,5 +1,5 @@
 use index_lens_accessors::*;
-use index_lens_bindings::market_indexer_coinmarketcap::Snapshot;
+use index_lens_bindings::market_indexer_coinmarketcap::{CurrencyData, Snapshot};
 const DIVISOR: f64 = 10000000.0;
 const DECIMALS: i32 = 6;
 #[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
@@ -39,17 +39,30 @@ fn calculate_index_value(snapshot: Box<Snapshot>) -> f64 {
         snapshot.value.data._19,
         snapshot.value.data._20,
     ];
+    let (market_caps_with_iwf, total_market_cap_with_iwf) = calc_market_caps_with_iwf(values);
+    let market_caps_with_iwf_weighted = market_caps_with_iwf
+        .into_iter()
+        .map(|s| s * s / total_market_cap_with_iwf);
+
+    let v = market_caps_with_iwf_weighted.clone().sum::<f64>()
+        / (market_caps_with_iwf_weighted.len() as f64)
+        / DIVISOR;
+
+    (v * 10_f64.powi(DECIMALS)).round() / 10_f64.powi(DECIMALS)
+}
+
+fn calc_market_caps_with_iwf(values: Vec<CurrencyData>) -> (Vec<f64>, f64) {
     let mut total_market_cap_with_iwf: f64 = 0.0;
-    values.iter().for_each(|s| {
+    let market_caps_with_iwf = values.iter().map(|s| {
         let market_cap = s.quote.usd.market_cap as f64;
         let circulating_supply = s.circulating_supply;
         let total_supply = s.total_supply;
         let iwf = circulating_supply / total_supply;
         let market_cap_with_iwf = market_cap as f64 * iwf;
         total_market_cap_with_iwf += market_cap_with_iwf;
+        market_cap_with_iwf
     });
-    let v = total_market_cap_with_iwf / values.len() as f64 / DIVISOR;
-    (v * 10_f64.powi(DECIMALS)).round() / 10_f64.powi(DECIMALS)
+    (market_caps_with_iwf.collect(), total_market_cap_with_iwf)
 }
 
 #[cfg(test)]
@@ -231,6 +244,6 @@ mod tests {
             }),
         };
         let result = calculate_index_value(Box::new(snapshot));
-        assert_eq!(result, 3331.941382);
+        assert_eq!(result, 1238.194068);
     }
 }
