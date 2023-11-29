@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: SPX Mar 2024 4500.000 put
+  type: snapshot_indexer_https
+  description: ''
+  tags:
+  - coingecko
+  - DAI
+  - USD
+datasource:
+  url: https://query2.finance.yahoo.com/v8/finance/chart/SPX240315P04500000
+  headers:
+    Content-Type: application/json
+  queries:
+interval: ${INTERVAL}
+cycles: null

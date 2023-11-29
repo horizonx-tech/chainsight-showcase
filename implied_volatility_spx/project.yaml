@@ -1,0 +1,8 @@
+version: v1
+label: implied_volatility_spx
+components:
+- component_path: components/https_spx_for_option.yaml
+- component_path: components/https_spx_4500_call.yaml
+- component_path: components/https_spx_4500_put.yaml
+# - component_path: components/https_spx_4600_call.yaml
+# - component_path: components/https_spx_4600_put.yaml

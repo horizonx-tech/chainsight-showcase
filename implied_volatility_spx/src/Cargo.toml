@@ -1,0 +1,21 @@
+[workspace]
+members = ["canisters/https_spx_for_option", "logics/https_spx_for_option", "canisters/https_spx_4500_call", "logics/https_spx_4500_call", "canisters/https_spx_4500_put", "logics/https_spx_4500_put"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+candid = "0.8"
+ic-cdk = "0.8"
+ic-cdk-macros = "0.6.10"
+ic-cdk-timers = "0.1"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+hex = "0.4.3"
+
+ic-web3-rs = { version = "0.1.2" }
+ic-solidity-bindgen = { version = "0.1.8" }
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "4719fa08dee493373cf85740c021c6872a7379c8" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "4719fa08dee493373cf85740c021c6872a7379c8" }
