@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/https_spx_for_option", "logics/https_spx_for_option", "canisters/https_spx_4500_call", "logics/https_spx_4500_call", "canisters/https_spx_4500_put", "logics/https_spx_4500_put"]
+members = ["canisters/https_spx_for_option", "logics/https_spx_for_option", "canisters/https_spx_4500_call", "logics/https_spx_4500_call", "canisters/https_spx_4500_put", "logics/https_spx_4500_put", "canisters/lens_iv_calculator", "logics/lens_iv_calculator", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"
