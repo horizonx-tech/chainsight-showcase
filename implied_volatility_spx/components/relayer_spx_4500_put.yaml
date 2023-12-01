@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: Relayer for SPX Mar 2024 4500.000 put
   type: relayer
-  description: "This relays Implied Volatility of 'SPX Mar 2024 4500.000 put option' to Sepolia."
+  description: "This relays Implied Volatility of SPX Mar 2024 4500.000 put option to Sepolia."
   tags:
   - Oracle
   - SPX

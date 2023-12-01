@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: SPX Mar 2024 4600.000 put
   type: snapshot_indexer_https
-  description: "Snapshots about "SPX" Mar 2024 4600.000 put option."
+  description: "Snapshots about SPX Mar 2024 4600.000 put option."
   tags:
   - Index Option
   - SPX

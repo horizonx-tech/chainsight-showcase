@@ -13,6 +13,7 @@ pub struct CalculateArgs {
     pub num_of_digits_to_scale: Option<u64>,
 }
 pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
+    ic_cdk::println!("args: {:?}", &args);
     let target_for_underlying = targets.get(0usize).unwrap().to_owned();
     let target_for_option = targets.get(1usize).unwrap().to_owned();
     
@@ -34,7 +35,7 @@ pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     // consider the scale of args
     if let Some(scale) = args.num_of_digits_to_scale {
         let scale = 10u64.pow(scale as u32) as f64;
-        return (sigma * scale).round() / scale;
+        return (sigma * scale).round();
     }
 
     sigma

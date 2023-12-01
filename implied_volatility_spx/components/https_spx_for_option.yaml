@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: S&P 500 Index ticker as an underlying asset for option trades
   type: snapshot_indexer_https
-  description: 'Snapshots about market price for S&P500 index (^SPX)'
+  description: "Snapshots about market price for S&P500 index"
   tags:
   - SP500
-  - ^SPX
+  - SPX
   - Index
   - yahoo.finance
 datasource:

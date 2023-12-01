@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: SPX Mar 2024 4500.000 call
   type: snapshot_indexer_https
-  description: "Snapshots about "SPX" Mar 2024 4500.000 call option."
+  description: "Snapshots about SPX Mar 2024 4500.000 call option."
   tags:
   - Index Option
   - SPX
