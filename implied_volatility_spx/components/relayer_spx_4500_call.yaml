@@ -1,12 +1,13 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: Relayer for SPX Mar 2024 4600.000 call
+  label: Relayer for SPX Mar 2024 4500.000 call
   type: relayer
-  description: ''
+  description: "This relays Implied Volatility of 'SPX Mar 2024 4500.000 put option' to Sepolia."
   tags:
   - Oracle
-  - snapshot
+  - SPX
+  - Index Option
 datasource:
   location:
     id: lens_iv_calculator

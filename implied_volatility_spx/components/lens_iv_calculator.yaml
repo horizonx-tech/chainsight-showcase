@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: Iv Calculator for Yahoo Finance API
   type: algorithm_lens
-  description: ''
+  description: 'This calculates Implied Volatility (IV) based on the option value obtained from Yahoo.finance'
   tags:
-  - Ethereum
-  - Account
+  - SPX
+  - Implied Volatility
 datasource:
   methods:
   - id: underlying

@@ -3,11 +3,11 @@ version: v1
 metadata:
   label: SPX Mar 2024 4500.000 put
   type: snapshot_indexer_https
-  description: ''
+  description: "Snapshots about "SPX" Mar 2024 4500.000 put option."
   tags:
-  - coingecko
-  - DAI
-  - USD
+  - Index Option
+  - SPX
+  - yahoo.finance
 datasource:
   url: https://query2.finance.yahoo.com/v8/finance/chart/SPX240315P04500000
   headers:
