@@ -10,6 +10,7 @@ pub struct CalculateArgs {
     pub initial_sigma: f64,
     pub tolerance: f64,
     pub attempt_count: u64,
+    pub num_of_digits_to_scale: Option<u64>,
 }
 pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     let target_for_underlying = targets.get(0usize).unwrap().to_owned();
@@ -25,10 +26,16 @@ pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
         .chart.result.get(0).expect("no result in option's chart").meta.clone();
     ic_cdk::println!("input: option={:?}", &option_meta);
 
-    let param = generate_seek_iv_param(underlying_current_price, option_meta, args);
+    let param = generate_seek_iv_param(underlying_current_price, option_meta, args.clone());
     ic_cdk::println!("param: {:?}", &param);
     let (sigma, attempt) = calculator::seek_implied_volatility(param);
     ic_cdk::println!("output: sigma={}, attempt={}", sigma, attempt);
+
+    // consider the scale of args
+    if let Some(scale) = args.num_of_digits_to_scale {
+        let scale = 10u64.pow(scale as u32) as f64;
+        return (sigma * scale).round() / scale;
+    }
 
     sigma
 }
@@ -38,7 +45,7 @@ fn generate_seek_iv_param(
     option_meta: Meta,
     args: CalculateArgs,
 ) -> calculator::SeekIvParam {
-    let CalculateArgs { initial_sigma, tolerance, attempt_count } = args;
+    let CalculateArgs { initial_sigma, tolerance, attempt_count , num_of_digits_to_scale: _} = args;
     
     let current_ts_sec = ic_cdk::api::time() / (1000 * 1000000); // nanosec -> sec
     let (k, t, is_call) = param_from_symbol(option_meta.symbol, current_ts_sec as f64);
