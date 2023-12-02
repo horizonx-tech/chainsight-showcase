@@ -14,5 +14,5 @@ datasource:
   headers:
     Content-Type: application/json
   queries:
-interval: ${INTERVAL}
+interval: ${INTERVAL_FOR_OPTION}
 cycles: null

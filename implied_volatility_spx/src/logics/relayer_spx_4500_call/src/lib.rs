@@ -2,6 +2,9 @@ mod types;
 pub type CallCanisterResponse = types::ResponseType;
 pub type CalculateArgs = relayer_spx_4500_call_bindings::CalculateArgs;
 pub type LensArgs = relayer_spx_4500_call_bindings::LensArgs;
+
+#[ic_cdk::query] // temp
+#[candid::candid_method(query)] // temp
 pub fn call_args() -> CalculateArgs {
     CalculateArgs {
         initial_sigma: 0.2,
