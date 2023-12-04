@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: S&P Global Reit uint256 Lens
+  type: algorithm_lens
+  description: "Converts the S&P Global Reit index from yahoo.com to uint256."
+  tags:
+    - S&P Global Reit
+datasource:
+  methods:
+    - id: sp_global_reit_indexer_https
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: null
+cycles: null
