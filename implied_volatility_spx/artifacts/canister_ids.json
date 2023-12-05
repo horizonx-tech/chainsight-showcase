@@ -14,6 +14,12 @@
   "lens_iv_calculator": {
     "ic": "icuee-oiaaa-aaaal-qcp6q-cai"
   },
+  "relayer_spx_4500_call": {
+    "ic": "mbrzu-ayaaa-aaaal-qcqaa-cai"
+  },
+  "relayer_spx_4500_put": {
+    "ic": "mtxon-miaaa-aaaal-qcqda-cai"
+  },
   "snapshots_iv_for_spx_4500_call": {
     "ic": "ilxpy-yaaaa-aaaal-qcp7a-cai"
   },
