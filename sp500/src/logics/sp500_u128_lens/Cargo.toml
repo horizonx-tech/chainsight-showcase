@@ -1,5 +1,5 @@
 [package]
-name = "sp500_uint256_lens"
+name = "sp500_u128_lens"
 version.workspace = true
 edition.workspace = true
 
@@ -14,6 +14,7 @@ ic-cdk-timers.workspace = true
 ic-stable-structures.workspace = true
 serde.workspace = true
 serde_bytes.workspace = true
+serde_json.workspace = true
 hex.workspace = true
 
 ic-web3-rs.workspace = true
@@ -21,5 +22,5 @@ ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
-sp500_uint256_lens_bindings = { path = "../../bindings/sp500_uint256_lens_bindings" }
-sp500_uint256_lens_accessors = { path = "../../accessors/sp500_uint256_lens_accessors" }
+sp500_u128_lens_bindings = { path = "../../bindings/sp500_u128_lens_bindings" }
+sp500_u128_lens_accessors = { path = "../../accessors/sp500_u128_lens_accessors" }
