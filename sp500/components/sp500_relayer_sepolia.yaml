@@ -9,9 +9,9 @@ metadata:
     - snapshot
 datasource:
   location:
-    id: sp500_uint256_lens
+    id: sp500_u128_lens
   method:
-    identifier: "get_result : (vec text) -> (U256)"
+    identifier: "get_result : (vec text) -> (nat)"
     interface: null
     args: []
 destination:

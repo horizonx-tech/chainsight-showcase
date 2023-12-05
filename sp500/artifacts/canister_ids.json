@@ -1,0 +1,11 @@
+{
+  "sp500_indexer_https": {
+    "ic": "xw57v-siaaa-aaaal-qcnwq-cai"
+  },
+  "sp500_relayer_sepolia": {
+    "ic": "pnq5b-nyaaa-aaaal-qcppq-cai"
+  },
+  "sp500_u128_lens": {
+    "ic": "p7wky-biaaa-aaaal-qcpmq-cai"
+  }
+}
