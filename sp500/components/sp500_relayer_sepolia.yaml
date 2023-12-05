@@ -9,15 +9,15 @@ metadata:
     - snapshot
 datasource:
   location:
-    id: sp500_uint256_lens
+    id: sp500_u128_lens
   method:
-    identifier: "get_result : (vec text) -> (U256)"
+    identifier: "get_result : (vec text) -> (nat)"
     interface: null
     args: []
 destination:
   network_id: 11155111
   type: uint256
-  oracle_address: "0x4aB6b26b2baDCB932b237484292Ae34775Ea7070"
+  oracle_address: "0xB5Ef491939A6dBf17287666768C903F03602c550"
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
 interval: ${INTERVAL}
 lens_targets:

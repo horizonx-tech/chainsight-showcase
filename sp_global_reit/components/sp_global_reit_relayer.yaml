@@ -1,26 +1,26 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: Relayer Scroll Seolia
+  label: S&P Global Reit Relayer Sepolia
   type: relayer
-  description: "A relayer that sends the Chainsight 20 index to the Scroll Seolia network."
+  description: "This canister relays the S&P Global Reit index to Sepolia."
   tags:
-    - Chainsight 20
+    - Oracle
     - snapshot
 datasource:
   location:
-    id: uint256_lens
+    id: sp_global_reit_uint256_lens
   method:
     identifier: "get_result : (vec text) -> (nat)"
     interface: null
     args: []
 destination:
-  network_id: 534351 # Scroll Sepolia
+  network_id: 11155111
   type: uint256
-  oracle_address: "0xB5Ef491939A6dBf17287666768C903F03602c550"
-  rpc_url: https://sepolia-rpc.scroll.io
+  oracle_address: "0x3e0E4CD1684Be08BFA06cb12c1809E3f6a3E1Fe9" # TODO: update this
+  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
 interval: ${INTERVAL}
 lens_targets:
   identifiers:
-    - index_indexer
+    - sp_global_reit_indexer_https
 cycles: null
