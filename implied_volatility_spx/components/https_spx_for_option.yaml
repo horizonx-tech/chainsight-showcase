@@ -1,13 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: S&P 500 Index ticker as an underlying asset for option trades
+  label: "SPX Indexer (S&P 500 index to trade)"
   type: snapshot_indexer_https
-  description: "Snapshots about market price for S&P500 index"
+  description: "Snapshots about market price for SPX (S&P 500 index to trade)"
   tags:
-  - SP500
-  - SPX
   - Index
+  - SPX
   - yahoo.finance
 datasource:
   url: https://query2.finance.yahoo.com/v8/finance/chart/%5ESPX

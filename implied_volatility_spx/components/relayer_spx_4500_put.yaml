@@ -10,10 +10,10 @@ metadata:
   - Index Option
 datasource:
   location:
-    id: lens_iv_calculator
+    id: lens_for_iv_float_to_uint
   method:
-    identifier: 'get_result : (LensArgs) -> (float64)'
-    candid_file_path: src/canisters/lens_iv_calculator/lens_iv_calculator.did
+    identifier: 'get_result : (LensArgs) -> (nat)'
+    candid_file_path: src/canisters/lens_for_iv_float_to_uint/lens_for_iv_float_to_uint.did
     args: []
 destination:
   network_id: 11155111
@@ -22,7 +22,6 @@ destination:
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
 lens_targets:
   identifiers:
-    - https_spx_for_option
-    - https_spx_4500_put
+    - snapshots_iv_for_spx_4500_put
 interval: ${INTERVAL_FOR_IV}
 cycles: null

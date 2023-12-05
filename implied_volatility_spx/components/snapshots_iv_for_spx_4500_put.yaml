@@ -3,7 +3,7 @@ version: v1
 metadata:
   label: Implied Volatility Snapshots For SPX Mar 2024 4500.000 put option
   type: snapshot_indexer_icp
-  description: "Snapshots about Implied Volatility of SPX Mar 2024 4600.000 put option."
+  description: "Snapshots about Implied Volatility of SPX Mar 2024 4500.000 put option."
   tags:
   - Index Option
   - SPX

@@ -1,8 +1,6 @@
 pub type CalculateArgs = snapshots_iv_for_spx_4500_put_bindings::CalculateArgs;
 pub type LensArgs = snapshots_iv_for_spx_4500_put_bindings::LensArgs;
 
-#[ic_cdk::query] // temp
-#[candid::candid_method(query)] // temp
 pub fn call_args() -> CalculateArgs {
     CalculateArgs {
         initial_sigma: 0.2,

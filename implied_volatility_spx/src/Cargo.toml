@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/https_spx_for_option", "logics/https_spx_for_option", "canisters/https_spx_4500_call", "logics/https_spx_4500_call", "canisters/https_spx_4500_put", "logics/https_spx_4500_put", "canisters/lens_iv_calculator", "logics/lens_iv_calculator", "canisters/relayer_spx_4500_call", "logics/relayer_spx_4500_call", "canisters/relayer_spx_4500_put", "logics/relayer_spx_4500_put", "canisters/snapshots_iv_for_spx_4500_call", "logics/snapshots_iv_for_spx_4500_call", "canisters/snapshots_iv_for_spx_4500_put", "logics/snapshots_iv_for_spx_4500_put", "bindings/*", "accessors/*"]
+members = ["canisters/https_spx_for_option", "logics/https_spx_for_option", "canisters/https_spx_4500_call", "logics/https_spx_4500_call", "canisters/lens_iv_calculator", "logics/lens_iv_calculator", "canisters/snapshots_iv_for_spx_4500_call", "logics/snapshots_iv_for_spx_4500_call", "canisters/lens_for_iv_float_to_uint", "logics/lens_for_iv_float_to_uint", "canisters/relayer_spx_4500_call", "logics/relayer_spx_4500_call", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"
@@ -18,5 +18,5 @@ hex = "0.4.3"
 
 ic-web3-rs = { git = "https://github.com/horizonx-tech/ic-web3-rs.git", tag = "v0.1.3" }
 ic-solidity-bindgen = { git = "https://github.com/horizonx-tech/ic-solidity-bindgen.git", tag = "v0.1.9" }
-chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "57448f35e39288a3262a4f649f8f13ba0df46068" }
-chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "57448f35e39288a3262a4f649f8f13ba0df46068" }
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "cda59f853562bb0075b10818fa219f10bed33400" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "cda59f853562bb0075b10818fa219f10bed33400" }
