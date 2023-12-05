@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: Implied Volatility Snapshots For SPX Mar 2024 4500.000 put option
+  type: snapshot_indexer_icp
+  description: "Snapshots about Implied Volatility of SPX Mar 2024 4500.000 put option."
+  tags:
+  - Index Option
+  - SPX
+datasource:
+  location:
+    id: lens_iv_calculator
+  method:
+    identifier: 'get_result : (LensArgs) -> (float64)'
+    candid_file_path: src/canisters/lens_iv_calculator/lens_iv_calculator.did
+    args: []
+lens_targets:
+  identifiers:
+    - https_spx_for_option
+    - https_spx_4500_put
+interval: ${INTERVAL_FOR_IV}
+cycles: null

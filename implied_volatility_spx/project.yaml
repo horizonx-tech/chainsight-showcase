@@ -1,0 +1,12 @@
+version: v1
+label: implied_volatility_spx
+components:
+- component_path: components/https_spx_for_option.yaml
+- component_path: components/https_spx_4500_call.yaml
+- component_path: components/https_spx_4500_put.yaml
+- component_path: components/lens_iv_calculator.yaml
+- component_path: components/snapshots_iv_for_spx_4500_call.yaml
+- component_path: components/snapshots_iv_for_spx_4500_put.yaml
+- component_path: components/lens_for_iv_float_to_uint.yaml
+# - component_path: components/relayer_spx_4500_call.yaml
+# - component_path: components/relayer_spx_4500_put.yaml

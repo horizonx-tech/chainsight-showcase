@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Relayer for SPX Mar 2024 4500.000 call
+  type: relayer
+  description: "This relays Implied Volatility of SPX Mar 2024 4500.000 put option to Sepolia."
+  tags:
+  - Oracle
+  - SPX
+  - Index Option
+datasource:
+  location:
+    id: lens_for_iv_float_to_uint
+  method:
+    identifier: 'get_result : (LensArgs) -> (nat)'
+    candid_file_path: src/canisters/lens_for_iv_float_to_uint/lens_for_iv_float_to_uint.did
+    args: []
+destination:
+  network_id: 11155111
+  type: uint256
+  oracle_address: "0xB5Ef491939A6dBf17287666768C903F03602c550"
+  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+lens_targets:
+  identifiers:
+    - snapshots_iv_for_spx_4500_call
+interval: ${INTERVAL_FOR_IV}
+cycles: null

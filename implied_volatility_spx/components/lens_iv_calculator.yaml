@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Iv Calculator for Yahoo Finance API
+  type: algorithm_lens
+  description: 'This calculates Implied Volatility (IV) based on the option value obtained from Yahoo.finance'
+  tags:
+  - SPX
+  - Implied Volatility
+datasource:
+  methods:
+  - id: underlying
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+    candid_file_path: src/canisters/https_spx_for_option/https_spx_for_option.did
+    func_name_alias: underlying_chart
+  - id: option
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+    candid_file_path: src/canisters/https_spx_4500_call/https_spx_4500_call.did
+    func_name_alias: option_chart
+with_args: true
+cycles: null
