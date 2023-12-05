@@ -1,11 +1,11 @@
 {
-	"lens_vol_ethusd": {
-		"ic": "k24ct-2yaaa-aaaao-a2o6q-cai"
-	},
-	"relayer_jolnir": {
-		"ic": "hug27-byaaa-aaaao-a2puq-cai"
-	},
-	"relayer_scroll_sepolia": {
-		"ic": "hpdg2-3aaaa-aaaao-a2pwa-cai"
-	}
+  "lens_vol_ethusd": {
+    "ic": "b53cd-riaaa-aaaal-qcomq-cai"
+  },
+  "relayer_jolnir": {
+    "ic": "buyj7-haaaa-aaaal-qcona-cai"
+  },
+  "relayer_scroll_sepolia": {
+    "ic": "btzpl-kyaaa-aaaal-qconq-cai"
+  }
 }
