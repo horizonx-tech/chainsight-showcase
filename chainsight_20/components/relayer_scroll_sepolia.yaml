@@ -17,7 +17,7 @@ datasource:
 destination:
   network_id: 534351 # Scroll Sepolia
   type: uint256
-  oracle_address: "0xB5Ef491939A6dBf17287666768C903F03602c550"
+  oracle_address: ${ORACLE_ADDRESS}
   rpc_url: https://sepolia-rpc.scroll.io
 interval: ${INTERVAL}
 lens_targets:
