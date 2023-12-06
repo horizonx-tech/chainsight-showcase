@@ -12,7 +12,7 @@ datasource:
   location:
     id: lens_for_iv_float_to_uint
   method:
-    identifier: 'get_result : (LensArgs) -> (nat)'
+    identifier: 'get_result : (vec text) -> (nat)'
     candid_file_path: src/canisters/lens_for_iv_float_to_uint/lens_for_iv_float_to_uint.did
     args: []
 destination:

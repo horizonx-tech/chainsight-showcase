@@ -13,5 +13,4 @@ datasource:
       identifier: "get_last_snapshot_value : () -> (float64)"
       candid_file_path: src/canisters/snapshots_iv_for_spx_4500_call/snapshots_iv_for_spx_4500_call.did
       func_name_alias: iv_in_snapshot_indexer
-with_args: true
 cycles: null

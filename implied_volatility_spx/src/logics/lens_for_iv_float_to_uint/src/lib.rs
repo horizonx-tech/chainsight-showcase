@@ -1,14 +1,11 @@
 use lens_for_iv_float_to_uint_accessors::*;
 
 pub type LensValue = u128;
-#[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
-pub struct CalculateArgs {
-    pub decimals: u32,
-}
-pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
+pub const DECIMALS: u32 = 18;
+pub async fn calculate(targets: Vec<String>) -> LensValue {
     let result = get_iv_in_snapshot_indexer(targets.get(0usize).unwrap().clone())
         .await.unwrap_or_else(|msg| panic!("{}", msg));
-    convert_to_u128(result, args.decimals)
+    convert_to_u128(result, DECIMALS)
 }
 
 fn convert_to_u128(value: f64, dec: u32) -> u128 {
