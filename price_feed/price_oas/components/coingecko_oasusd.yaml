@@ -21,4 +21,4 @@ datasource:
     precision: 18
 storage:
   with_timestamp: true
-interval: 60
+interval: ${INTERVAL}
