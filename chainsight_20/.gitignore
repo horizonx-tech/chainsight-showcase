@@ -3,5 +3,6 @@ src/accessors
 src/bindings
 src/canisters
 src/target
+!artifacts/canister_ids.json
 artifacts
 .env
