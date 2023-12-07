@@ -1,0 +1,17 @@
+{
+  "index_indexer": {
+    "ic": "34ixy-vyaaa-aaaao-a264a-cai"
+  },
+  "index_lens": {
+    "ic": "2rgtw-2qaaa-aaaao-a263q-cai"
+  },
+  "market_indexer_coinmarketcap": {
+    "ic": "2whvc-xiaaa-aaaao-a263a-cai"
+  },
+  "relayer_scroll_sepolia": {
+    "ic": "br5f7-7uaaa-aaaaa-qaaca-cai"
+  },
+  "uint256_lens": {
+    "ic": "33jrm-yaaaa-aaaao-a264q-cai"
+  }
+}
