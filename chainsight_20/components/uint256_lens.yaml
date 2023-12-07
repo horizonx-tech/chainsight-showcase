@@ -3,9 +3,9 @@ version: v1
 metadata:
   label: u128 Lens
   type: algorithm_lens
-  description: "Get the latest Chainsight20 index from indexer and convert it into u128 so as to be used by EVM contracts."
+  description: "Get last_snapshot_value from a snapshot indexer and convert it into u128 with 6 decimals so as to be used by EVM contracts."
   tags:
-    - Chainsight 20
+    - uint128
 datasource:
   methods:
     - id: index_indexer
