@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: S&P Global Reit uint256 Lens
+  label: u128 Lens
   type: algorithm_lens
-  description: "Converts the S&P Global Reit index from yahoo.com to uint256."
+  description: "Converts an index value from yahoo.com to u128 so as to be used by the EVM relayer with 6 decimals precision."
   tags:
-    - S&P Global Reit
+    - u128
 datasource:
   methods:
     - id: sp_global_reit_indexer_https
