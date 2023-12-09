@@ -5,3 +5,4 @@ src/canisters
 src/target
 artifacts
 .env
+!artifacts/canister_ids.json
