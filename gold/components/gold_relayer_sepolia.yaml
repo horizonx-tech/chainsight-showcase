@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Gold Relayer Sepolia
+  type: relayer
+  description: ''
+  tags:
+  - SPDR Gold Shares
+  - Gold
+  - Sepolia
+datasource:
+  location:
+    id: gold_algorithm_lens
+  method:
+    identifier: 'get_result : (vec text) -> (nat)'
+    interface: null
+    args: []
+destination:
+  network_id: 11155111
+  type: uint256
+  oracle_address: 0xB5Ef491939A6dBf17287666768C903F03602c550
+  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+interval: ${INTERVAL}
+lens_targets: 
+  identifiers:
+    - gold_snapshot_indexer_https
+cycles: null

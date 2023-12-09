@@ -1,0 +1,6 @@
+version: v1
+label: gold
+components:
+- component_path: components/gold_snapshot_indexer_https.yaml
+- component_path: components/gold_algorithm_lens.yaml
+- component_path: components/gold_relayer_sepolia.yaml

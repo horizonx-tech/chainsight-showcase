@@ -1,0 +1,7 @@
+src/__interfaces
+src/accessors
+src/bindings
+src/canisters
+src/target
+artifacts
+.env

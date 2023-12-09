@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Gold u128 Lens
+  type: algorithm_lens
+  description: "Converts the latest price of SPDR Gold Shares (GLD) in USD from yahoo.finance to u128 with 8 decimals."
+  tags:
+    - SPDR Gold Shares
+    - Gold
+datasource:
+  methods:
+    - id: gold_snapshot_indexer_https
+      identifier: "get_last_snapshot : () -> (SnapshotValue)"
+      candid_file_path: null
+cycles: null
