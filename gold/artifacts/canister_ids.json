@@ -1,0 +1,11 @@
+{
+  "gold_algorithm_lens": {
+    "ic": "tjitf-iiaaa-aaaao-a27ja-cai"
+  },
+  "gold_relayer_sepolia": {
+    "ic": "tojvr-fqaaa-aaaao-a27jq-cai"
+  },
+  "gold_snapshot_indexer_https": {
+    "ic": "t3oe4-eyaaa-aaaao-a27ka-cai"
+  }
+}
