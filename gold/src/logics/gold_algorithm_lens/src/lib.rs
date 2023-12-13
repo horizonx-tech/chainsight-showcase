@@ -2,9 +2,10 @@ use gold_algorithm_lens_accessors::*;
 pub type LensValue = u128;
 const DECIMALS: u32 = 8;
 pub async fn calculate(targets: Vec<String>) -> LensValue {
-    let result =
-        get_get_last_snapshot_in_gold_snapshot_indexer_https(targets.get(0usize).unwrap().clone())
-            .await;
+    let result = get_get_last_snapshot_value_in_gold_snapshot_indexer_https(
+        targets.get(0usize).unwrap().clone(),
+    )
+    .await;
     let market_price = result.unwrap().chart.result[0].meta.regularMarketPrice;
     convert_to_u128(market_price)
 }

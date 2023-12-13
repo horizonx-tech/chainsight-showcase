@@ -10,6 +10,6 @@ metadata:
 datasource:
   methods:
     - id: gold_snapshot_indexer_https
-      identifier: "get_last_snapshot : () -> (SnapshotValue)"
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
       candid_file_path: null
 cycles: null
