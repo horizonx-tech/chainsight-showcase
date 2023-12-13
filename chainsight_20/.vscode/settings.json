@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "yaml.completion": true,
   "rust-analyzer.linkedProjects": ["./src/logics/index_lens/Cargo.toml"]
