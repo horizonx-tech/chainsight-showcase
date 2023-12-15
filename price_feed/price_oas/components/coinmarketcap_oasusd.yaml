@@ -16,7 +16,9 @@ datasource:
     Content-Type: application/json
     X-CMC_PRO_API_KEY: ${CMC_PRO_API_KEY}
   queries:
-    slug: oasys
+    type: static
+    value:
+      slug: oasys
 storage:
   with_timestamp: true
 interval: ${INTERVAL}
