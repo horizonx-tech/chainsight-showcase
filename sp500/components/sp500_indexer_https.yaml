@@ -12,5 +12,7 @@ datasource:
   headers:
     Content-Type: application/json
   queries:
+    type: static
+    value:
 interval: ${INTERVAL}
 cycles: null

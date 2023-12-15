@@ -15,10 +15,12 @@ datasource:
   headers:
     Content-Type: application/json
   queries:
-    ids: oasys
-    vs_currencies: usd
-    include_24hr_vol: true
-    precision: 18
+    type: static
+    value:
+      ids: oasys
+      vs_currencies: usd
+      include_24hr_vol: true
+      precision: 18
 storage:
   with_timestamp: true
 interval: ${INTERVAL}

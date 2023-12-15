@@ -12,10 +12,12 @@ datasource:
   headers:
     accept: application/json
   queries:
-    vs_currency: usd
-    ids: avalanche-2,cardano,bitcoin-cash,binancecoin,bitcoin,dai,dogecoin,polkadot,ethereum,leo-token,chainlink,litecoin,matic-network,okb,shiba-inu,solana,the-open-network,tron,true-usd,uniswap,usd-coin,tether,stellar,kaspa,ripple
-    sparkline: false
-    locale: en
-    precision: 0
+    type: static
+    value:
+      vs_currency: usd
+      ids: avalanche-2,cardano,bitcoin-cash,binancecoin,bitcoin,dai,dogecoin,polkadot,ethereum,leo-token,chainlink,litecoin,matic-network,okb,shiba-inu,solana,the-open-network,tron,true-usd,uniswap,usd-coin,tether,stellar,kaspa,ripple
+      sparkline: false
+      locale: en
+      precision: 0
 interval: ${INTERVAL}
 cycles: null
