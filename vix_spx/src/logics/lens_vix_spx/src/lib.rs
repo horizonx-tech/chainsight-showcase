@@ -5,8 +5,11 @@ mod calc;
 use calc::{k, options, variance, vix};
 
 pub type LensValue = f64;
-
-pub async fn calculate(targets: Vec<String>) -> LensValue {
+#[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
+pub struct CalculateArgs {
+    pub num_of_digits_to_scale: Option<u64>,
+}
+pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     let near = get_near_term_options(targets.get(0usize).unwrap().clone()).await.unwrap();
     let next = get_next_term_options(targets.get(1usize).unwrap().clone()).await.unwrap();
     
@@ -43,8 +46,9 @@ pub async fn calculate(targets: Vec<String>) -> LensValue {
     let next_calls = next_options.calls.clone().iter().map(|v|  cast_with_serde::<lens_vix_spx_bindings::next_term_options::OptionSpxInner, Box<OptionSpxInnerType>>(v)).collect::<Vec<Box<OptionSpxInnerType>>>();
     let next_puts = next_options.puts.clone().iter().map(|v| cast_with_serde::<lens_vix_spx_bindings::next_term_options::OptionSpxInner, Box<OptionSpxInnerType>>(v)).collect::<Vec<Box<OptionSpxInnerType>>>();
     let next_variance = calculate_variance(next_strikes.clone(), &next_calls, &next_puts, next_t, 0.0); // NOTE: temp risk_free_rate
-    
-    vix::calculate_vix(vix::ParamVix {
+
+    // Calculate vix
+    let result = vix::calculate_vix(vix::ParamVix {
         near: vix::ParamVixPerTerm {
             variance: near_variance,
             t: near_t,
@@ -55,7 +59,14 @@ pub async fn calculate(targets: Vec<String>) -> LensValue {
             t: next_t,
             minites_until_t: next_minites_until_t,
         },
-    })
+    });
+
+    // Scale by args
+    if let Some(scale) = args.num_of_digits_to_scale {
+        let scale = 10u64.pow(scale as u32) as f64;
+        return (result * scale).round();
+    }
+    result
 }
 
 // calculate Time to Expiration (Number of Minites)
