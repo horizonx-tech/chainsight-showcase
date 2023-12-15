@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: Next term SPX options for VIX
+  type: snapshot_indexer_https
+  description: ""
+  tags:
+  - Index Option
+  - SPX
+  - yahoo.finance
+datasource:
+  url: https://query1.finance.yahoo.com/v7/finance/options/%5ESPX
+  # url: https://query1.finance.yahoo.com/v7/finance/options/%5ESPX?straddle=false&date=1704758400
+  headers:
+    Content-Type: application/json
+  queries:
+    type: dynamic
+interval: ${INTERVAL}
+cycles: null

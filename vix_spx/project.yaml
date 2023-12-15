@@ -1,0 +1,6 @@
+version: v1
+label: vix_spx
+components:
+- component_path: components/spx_near_term_for_vix.yaml
+- component_path: components/spx_next_term_for_vix.yaml
+- component_path: components/lens_vix_spx.yaml

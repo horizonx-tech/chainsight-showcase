@@ -1,0 +1,26 @@
+[package]
+name = "lens_vix_spx"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+candid.workspace = true
+ic-cdk.workspace = true
+ic-cdk-macros.workspace = true
+ic-cdk-timers.workspace = true
+ic-stable-structures.workspace = true
+serde.workspace = true
+serde_bytes.workspace = true
+serde_json.workspace = true
+hex.workspace = true
+
+ic-web3-rs.workspace = true
+ic-solidity-bindgen.workspace = true
+chainsight-cdk-macros.workspace = true
+chainsight-cdk.workspace = true
+
+lens_vix_spx_bindings = { path = "../../bindings/lens_vix_spx_bindings" }
+lens_vix_spx_accessors = { path = "../../accessors/lens_vix_spx_accessors" }

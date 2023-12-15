@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Lens for VIX
+  type: algorithm_lens
+  description: ""
+  tags:
+  - SPX
+  - VIX
+datasource:
+  methods:
+    - id: near_term_options
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: src/canisters/spx_near_term_for_vix/spx_near_term_for_vix.did
+      func_name_alias: near_term_options
+    - id: next_term_options
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: src/canisters/spx_next_term_for_vix/spx_next_term_for_vix.did
+      func_name_alias: next_term_options
+with_args: true
+cycles: null

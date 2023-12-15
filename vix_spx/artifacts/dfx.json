@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "canisters": {
+    "spx_near_term_for_vix": {
+      "type": "custom",
+      "candid": "./spx_near_term_for_vix.did",
+      "wasm": "./spx_near_term_for_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "spx_next_term_for_vix": {
+      "type": "custom",
+      "candid": "./spx_next_term_for_vix.did",
+      "wasm": "./spx_next_term_for_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "lens_vix_spx": {
+      "type": "custom",
+      "candid": "./lens_vix_spx.did",
+      "wasm": "./lens_vix_spx.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}
