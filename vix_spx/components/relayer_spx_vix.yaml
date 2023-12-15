@@ -1,19 +1,18 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: Relayer for SPX Mar 2024 4500.000 call
+  label: Relayer for VIX of SPX
   type: relayer
-  description: "This relays Implied Volatility of SPX Mar 2024 4500.000 put option to Sepolia."
+  description: "This relays VIX of SPX to Sepolia."
   tags:
-  - Oracle
   - SPX
   - Index Option
 datasource:
   location:
-    id: lens_dummy_for_iv_float_to_uint
+    id: lens_vix_spx
   method:
-    identifier: 'get_result : (LensArgs) -> (nat)'
-    candid_file_path: src/canisters/lens_dummy_for_iv_float_to_uint/lens_dummy_for_iv_float_to_uint.did
+    identifier: 'get_result : (LensArgs) -> (float64)'
+    candid_file_path: src/canisters/lens_vix_spx/lens_vix_spx.did
     args: []
 destination:
   network_id: 11155111
@@ -22,6 +21,7 @@ destination:
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
 lens_targets:
   identifiers:
-    - lens_dummy_for_iv_float_to_uint
-interval: ${INTERVAL_FOR_IV}
+    - spx_near_term_for_vix
+    - spx_next_term_for_vix
+interval: ${INTERVAL}
 cycles: null

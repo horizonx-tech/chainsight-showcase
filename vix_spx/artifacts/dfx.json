@@ -33,6 +33,28 @@
           "visibility": "public"
         }
       ]
+    },
+    "relayer_spx_vix": {
+      "type": "custom",
+      "candid": "./relayer_spx_vix.did",
+      "wasm": "./relayer_spx_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "indexer_spx_vix": {
+      "type": "custom",
+      "candid": "./indexer_spx_vix.did",
+      "wasm": "./indexer_spx_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
     }
   },
   "defaults": {

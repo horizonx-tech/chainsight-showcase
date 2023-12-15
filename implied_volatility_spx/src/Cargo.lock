@@ -289,7 +289,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "chainsight-cdk"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=cda59f853562bb0075b10818fa219f10bed33400#cda59f853562bb0075b10818fa219f10bed33400"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=6e55b5e8a38d1d853f4217614555f7ec7eaeb92b#6e55b5e8a38d1d853f4217614555f7ec7eaeb92b"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -315,7 +315,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk-macros"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=cda59f853562bb0075b10818fa219f10bed33400#cda59f853562bb0075b10818fa219f10bed33400"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=6e55b5e8a38d1d853f4217614555f7ec7eaeb92b#6e55b5e8a38d1d853f4217614555f7ec7eaeb92b"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -1087,7 +1087,8 @@ dependencies = [
 [[package]]
 name = "ic-solidity-bindgen"
 version = "0.1.9"
-source = "git+https://github.com/horizonx-tech/ic-solidity-bindgen.git?tag=v0.1.9#27c2765680ffcf9d5cc9ed27d31fd7eaa47916df"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8a6c744a9b30e73b1524e1918220304a192f5aaf3ff51245e15840f5fe853d70"
 dependencies = [
  "async-trait",
  "derive_builder",
@@ -1101,7 +1102,8 @@ dependencies = [
 [[package]]
 name = "ic-solidity-bindgen-macros"
 version = "0.1.9"
-source = "git+https://github.com/horizonx-tech/ic-solidity-bindgen.git?tag=v0.1.9#27c2765680ffcf9d5cc9ed27d31fd7eaa47916df"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "48309f2d8da903805c45757bef9ab1e977d515e194c99e41ee4a5f5e81816013"
 dependencies = [
  "Inflector",
  "ic-web3-rs",
@@ -1148,7 +1150,8 @@ checksum = "95dce29e3ceb0e6da3e78b305d95365530f2efd2146ca18590c0ef3aa6038568"
 [[package]]
 name = "ic-web3-rs"
 version = "0.1.3"
-source = "git+https://github.com/horizonx-tech/ic-web3-rs.git?tag=v0.1.3#bcd148f68f27eb0180620fb3080705cb962dade2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1913731fd8edf367a99acb98cb09b36b65f2bd7bcd3e20e647cc3132da3edf3b"
 dependencies = [
  "arrayvec 0.7.4",
  "candid 0.9.11",
@@ -1370,151 +1373,6 @@ name = "leb128"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "884e2677b40cc8c339eaefcb701c32ef1fd2493d71118dc0ca4b6a736c93bd67"
-
-[[package]]
-name = "lens_for_iv_float_to_uint"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "lens_for_iv_float_to_uint_accessors",
- "lens_for_iv_float_to_uint_bindings",
- "serde",
- "serde_bytes",
- "serde_json",
-]
-
-[[package]]
-name = "lens_for_iv_float_to_uint_accessors"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "lens_for_iv_float_to_uint_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "lens_for_iv_float_to_uint_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "lens_for_iv_float_to_uint_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "lens_for_iv_float_to_uint",
- "lens_for_iv_float_to_uint_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "lens_iv_calculator"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "lens_iv_calculator_accessors",
- "lens_iv_calculator_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "lens_iv_calculator_accessors"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "lens_iv_calculator_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "lens_iv_calculator_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "lens_iv_calculator_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "lens_iv_calculator",
- "lens_iv_calculator_bindings",
- "serde",
- "serde_bytes",
-]
 
 [[package]]
 name = "libc"
@@ -2071,110 +1929,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
 
 [[package]]
-name = "relayer_spx_4500_call"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "relayer_spx_4500_call_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "relayer_spx_4500_call_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "relayer_spx_4500_call_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "relayer_spx_4500_call",
- "relayer_spx_4500_call_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "relayer_spx_4500_put"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "relayer_spx_4500_put_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "relayer_spx_4500_put_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "relayer_spx_4500_put_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "relayer_spx_4500_put",
- "relayer_spx_4500_put_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
 name = "rlp"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2350,110 +2104,6 @@ name = "smallvec"
 version = "1.11.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4dccd0940a2dcdf68d092b8cbab7dc0ad8fa938bf95787e1b916b0e3d0e8e970"
-
-[[package]]
-name = "snapshots_iv_for_spx_4500_call"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "snapshots_iv_for_spx_4500_call_bindings",
-]
-
-[[package]]
-name = "snapshots_iv_for_spx_4500_call_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "snapshots_iv_for_spx_4500_call_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "snapshots_iv_for_spx_4500_call",
- "snapshots_iv_for_spx_4500_call_bindings",
-]
-
-[[package]]
-name = "snapshots_iv_for_spx_4500_put"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "snapshots_iv_for_spx_4500_put_bindings",
-]
-
-[[package]]
-name = "snapshots_iv_for_spx_4500_put_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "snapshots_iv_for_spx_4500_put_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "snapshots_iv_for_spx_4500_put",
- "snapshots_iv_for_spx_4500_put_bindings",
-]
 
 [[package]]
 name = "stacker"

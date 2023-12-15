@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Snapshot Indexer ICP for VIX of SPX
+  type: snapshot_indexer_icp
+  description: "Snapshots about VIX of SPX"
+  tags:
+  - Oracle
+  - SPX
+datasource:
+  location:
+    id: lens_vix_spx
+  method:
+    identifier: 'get_result : (LensArgs) -> (float64)'
+    candid_file_path: src/canisters/lens_vix_spx/lens_vix_spx.did
+    args: []
+lens_targets:
+  identifiers:
+    - spx_near_term_for_vix
+    - spx_next_term_for_vix
+interval: ${INTERVAL}
+cycles: null
