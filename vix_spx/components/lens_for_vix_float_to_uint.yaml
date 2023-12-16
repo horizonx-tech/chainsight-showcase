@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Lens for VIX - From Float to Uint
+  type: algorithm_lens
+  description: "Converts float value to uint value for VIX Lens"
+  tags:
+  - SPX
+datasource:
+  methods:
+    - id: vix_in_snapshot_indexer
+      identifier: "get_last_snapshot_value : () -> (float64)"
+      candid_file_path: src/canisters/indexer_spx_vix/indexer_spx_vix.did
+      func_name_alias: vix_in_snapshot_indexer
+with_args: true
+cycles: null

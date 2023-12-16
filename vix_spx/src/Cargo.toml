@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/spx_near_term_for_vix", "logics/spx_near_term_for_vix", "canisters/spx_next_term_for_vix", "logics/spx_next_term_for_vix", "canisters/lens_vix_spx", "logics/lens_vix_spx", "canisters/relayer_spx_vix", "logics/relayer_spx_vix", "canisters/indexer_spx_vix", "logics/indexer_spx_vix", "bindings/*", "accessors/*"]
+members = ["canisters/spx_near_term_for_vix", "logics/spx_near_term_for_vix", "canisters/spx_next_term_for_vix", "logics/spx_next_term_for_vix", "canisters/lens_vix_spx", "logics/lens_vix_spx", "canisters/indexer_spx_vix", "logics/indexer_spx_vix", "canisters/lens_for_vix_float_to_uint", "logics/lens_for_vix_float_to_uint", "canisters/relayer_spx_vix", "logics/relayer_spx_vix", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"

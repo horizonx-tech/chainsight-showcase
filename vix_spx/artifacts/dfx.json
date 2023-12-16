@@ -34,10 +34,10 @@
         }
       ]
     },
-    "relayer_spx_vix": {
+    "indexer_spx_vix": {
       "type": "custom",
-      "candid": "./relayer_spx_vix.did",
-      "wasm": "./relayer_spx_vix.wasm",
+      "candid": "./indexer_spx_vix.did",
+      "wasm": "./indexer_spx_vix.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -45,10 +45,21 @@
         }
       ]
     },
-    "indexer_spx_vix": {
+    "lens_for_vix_float_to_uint": {
       "type": "custom",
-      "candid": "./indexer_spx_vix.did",
-      "wasm": "./indexer_spx_vix.wasm",
+      "candid": "./lens_for_vix_float_to_uint.did",
+      "wasm": "./lens_for_vix_float_to_uint.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "relayer_spx_vix": {
+      "type": "custom",
+      "candid": "./relayer_spx_vix.did",
+      "wasm": "./relayer_spx_vix.wasm",
       "metadata": [
         {
           "name": "candid:service",
