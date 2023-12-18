@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: US Treasury Yield Curve from Investing.com
+  type: snapshot_indexer_https
+  description: "Collect US Treasury Yield Curve from Investing.com, data with maturities ranging from 1 month to 30 years are obtained."
+  tags:
+  - Yield Curve
+  - Bonds
+  - US Treasury
+datasource:
+  url: https://sbcharts.investing.com/bond_charts/bonds_chart_1.json
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+interval: ${INTERVAL_FOR_US_TREASURY}
+cycles: null
