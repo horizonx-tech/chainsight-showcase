@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: Snapshot Indexer ICP for VIX of SPX
   type: snapshot_indexer_icp
-  description: "Snapshots about VIX of SPX"
+  description: "Snapshots about Volatility Index of SPX"
   tags:
-  - Oracle
-  - SPX
+  - Volatility Index
+  - Snapshots
 datasource:
   location:
     id: lens_vix_spx
@@ -18,5 +18,5 @@ lens_targets:
   identifiers:
     - spx_near_term_for_vix
     - spx_next_term_for_vix
-interval: ${INTERVAL}
+interval: ${INTERVAL_FOR_VIX}
 cycles: null

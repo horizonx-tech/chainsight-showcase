@@ -1,12 +1,11 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: Lens for VIX
+  label: Lens for Volatility Index - SPX
   type: algorithm_lens
-  description: ""
+  description: 'This calculates Volatility Index (VIX) based on SPX options in near/next term obtained from Yahoo.finance'
   tags:
-  - SPX
-  - VIX
+  - Volatility Index
 datasource:
   methods:
     - id: near_term_options

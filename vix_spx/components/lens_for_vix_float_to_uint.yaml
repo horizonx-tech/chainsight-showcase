@@ -3,9 +3,9 @@ version: v1
 metadata:
   label: Lens for VIX - From Float to Uint
   type: algorithm_lens
-  description: "Converts float value to uint value for VIX Lens"
+  description: "Converts float value to uint value for Volatility Index Lens"
   tags:
-  - SPX
+  - Volatility Index
 datasource:
   methods:
     - id: vix_in_snapshot_indexer

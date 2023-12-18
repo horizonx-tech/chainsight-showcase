@@ -3,9 +3,9 @@ version: v1
 metadata:
   label: Next term SPX options for VIX
   type: snapshot_indexer_https
-  description: ""
+  description: "Collect next term SPX options for Volatility Index, Calculates parameters to obtain the option data to be acquired."
   tags:
-  - Index Option
+  - Volatility Index
   - SPX
   - yahoo.finance
 datasource:
@@ -15,5 +15,5 @@ datasource:
     Content-Type: application/json
   queries:
     type: dynamic
-interval: ${INTERVAL}
+interval: ${INTERVAL_FOR_OPTION}
 cycles: null

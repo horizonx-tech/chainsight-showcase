@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: Relayer for VIX of SPX
   type: relayer
-  description: "This relays VIX of SPX to Sepolia."
+  description: "This relays Volatility Index of SPX to Sepolia."
   tags:
-  - SPX
-  - Index Option
+  - Volatility Index
+  - Oracle
 datasource:
   location:
     id: lens_for_vix_float_to_uint
@@ -22,5 +22,5 @@ destination:
 lens_targets:
   identifiers:
     - indexer_spx_vix
-interval: ${INTERVAL}
+interval: ${INTERVAL_FOR_VIX_RELAYER}
 cycles: null
