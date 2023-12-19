@@ -2,7 +2,7 @@ use lens_vix_spx_accessors::*;
 use lens_vix_spx_bindings::near_term_options::OptionSpxInner as OptionSpxInnerType;
 
 mod calc;
-use calc::{k, options, variance, vix};
+use calc::{k, options, variance, vix, interest_rate};
 
 pub type LensValue = f64;
 #[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
@@ -12,6 +12,8 @@ pub struct CalculateArgs {
 pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     let near = get_near_term_options(targets.get(0usize).unwrap().clone()).await.unwrap();
     let next = get_next_term_options(targets.get(1usize).unwrap().clone()).await.unwrap();
+    let yields_data = get_us_treasury_yield_curve(targets.get(2usize).unwrap().clone()).await.unwrap();
+    let cmt_yields = convert_yields_to_calc_r(yields_data.current);
     
     let current_nano_secs = ic_cdk::api::time() as u64;
     ic_cdk::println!("current_nano_secs: {:?}", current_nano_secs);
@@ -21,33 +23,44 @@ pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     let near_options = near_result.options.get(0usize).unwrap();
     let near_expiration_date = near_options.expirationDate;
     let near_minites_until_t = calculate_t((near_expiration_date * 1000 * 1000000) as u64, current_nano_secs);
+    let near_days_until_t = near_minites_until_t / 60.0 / 24.0;
     let near_t = near_minites_until_t / vix::N_365;
+    let near_interest_rate = interest_rate::interest_rate(cmt_yields.clone(), near_days_until_t);
     ic_cdk::println!(">> near");
     ic_cdk::println!("expirationDate: {:?}", near_expiration_date);
     ic_cdk::println!("minites_until_t: {:?}", near_minites_until_t);
+    ic_cdk::println!("days_until_t: {:?}", near_days_until_t);
     ic_cdk::println!("t: {:?}", near_t);
-
+    ic_cdk::println!("interest_rate: {:?}", near_interest_rate);
+    //// variance
     let near_strikes = &near_result.strikes;
     let near_calls = &near_options.calls;
     let near_puts = &near_options.puts;
-    let near_variance = calculate_variance(near_strikes.clone(), near_calls, near_puts, near_t, 0.0); // NOTE: temp risk_free_rate
+    let near_variance = calculate_variance(near_strikes.clone(), near_calls, near_puts, near_t, near_interest_rate);
+    ic_cdk::println!("variance: {:?}", near_variance);
 
     // Next Term
     let next_result = next.optionChain.result.get(0usize).unwrap();
     let next_options = next_result.options.get(0usize).unwrap();
     let next_expiration_date = next_options.expirationDate;
     let next_minites_until_t = calculate_t( (next_expiration_date * 1000 * 1000000) as u64, current_nano_secs);
+    let next_days_until_t = next_minites_until_t / 60.0 / 24.0;
     let next_t = next_minites_until_t / vix::N_365;
+    let next_interest_rate = interest_rate::interest_rate(cmt_yields.clone(), next_days_until_t);
     ic_cdk::println!(">> next");
     ic_cdk::println!("expirationDate: {:?}", next_expiration_date);
+    ic_cdk::println!("minites_until_t: {:?}", next_minites_until_t);
+    ic_cdk::println!("days_until_t: {:?}", next_days_until_t);
     ic_cdk::println!("t: {:?}", next_t);
-
+    ic_cdk::println!("interest_rate: {:?}", next_interest_rate);
+    //// variance
     let next_strikes = &next_result.strikes;
     let next_calls = next_options.calls.clone().iter().map(|v|  cast_with_serde::<lens_vix_spx_bindings::next_term_options::OptionSpxInner, Box<OptionSpxInnerType>>(v)).collect::<Vec<Box<OptionSpxInnerType>>>();
-    let next_puts = next_options.puts.clone().iter().map(|v| cast_with_serde::<lens_vix_spx_bindings::next_term_options::OptionSpxInner, Box<OptionSpxInnerType>>(v)).collect::<Vec<Box<OptionSpxInnerType>>>();
-    let next_variance = calculate_variance(next_strikes.clone(), &next_calls, &next_puts, next_t, 0.0); // NOTE: temp risk_free_rate
+    let next_puts = next_options.puts.clone().iter().map(|v| cast_with_serde::<lens_vix_spx_bindings::next_term_options::OptionSpxInner, Box<OptionSpxInnerType>>(v)).collect::<Vec<Box<OptionSpxInnerType>>>();    
+    let next_variance = calculate_variance(next_strikes.clone(), &next_calls, &next_puts, next_t, next_interest_rate);
+    ic_cdk::println!("variance: {:?}", next_variance);
 
-    // Calculate vix
+    // Calculate Volatility Index
     let result = vix::calculate_vix(vix::ParamVix {
         near: vix::ParamVixPerTerm {
             variance: near_variance,
@@ -60,6 +73,7 @@ pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
             minites_until_t: next_minites_until_t,
         },
     });
+    ic_cdk::println!("vix: {:?}", result);
 
     // Scale by args
     if let Some(scale) = args.num_of_digits_to_scale {
@@ -169,6 +183,7 @@ fn calculate_variance(strikes: Vec<f64>, calls: &Vec<Box<OptionSpxInnerType>>, p
     })
 }
 
+// Converters
 fn convert_call_to_option(v: &Box<OptionSpxInnerType>) -> options::Option {
     options::Option {
         strike_price: v.strike,
@@ -177,7 +192,6 @@ fn convert_call_to_option(v: &Box<OptionSpxInnerType>) -> options::Option {
         is_call: true,
     }
 }
-
 fn convert_put_to_option(v: &Box<OptionSpxInnerType>) -> options::Option {
     options::Option {
         strike_price: v.strike,
@@ -186,11 +200,40 @@ fn convert_put_to_option(v: &Box<OptionSpxInnerType>) -> options::Option {
         is_call: false,
     }
 }
-
 fn convert_option_from_options_to_variance(v: &options::Option) -> variance::Option {
     variance::Option {
         strike_price: v.strike_price,
         bid: v.bid,
         ask: v.ask,
     }
+}
+fn convert_yields_to_calc_r(input: Vec<(String,f64)>) -> Vec<interest_rate::CmtYield> {
+    let mut result = vec![];
+    for (term_symbol, yield_) in input {
+        // from 'Bounded Cubic Spline Interpolation' in https://cdn.cboe.com/api/global/us_indices/governance/Cboe_Volatility_Index_Mathematics_Methodology.pdf
+        let days = match term_symbol.as_str() {
+            "1M" => 30,
+            "2M" => 60,
+            "3M" => 91,
+            "6M" => 182,
+            "1Y" => 365,
+            "2Y" => 730,
+            "3Y" => 1095,
+            "5Y" => 1825,
+            "7Y" => 2555,
+            "10Y" => 3650,
+            "20Y" => 7300,
+            "30Y" => 10950,
+            _ => 0,
+        };
+        if days == 0 {
+            continue;
+        }
+        result.push(interest_rate::CmtYield {
+            days,
+            yield_: yield_ * 0.01, // from percent to decimal
+        });
+    }
+
+    result
 }

@@ -23,6 +23,17 @@
         }
       ]
     },
+    "us_treasury_yield_curve_indexer": {
+      "type": "custom",
+      "candid": "./us_treasury_yield_curve_indexer.did",
+      "wasm": "./us_treasury_yield_curve_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
     "lens_vix_spx": {
       "type": "custom",
       "candid": "./lens_vix_spx.did",
