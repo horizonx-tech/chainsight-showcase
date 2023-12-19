@@ -11,6 +11,12 @@ interface IProposalSynchronizer {
     );
 
     /**
+     * @dev Set the proposal manager
+     * @param _proposalManager The address of the proposal manager
+     **/
+    function setProposalManager(address _proposalManager) external;
+
+    /**
      * @dev Synchronize a proposal from another chain
      * @param id The id of the proposal
      * @param proposer proposer of the proposal

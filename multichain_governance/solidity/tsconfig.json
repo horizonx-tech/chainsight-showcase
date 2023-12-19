@@ -7,5 +7,10 @@
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
-  }
+  },
+  "include": [],
+  "files": [
+    "hardhat.config.ts",
+    "node_modules/@nomicfoundation/hardhat-ethers/src/internal/type-extensions.d.ts"
+  ]
 }

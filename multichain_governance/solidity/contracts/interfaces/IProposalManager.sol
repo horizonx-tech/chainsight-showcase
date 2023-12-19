@@ -11,6 +11,12 @@ interface IProposalManager {
     );
 
     /**
+     * @dev Set the proposal factory address
+     * @param _proposalFactory The address of the proposal factory
+     */
+    function setProposalFactory(address _proposalFactory) external;
+
+    /**
      * get proposal information.
      * @param id The id of the proposal
      * @return creator The creator of the proposal
@@ -35,6 +41,20 @@ interface IProposalManager {
             uint256 againstVotes,
             bool accepted
         );
+
+    /**
+     * @dev Create a new proposal
+     * @param id The id of the proposal
+     * @param creator The creator of the proposal
+     * @param startTimestamp The start timestamp of voting
+     * @param endTimestamp The end timestamp of voting
+     */
+    function createProposal(
+        uint256 id,
+        address creator,
+        uint256 startTimestamp,
+        uint256 endTimestamp
+    ) external;
 
     /**
      * @dev synchronize a proposal from another chain

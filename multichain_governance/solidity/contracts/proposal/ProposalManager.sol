@@ -8,7 +8,8 @@ contract ProposalManager is IProposalManager, Ownable {
     IERC20 public immutable votingToken;
     address public immutable votingSynchronizer;
     address public immutable proposalSyncrhonizer;
-    // the voting period for the proposal on the other chain. this is required for synchronizing votes to other chains
+    address public proposalFactory;
+    // the voting period for the proposal on the other chain. this is required for synchronizing votes to other chains.
     uint256 public constant OTHERCHAIN_VOTING_PERIOD = 1 hours;
 
     struct Proposal {
@@ -44,6 +45,30 @@ contract ProposalManager is IProposalManager, Ownable {
     }
 
     /// @inheritdoc IProposalManager
+    function setProposalFactory(address _proposalFactory) external onlyOwner {
+        require(
+            _proposalFactory != address(0),
+            "ProposalManager: INVALID_PROPOSAL_FACTORY"
+        );
+        proposalFactory = _proposalFactory;
+    }
+
+    /// @inheritdoc IProposalManager
+    function createProposal(
+        uint256 id,
+        address creator,
+        uint256 startTimestamp,
+        uint256 endTimestamp
+    ) external override {
+        require(
+            msg.sender == proposalFactory,
+            "ProposalManager: ONLY_PROPOSAL_FACTORY"
+        );
+        uint256 _chainId = block.chainid;
+        _createProposal(id, creator, _chainId, startTimestamp, endTimestamp);
+    }
+
+    /// @inheritdoc IProposalManager
     function onProposalCreated(
         uint256 id,
         address creator,
@@ -55,16 +80,32 @@ contract ProposalManager is IProposalManager, Ownable {
             msg.sender == proposalSyncrhonizer,
             "ProposalManager: ONLY_PROPOSAL_SYNCHRONIZER"
         );
-        uint256 _chainId = block.chainid;
-        // the proposal should be created on the same chain as the contract
+        _createProposal(id, creator, chainId, startTimestamp, endTimestamp);
+    }
+
+    function _createProposal(
+        uint256 id,
+        address creator,
+        uint256 chainId,
+        uint256 startTimestamp,
+        uint256 endTimestamp
+    ) internal {
         require(
-            proposals[id].chainId == _chainId,
-            "ProposalManager: INVALID_CHAIN_ID"
+            proposals[id].creator == address(0),
+            "ProposalManager: PROPOSAL_ALREADY_EXIST"
         );
-        // to make this function idempotent, if the proposal is already created, no error should be thrown
-        if (proposals[id].creator != address(0)) {
-            return;
-        }
+        require(
+            creator != address(0),
+            "ProposalManager: INVALID_PROPOSAL_CREATOR"
+        );
+        require(
+            startTimestamp > block.timestamp,
+            "ProposalManager: INVALID_START_TIMESTAMP"
+        );
+        require(
+            endTimestamp > startTimestamp,
+            "ProposalManager: INVALID_END_TIMESTAMP"
+        );
         proposals[id] = Proposal({
             creator: creator,
             chainId: chainId,

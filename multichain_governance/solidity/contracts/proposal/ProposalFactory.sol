@@ -38,10 +38,9 @@ contract ProposalFactory is IProposalFactory {
                 )
             )
         );
-        proposalManager.onProposalCreated(
+        proposalManager.createProposal(
             id,
             msg.sender,
-            block.chainid,
             startTimestamp,
             endTimestamp
         );

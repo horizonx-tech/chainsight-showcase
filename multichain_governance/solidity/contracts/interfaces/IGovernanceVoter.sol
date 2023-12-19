@@ -5,7 +5,7 @@ interface IGovernanceVoter {
     event Vote(address voter, bool support, uint248 voitingPower);
 
     /**
-     * @dev Vote on a proposal
+     * @dev Vote on a proposal.
      * @param id The id of the proposal
      * @param inSupport Whether to vote for or against the proposal
      **/
