@@ -2,6 +2,7 @@ import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import fs from "fs";
 import path from "path";
+require("hardhat-abi-exporter");
 
 const SKIP_LOAD = process.env.SKIP_LOAD === "true";
 const tasksPath = path.join(__dirname, "tasks");
@@ -20,6 +21,10 @@ const config: HardhatUserConfig = {
     outDir: "typechain",
     target: "ethers-v6",
     alwaysGenerateOverloads: true,
+  },
+  abiExporter: {
+    path: "./abi",
+    pretty: true,
   },
   networks: {
     hardhat: {

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/event_indexer.json
+version: v1
+metadata:
+  label: Voting Event Indexer Scroll Sepolia
+  type: event_indexer
+  description: ''
+  tags:
+  - TODO
+datasource:
+  id: 0x6B175474E89094C44Da98b954EedeAC495271d0F
+  event:
+    identifier: Voted
+    interface: IProposalManager.json
+  network:
+    rpc_url: https://mainnet.infura.io/v3/${INFURA_MAINNET_RPC_URL_KEY}
+    chain_id: 1
+  from: 17660942
+  contract_type: ERC-20
+interval: 3600
+cycles: null

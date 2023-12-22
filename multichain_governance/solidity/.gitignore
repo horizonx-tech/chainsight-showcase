@@ -9,6 +9,7 @@ yarn-error.log
 # TypeChain files
 /typechain
 /typechain-types
+/abi
 
 # solidity-coverage files
 /coverage
