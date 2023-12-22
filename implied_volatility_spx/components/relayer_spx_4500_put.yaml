@@ -10,10 +10,10 @@ metadata:
   - Index Option
 datasource:
   location:
-    id: lens_dummy_for_iv_float_to_uint_no_args
+    id: lens_for_iv_float_to_uint
   method:
     identifier: 'get_result : (vec text) -> (nat)'
-    candid_file_path: src/canisters/lens_dummy_for_iv_float_to_uint_no_args/lens_dummy_for_iv_float_to_uint_no_args.did
+    candid_file_path: src/canisters/lens_for_iv_float_to_uint/lens_for_iv_float_to_uint.did
     args: []
 destination:
   network_id: 11155111
@@ -22,6 +22,6 @@ destination:
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
 lens_targets:
   identifiers:
-    - lens_dummy_for_iv_float_to_uint_no_args
+    - snapshots_iv_for_spx_4500_put
 interval: ${INTERVAL_FOR_IV}
 cycles: null
