@@ -1,5 +1,5 @@
 version: v1
-label: price_eth
+label: crypto_volatility_index
 components:
 - component_path: components/snapshot_cvi_latest_round.yaml
 - component_path: components/lens_cvi_scaler.yaml
