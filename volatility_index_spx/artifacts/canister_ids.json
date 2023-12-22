@@ -1,0 +1,23 @@
+{
+  "indexer_spx_vix": {
+    "ic": "7a4wi-raaaa-aaaal-qcu3a-cai"
+  },
+  "lens_for_vix_float_to_uint": {
+    "ic": "6wxod-eqaaa-aaaal-qcu6a-cai"
+  },
+  "lens_vix_spx": {
+    "ic": "7s2br-5qaaa-aaaal-qcuya-cai"
+  },
+  "relayer_spx_vix": {
+    "ic": "vpa2j-saaaa-aaaal-qcvba-cai"
+  },
+  "spx_near_term_for_vix": {
+    "ic": "46nrg-wqaaa-aaaal-qcusa-cai"
+  },
+  "spx_next_term_for_vix": {
+    "ic": "5uct4-uaaaa-aaaal-qcuva-cai"
+  },
+  "us_treasury_yield_curve_indexer": {
+    "ic": "ui2mz-tyaaa-aaaal-qcs2a-cai"
+  }
+}

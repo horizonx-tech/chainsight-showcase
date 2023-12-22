@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Lens for Volatility Index - SPX
+  type: algorithm_lens
+  description: 'This calculates Volatility Index (VIX) based on SPX options in near/next term obtained from Yahoo.finance'
+  tags:
+  - Volatility Index
+datasource:
+  methods:
+    - id: near_term_options
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: src/canisters/spx_near_term_for_vix/spx_near_term_for_vix.did
+      func_name_alias: near_term_options
+    - id: next_term_options
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: src/canisters/spx_next_term_for_vix/spx_next_term_for_vix.did
+      func_name_alias: next_term_options
+    - id: us_treasury_yield_curve
+      identifier: "get_last_snapshot_value : () -> (SnapshotValue)"
+      candid_file_path: src/canisters/us_treasury_yield_curve_indexer/us_treasury_yield_curve_indexer.did
+      func_name_alias: us_treasury_yield_curve
+with_args: true
+cycles: null

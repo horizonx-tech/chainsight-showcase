@@ -1,0 +1,10 @@
+version: v1
+label: volatility_index_spx
+components:
+- component_path: components/spx_near_term_for_vix.yaml
+- component_path: components/spx_next_term_for_vix.yaml
+- component_path: components/us_treasury_yield_curve_indexer.yaml
+- component_path: components/lens_vix_spx.yaml
+- component_path: components/indexer_spx_vix.yaml
+- component_path: components/lens_for_vix_float_to_uint.yaml
+- component_path: components/relayer_spx_vix.yaml

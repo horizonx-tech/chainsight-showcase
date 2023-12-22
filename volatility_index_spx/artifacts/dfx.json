@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "canisters": {
+    "spx_near_term_for_vix": {
+      "type": "custom",
+      "candid": "./spx_near_term_for_vix.did",
+      "wasm": "./spx_near_term_for_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "spx_next_term_for_vix": {
+      "type": "custom",
+      "candid": "./spx_next_term_for_vix.did",
+      "wasm": "./spx_next_term_for_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "us_treasury_yield_curve_indexer": {
+      "type": "custom",
+      "candid": "./us_treasury_yield_curve_indexer.did",
+      "wasm": "./us_treasury_yield_curve_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "lens_vix_spx": {
+      "type": "custom",
+      "candid": "./lens_vix_spx.did",
+      "wasm": "./lens_vix_spx.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "indexer_spx_vix": {
+      "type": "custom",
+      "candid": "./indexer_spx_vix.did",
+      "wasm": "./indexer_spx_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "lens_for_vix_float_to_uint": {
+      "type": "custom",
+      "candid": "./lens_for_vix_float_to_uint.did",
+      "wasm": "./lens_for_vix_float_to_uint.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "relayer_spx_vix": {
+      "type": "custom",
+      "candid": "./relayer_spx_vix.did",
+      "wasm": "./relayer_spx_vix.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}

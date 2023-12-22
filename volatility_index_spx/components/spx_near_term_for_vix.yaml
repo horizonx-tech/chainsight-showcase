@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: Near term SPX options for VIX
+  type: snapshot_indexer_https
+  description: "Collect near term SPX options for Volatility Index, Calculates parameters to obtain the option data to be acquired."
+  tags:
+  - Volatility Index
+  - SPX
+  - yahoo.finance
+datasource:
+  url: https://query1.finance.yahoo.com/v7/finance/options/%5ESPX
+  # url: https://query1.finance.yahoo.com/v7/finance/options/%5ESPX?straddle=false&date=1704672000
+  headers:
+    Content-Type: application/json
+  queries:
+    type: dynamic
+interval: ${INTERVAL_FOR_OPTION}
+cycles: null
