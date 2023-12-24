@@ -1,0 +1,22 @@
+[workspace]
+members = ["canisters/eth_usdc_price", "logics/eth_usdc_price", "canisters/usdc_eth_0_3_pool_fees", "logics/usdc_eth_0_3_pool_fees", "canisters/usdc_eth_0_3_tcumul_28x6hr", "logics/usdc_eth_0_3_tcumul_28x6hr", "canisters/usdc_eth_0_3_v3pool", "logics/usdc_eth_0_3_v3pool", "canisters/usdc_eth_0_3_relayer", "logics/usdc_eth_0_3_relayer", "canisters/usdc_eth_0_3_algorithm_lens", "logics/usdc_eth_0_3_algorithm_lens", "canisters/wbtc_eth_0_05_pool_fees", "logics/wbtc_eth_0_05_pool_fees", "canisters/wbtc_eth_0_05_tcumul_28x6hr", "logics/wbtc_eth_0_05_tcumul_28x6hr", "canisters/wbtc_eth_0_05_v3pool", "logics/wbtc_eth_0_05_v3pool", "canisters/wbtc_eth_0_05_relayer", "logics/wbtc_eth_0_05_relayer", "canisters/wbtc_eth_0_05_algorithm_lens", "logics/wbtc_eth_0_05_algorithm_lens", "canisters/rndr_eth_1_pool_fees", "logics/rndr_eth_1_pool_fees", "canisters/rndr_eth_1_tcumul_28x6hr", "logics/rndr_eth_1_tcumul_28x6hr", "canisters/rndr_eth_1_v3pool", "logics/rndr_eth_1_v3pool", "canisters/rndr_eth_1_relayer", "logics/rndr_eth_1_relayer", "canisters/rndr_eth_1_algorithm_lens", "logics/rndr_eth_1_algorithm_lens", "canisters/vra_eth_0_3_pool_fees", "logics/vra_eth_0_3_pool_fees", "canisters/vra_eth_0_3_tcumul_28x6hr", "logics/vra_eth_0_3_tcumul_28x6hr", "canisters/vra_eth_0_3_v3pool", "logics/vra_eth_0_3_v3pool", "canisters/vra_eth_0_3_relayer", "logics/vra_eth_0_3_relayer", "canisters/vra_eth_0_3_algorithm_lens", "logics/vra_eth_0_3_algorithm_lens", "bindings/*", "accessors/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+candid = "0.9.6"
+ic-cdk = "0.11.3"
+ic-cdk-macros = "0.8.1"
+ic-cdk-timers = "0.5.0"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+serde_json = "1.0.108"
+hex = "0.4.3"
+
+ic-web3-rs = "0.1.3"
+ic-solidity-bindgen = "0.1.9"
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "6e55b5e8a38d1d853f4217614555f7ec7eaeb92b" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev = "6e55b5e8a38d1d853f4217614555f7ec7eaeb92b" }

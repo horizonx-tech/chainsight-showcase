@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+ label: vra_eth_0_3_indexer
+ type: snapshot_indexer_icp
+ description: 'This canister indexes the EDPR of this pair'
+ tags:
+ - Uniswap
+ - Ethereum
+datasource:
+ type: canister
+ location:
+  id: vra_eth_0_3_algorithm_lens
+ method:
+  identifier: 'get_last_snapshot : () -> (record { value : text; timestamp : nat64 })'
+  interface: null
+  args: []
+storage:
+ with_timestamp: true
+interval: ${INTERVAL}
+lens_targets:
+ identifiers:
+  - vra_eth_0_3_pool_fees
+  - vra_eth_0_3_tcumul_28x6hr
+  - vra_eth_0_3_v3pool
+  - eth_usdc_price

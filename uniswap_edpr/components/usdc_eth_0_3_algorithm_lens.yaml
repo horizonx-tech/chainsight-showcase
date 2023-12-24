@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: usdc_eth_0_3_algorithm_lens
+  type: algorithm_lens
+  description: ''
+  tags:
+  - Ethereum
+  - Account
+datasource:
+  methods:
+  - id: usdc_eth_0_3_pool_fees
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+  - id: usdc_eth_0_3_tcumul_28x6hr
+    identifier: 'get_last_snapshot_value : () -> (record { vec int64; vec text })'
+  - id: usdc_eth_0_3_v3pool
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+  - id: eth_usdc_price
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'

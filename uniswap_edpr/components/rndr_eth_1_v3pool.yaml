@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: rndr_eth_1_v3pool
+  type: snapshot_indexer_https
+  description: '24-hour pool fees'
+  tags:
+  - uniswap
+  - RNDR
+  - ETH
+datasource:
+  url: https://cush.apiary.software/ethereum
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+      id: '1'
+      jsonrpc: '2.0'
+      method: cush_getV3Pool
+      params: '["0xe936f0073549ad8b1fa53583600d629ba9375161",0]'
+storage:
+  with_timestamp: true
+interval: ${INTERVAL}
