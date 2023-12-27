@@ -9,7 +9,7 @@ metadata:
   - USDC
   - ETH
 datasource:
-  url: https://cush.apiary.software/ethereum
+  url: https://omni.oku.zone/ethereum
   headers:
     Content-Type: application/json
   queries:

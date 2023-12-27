@@ -9,7 +9,7 @@ metadata:
   - VRA
   - ETH
 datasource:
-  url: https://cush.apiary.software/ethereum
+  url: https://omni.oku.zone/ethereum
   headers:
     Content-Type: application/json
   queries:
@@ -18,7 +18,7 @@ datasource:
       id: '1'
       jsonrpc: '2.0'
       method: cush_getPoolFees
-      params: '["0x98409d8ca9629fbe01ab1b914ebf304175e384c8"]'
+      params: '[%220x98409d8ca9629fbe01ab1b914ebf304175e384c8%22]'
 storage:
   with_timestamp: true
 interval: ${INTERVAL}

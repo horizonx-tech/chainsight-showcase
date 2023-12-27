@@ -9,7 +9,7 @@ metadata:
   - RNDR
   - ETH
 datasource:
-  url: https://cush.apiary.software/ethereum
+  url: https://omni.oku.zone/ethereum
   headers:
     Content-Type: application/json
   queries:
@@ -18,7 +18,7 @@ datasource:
       id: '1'
       jsonrpc: '2.0'
       method: cush_getPoolFees
-      params: '["0xe936f0073549ad8b1fa53583600d629ba9375161"]'
+      params: '[%220xe936f0073549ad8b1fa53583600d629ba9375161%22]'
 storage:
   with_timestamp: true
 interval: ${INTERVAL}

@@ -9,7 +9,7 @@ metadata:
   - WBTC
   - ETH
 datasource:
-  url: https://cush.apiary.software/ethereum
+  url: https://omni.oku.zone/ethereum
   headers:
     Content-Type: application/json
   queries:
@@ -18,7 +18,7 @@ datasource:
       id: '1'
       jsonrpc: '2.0'
       method: cush_getV3Pool
-      params: '["0x4585fe77225b41b697c938b018e2ac67ac5a20c0",0]'
+      params: '[%220x4585fe77225b41b697c938b018e2ac67ac5a20c0%22,0]'
 storage:
   with_timestamp: true
 interval: ${INTERVAL}
