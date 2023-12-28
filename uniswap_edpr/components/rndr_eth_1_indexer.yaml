@@ -10,7 +10,7 @@ metadata:
 datasource:
  type: canister
  location:
-  id: rndr_eth_1_algorithm_lens
+  id: shared_algorithm_lens
  method:
   identifier: 'get_last_snapshot : () -> (record { value : text; timestamp : nat64 })'
   interface: null
