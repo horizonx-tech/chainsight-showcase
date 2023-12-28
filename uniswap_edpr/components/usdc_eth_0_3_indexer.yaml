@@ -13,6 +13,7 @@ datasource:
     id: shared_algorithm_lens
   method:
     identifier: 'get_last_snapshot : () -> (record { value : text; timestamp : nat64 })'
+    candid_file_path: src/canisters/shared_algorithm_lens/shared_algorithm_lens.did
     interface: null
     args: []
 storage:

@@ -5,8 +5,8 @@ metadata:
   type: algorithm_lens
   description: "Converts data type for relayer"
   tags:
-    - Uniswap
-    - Ethereum
+  - Uniswap
+  - Ethereum
 datasource:
   methods:
   - id: usdc_eth_0_3_indexer

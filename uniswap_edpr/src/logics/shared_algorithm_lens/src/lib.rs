@@ -1,4 +1,4 @@
-use rndr_eth_1_algorithm_lens_accessors :: * ;
+use shared_algorithm_lens_accessors :: * ;
 use std :: collections :: HashMap;
 use serde_json :: Value;
 
@@ -29,7 +29,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     
     let fees_24h_usd = pool_fees_result.unwrap().result[0].fees_24h_usd;
 
-    let t1_price_usd  = eth_usdc_price_result.clone().unwrap().result.t1_price_usd;
+    let eth_price_usd  = eth_usdc_price_result.clone().unwrap().result.t1_price_usd;
 
     let address = v3pool_result.clone().unwrap().result.address;
     let current_tick_liquidity = v3pool_result.clone().unwrap().result.liquidity;
@@ -38,6 +38,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     let tick_spacing = v3pool_result.clone().unwrap().result.tick_spacing;
     let ticks_str = v3pool_result.clone().unwrap().result.ticks;
     let ticks = serde_json::from_str::<HashMap<String, Value>>(&ticks_str);
+    let token0 = v3pool_result.clone().unwrap().result.token0;
 
     let tick_cumul_28x6h = tc28x6_result.unwrap().0;
 
@@ -104,7 +105,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
             * (upper_sqrt_price_x96 - sqrt_ratio_x96 as f32)
             + (sqrt_ratio_x96 as f32 - lower_sqrt_price_x96));
 
-    let fees_24h_eth = fees_24h_usd / t1_price_usd;
+    let fees_24h_eth = fees_24h_usd / eth_price_usd;
     let edr = fees_24h_eth / tvl_in_range;
     let edpr = edr / 100.0;
 
