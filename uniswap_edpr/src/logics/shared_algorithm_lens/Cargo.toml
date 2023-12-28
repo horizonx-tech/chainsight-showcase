@@ -1,5 +1,5 @@
 [package]
-name = "wbtc_eth_0_05_relayer"
+name = "shared_algorithm_lens"
 version.workspace = true
 edition.workspace = true
 
@@ -22,5 +22,5 @@ ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
-wbtc_eth_0_05_relayer_bindings = { path = "../../bindings/wbtc_eth_0_05_relayer_bindings" }
-
+shared_algorithm_lens_bindings = { path = "../../bindings/shared_algorithm_lens_bindings" }
+shared_algorithm_lens_accessors = { path = "../../accessors/shared_algorithm_lens_accessors" }

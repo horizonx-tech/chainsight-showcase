@@ -1,4 +1,4 @@
-use wbtc_eth_0_05_algorithm_lens_accessors :: * ;
+use rndr_eth_1_algorithm_lens_accessors :: * ;
 use std :: collections :: HashMap;
 use serde_json :: Value;
 
@@ -22,9 +22,9 @@ pub struct Tick {
 }
 
 pub async fn calculate (targets : Vec < String >) -> LensValue {
-    let pool_fees_result = get_get_last_snapshot_value_in_wbtc_eth_0_05_pool_fees (targets . get (0usize) . unwrap () . clone ()) . await ;
-    let tc28x6_result = get_get_last_snapshot_value_in_wbtc_eth_0_05_tcumul_28x6hr (targets . get (1usize) . unwrap () . clone ()) . await ;
-    let v3pool_result = get_get_last_snapshot_value_in_wbtc_eth_0_05_v3pool (targets . get (2usize) . unwrap () . clone ()) . await ;
+    let pool_fees_result = get_get_last_snapshot_value_in_pool_fees (targets . get (0usize) . unwrap () . clone ()) . await ;
+    let tc28x6_result = get_get_last_snapshot_value_in_tcumul_28x6hr (targets . get (1usize) . unwrap () . clone ()) . await ;
+    let v3pool_result = get_get_last_snapshot_value_in_v3pool (targets . get (2usize) . unwrap () . clone ()) . await ;
     let eth_usdc_price_result = get_get_last_snapshot_value_in_eth_usdc_price (targets . get (3usize) . unwrap () . clone ()) . await ;
     
     let fees_24h_usd = pool_fees_result.unwrap().result[0].fees_24h_usd;
@@ -43,7 +43,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
 
     let price_x96 = u128::pow(sqrt_ratio_x96.into(), 2) as f32;
     let mut current_price = price_x96 / f32::powf(2.0,192.0);
-    let current_price = current_price / f32::powf(10.0,12.0);
+    current_price = current_price / f32::powf(10.0,12.0);
 
     let mut compressed: i32 = tick_current / tick_spacing;
     if tick_current <0 && tick_current % tick_spacing != 0 {
@@ -107,6 +107,14 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     let fees_24h_eth = fees_24h_usd / t1_price_usd;
     let edr = fees_24h_eth / tvl_in_range;
     let edpr = edr / 100.0;
+
+    if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
+        current_price = 1.0 / current_price;
+        let new_range_top = 1.0 / range_bottom;
+        let new_range_bottom = 1.0 / range_top;
+        range_top = new_range_top;
+        range_bottom = new_range_bottom;
+    }
 
     let result = LensValue {
         address,
