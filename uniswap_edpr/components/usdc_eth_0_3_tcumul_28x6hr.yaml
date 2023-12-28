@@ -5,7 +5,8 @@ metadata:
   type: snapshot_indexer_evm
   description: '6-hourly cumulative ticks USDC/ETH 0.3%'
   tags:
-  - uniswap
+  - Uniswap
+  - USDC/(W)ETH
   - Ethereum
 datasource:
   type: contract

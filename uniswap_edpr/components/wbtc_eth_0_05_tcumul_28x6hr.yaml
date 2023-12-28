@@ -5,7 +5,8 @@ metadata:
   type: snapshot_indexer_evm
   description: '6-hourly cumulative ticks WBTC/ETH 0.05%'
   tags:
-  - uniswap
+  - Uniswap
+  - WBTC/(W)ETH
   - Ethereum
 datasource:
   type: contract

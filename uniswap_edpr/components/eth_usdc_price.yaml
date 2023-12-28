@@ -5,7 +5,8 @@ metadata:
   type: snapshot_indexer_https
   description: 'ETH price derived from USDC/ETH pool'
   tags:
-  - uniswap
+  - Uniswap
+  - USDC/(W)ETH
   - USDC
   - ETH
 datasource:

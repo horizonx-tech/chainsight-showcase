@@ -5,7 +5,8 @@ metadata:
   type: snapshot_indexer_evm
   description: '6-hourly cumulative ticks ETH/VRA 0.3%'
   tags:
-  - uniswap
+  - Uniswap
+  - (W)ETH/VRA
   - Ethereum
 datasource:
   type: contract

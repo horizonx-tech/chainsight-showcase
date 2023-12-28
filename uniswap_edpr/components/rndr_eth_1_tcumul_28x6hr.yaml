@@ -5,7 +5,8 @@ metadata:
   type: snapshot_indexer_evm
   description: '6-hourly cumulative ticks RNDR/ETH 1%'
   tags:
-  - uniswap
+  - Uniswap
+  - RNDR/(W)ETH
   - Ethereum
 datasource:
   type: contract

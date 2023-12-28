@@ -6,6 +6,8 @@ metadata:
   description: 'This canister indexes the EDPR of this pair'
   tags:
   - Uniswap
+  - RNDR/(W)ETH
+  - EDPR
   - Ethereum
 datasource:
   type: canister

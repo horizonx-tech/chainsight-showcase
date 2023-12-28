@@ -6,6 +6,7 @@ metadata:
   description: "Converts data type for relayer"
   tags:
   - Uniswap
+  - (W)ETH/VRA
   - Ethereum
 datasource:
   methods:

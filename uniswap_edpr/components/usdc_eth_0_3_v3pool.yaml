@@ -5,9 +5,11 @@ metadata:
   type: snapshot_indexer_https
   description: '24-hour pool fees'
   tags:
-  - uniswap
+  - Uniswap
+  - USDC/(W)ETH
   - USDC
   - ETH
+  - Ethereum
 datasource:
   url: https://omni.oku.zone/ethereum
   headers:

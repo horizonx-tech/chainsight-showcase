@@ -5,6 +5,8 @@ metadata:
   type: algorithm_lens
   description: ''
   tags:
+  - Uniswap
+  - EDPR
   - Ethereum
   - Account
 datasource:
