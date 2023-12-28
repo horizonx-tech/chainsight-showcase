@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: rpl_eth_0_3_indexer_lens
+  type: algorithm_lens
+  description: "Converts data type for relayer"
+  tags:
+  - Uniswap
+  - (W)ETH/RPL
+  - Ethereum
+datasource:
+  methods:
+  - id: rpl_eth_0_3_indexer
+    identifier: "get_last_snapshot : () -> (Snapshot)"
+cycles: null

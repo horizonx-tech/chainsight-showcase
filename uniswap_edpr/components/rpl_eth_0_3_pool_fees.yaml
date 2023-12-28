@@ -1,14 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: eth_usdc_price
+  label: rpl_eth_0_3_pool_fees
   type: snapshot_indexer_https
-  description: 'ETH price derived from wstETH/ETH pool'
+  description: '24-hour pool fees'
   tags:
   - Uniswap
-  - wstETH/(W)ETH
-  - wstETH
+  - (W)ETH/RPL
+  - RPL
   - ETH
+  - Ethereum
 datasource:
   url: https://omni.oku.zone/ethereum
   headers:
@@ -18,7 +19,8 @@ datasource:
     value:
       id: '1'
       jsonrpc: '2.0'
-      method: cush_poolUsdPrice
-      params: '[%220x109830a1aaad605bbf02a9dfa7b0b92ec2fb7daa%22,0]'
+      method: cush_getPoolFees
+      params: '[%220xe42318ea3b998e8355a3da364eb9d48ec725eb45%22]'
+storage:
+  with_timestamp: true
 interval: ${INTERVAL}
-cycles: null

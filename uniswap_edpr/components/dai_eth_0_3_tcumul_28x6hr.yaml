@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: dai_eth_0_3_tcumul_28x6hr
+  type: snapshot_indexer_evm
+  description: '6-hourly cumulative ticks DAI/ETH 0.3%'
+  tags:
+  - Uniswap
+  - DAI/(W)ETH
+  - Ethereum
+datasource:
+  type: contract
+  location:
+    id: c2e9f25be6257c210d7adf0d4cd6e3e881ba25f8
+    args:
+      network_id: 1
+      rpc_url: https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}
+  method:
+    identifier: observe(uint32[]):(int56[],uint160[])
+    interface: UniswapV3Pool.json
+    args: [[604800,583200,561600,540000,518400,496800,475200,453600,432000,410400,388800,367200,345600,324000,302400,280800,259200,237600,216000,194400,172800,151200,129600,108000,86400,64800,43200,21600,0]]
+storage:
+  with_timestamp: true
+interval: ${INTERVAL}

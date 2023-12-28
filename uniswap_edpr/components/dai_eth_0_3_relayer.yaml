@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: dai_eth_0_3_relayer
+  type: relayer
+  description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the DAI/ETH 0.3% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia'
+  tags:
+  - Uniswap
+  - DAI/(W)ETH
+  - Oracle
+  - EDPR
+  - snapshot
+datasource:
+  type: canister
+  location:
+    id: dai_eth_0_3_indexer_lens
+    args:
+      id_type: canister_name
+  method:
+    identifier: 'get_last_snapshot_value : () -> (text)'
+    interface: null
+    args: []
+destination:
+  network_id: 11155111
+  type: uint256
+  oracle_address: "0xB5Ef491939A6dBf17287666768C903F03602c550"
+  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+interval: ${INTERVAL}
+lens_targets:
+  identifiers:
+    - dai_eth_0_3_pool_fees
+    - dai_eth_0_3_tcumul_28x6hr
+    - dai_eth_0_3_v3pool
+    - eth_usdc_price
