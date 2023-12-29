@@ -1,10 +1,10 @@
 eth_usdc_price
-white_eth_0_01_pool_fees
-white_eth_0_01_tcumul_28x6hr
-white_eth_0_01_v3pool
-white_eth_0_01_relayer
-white_eth_0_01_indexer
-white_eth_0_01_indexer_lens
+shib_eth_1_pool_fees
+shib_eth_1_tcumul_28x6hr
+shib_eth_1_v3pool
+shib_eth_1_relayer
+shib_eth_1_indexer
+shib_eth_1_indexer_lens
 shared_algorithm_lens
 wsteth_eth_0_01_pool_fees
 wsteth_eth_0_01_tcumul_28x6hr

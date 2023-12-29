@@ -11,12 +11,12 @@ datasource:
   methods:
   - id: pool_fees
     identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-    candid_file_path: src/canisters/white_eth_0_01_pool_fees/white_eth_0_01_pool_fees.did
+    candid_file_path: src/canisters/shib_eth_1_pool_fees/shib_eth_1_pool_fees.did
   - id: tcumul_28x6hr
     identifier: 'get_last_snapshot_value : () -> (record { vec int64; vec text })'
   - id: v3pool
     identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-    candid_file_path: src/canisters/white_eth_0_01_v3pool/white_eth_0_01_v3pool.did
+    candid_file_path: src/canisters/shib_eth_1_v3pool/shib_eth_1_v3pool.did
   - id: eth_usdc_price
     identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
     candid_file_path: src/canisters/eth_usdc_price/eth_usdc_price.did

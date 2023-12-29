@@ -1,5 +1,5 @@
 [package]
-name = "white_eth_0_01_v3pool"
+name = "shib_eth_1_v3pool"
 version.workspace = true
 edition.workspace = true
 

@@ -1,5 +1,5 @@
 [package]
-name = "white_eth_0_01_indexer"
+name = "shib_eth_1_relayer"
 version.workspace = true
 edition.workspace = true
 
@@ -22,5 +22,5 @@ ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
-white_eth_0_01_indexer_bindings = { path = "../../bindings/white_eth_0_01_indexer_bindings" }
+shib_eth_1_relayer_bindings = { path = "../../bindings/shib_eth_1_relayer_bindings" }
 

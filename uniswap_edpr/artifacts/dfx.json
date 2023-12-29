@@ -12,10 +12,10 @@
         }
       ]
     },
-    "white_eth_0_01_pool_fees": {
+    "shib_eth_1_pool_fees": {
       "type": "custom",
-      "candid": "./white_eth_0_01_pool_fees.did",
-      "wasm": "./white_eth_0_01_pool_fees.wasm",
+      "candid": "./shib_eth_1_pool_fees.did",
+      "wasm": "./shib_eth_1_pool_fees.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -23,10 +23,10 @@
         }
       ]
     },
-    "white_eth_0_01_tcumul_28x6hr": {
+    "shib_eth_1_tcumul_28x6hr": {
       "type": "custom",
-      "candid": "./white_eth_0_01_tcumul_28x6hr.did",
-      "wasm": "./white_eth_0_01_tcumul_28x6hr.wasm",
+      "candid": "./shib_eth_1_tcumul_28x6hr.did",
+      "wasm": "./shib_eth_1_tcumul_28x6hr.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -34,10 +34,10 @@
         }
       ]
     },
-    "white_eth_0_01_v3pool": {
+    "shib_eth_1_v3pool": {
       "type": "custom",
-      "candid": "./white_eth_0_01_v3pool.did",
-      "wasm": "./white_eth_0_01_v3pool.wasm",
+      "candid": "./shib_eth_1_v3pool.did",
+      "wasm": "./shib_eth_1_v3pool.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -45,10 +45,10 @@
         }
       ]
     },
-    "white_eth_0_01_relayer": {
+    "shib_eth_1_relayer": {
       "type": "custom",
-      "candid": "./white_eth_0_01_relayer.did",
-      "wasm": "./white_eth_0_01_relayer.wasm",
+      "candid": "./shib_eth_1_relayer.did",
+      "wasm": "./shib_eth_1_relayer.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -56,10 +56,10 @@
         }
       ]
     },
-    "white_eth_0_01_indexer": {
+    "shib_eth_1_indexer": {
       "type": "custom",
-      "candid": "./white_eth_0_01_indexer.did",
-      "wasm": "./white_eth_0_01_indexer.wasm",
+      "candid": "./shib_eth_1_indexer.did",
+      "wasm": "./shib_eth_1_indexer.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -67,10 +67,10 @@
         }
       ]
     },
-    "white_eth_0_01_indexer_lens": {
+    "shib_eth_1_indexer_lens": {
       "type": "custom",
-      "candid": "./white_eth_0_01_indexer_lens.did",
-      "wasm": "./white_eth_0_01_indexer_lens.wasm",
+      "candid": "./shib_eth_1_indexer_lens.did",
+      "wasm": "./shib_eth_1_indexer_lens.wasm",
       "metadata": [
         {
           "name": "candid:service",

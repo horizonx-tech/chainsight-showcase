@@ -1,19 +1,19 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
-  label: white_eth_0_01_relayer
+  label: shib_eth_1_relayer
   type: relayer
-  description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the WHITE/ETH 0.01% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia'
+  description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the SHIB/ETH 1% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia'
   tags:
   - Uniswap
-  - WHITE/ETH
+  - SHIB/ETH
   - oracle
   - EDPR
   - snapshot
 datasource:
   type: canister
   location:
-    id: white_eth_0_01_indexer_lens
+    id: shib_eth_1_indexer_lens
     args:
       id_type: canister_name
   method:
@@ -28,7 +28,7 @@ destination:
 interval: ${INTERVAL}
 lens_targets:
   identifiers:
-    - white_eth_0_01_pool_fees
-    - white_eth_0_01_tcumul_28x6hr
-    - white_eth_0_01_v3pool
+    - shib_eth_1_pool_fees
+    - shib_eth_1_tcumul_28x6hr
+    - shib_eth_1_v3pool
     - eth_usdc_price

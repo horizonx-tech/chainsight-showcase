@@ -1,5 +1,5 @@
 [package]
-name = "white_eth_0_01_tcumul_28x6hr"
+name = "shib_eth_1_tcumul_28x6hr"
 version.workspace = true
 edition.workspace = true
 

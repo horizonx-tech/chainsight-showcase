@@ -4,7 +4,7 @@ This project was built for the [Chainsight](https://chainsight.network/) platfor
 The trading pairs currently included are:
 - [wstETH/ETH](https://info.uniswap.org/#/pools/0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8) 0.3% fee tier
 - [DAI/ETH](https://info.uniswap.org/#/pools/0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8) 0.05% fee tier
-- [WHITE/ETH](https://info.uniswap.org/#/pools/0xc5c134a1f112efa96003f8559dba6fac0ba77692) 1% fee tier
+- [SHIB/ETH](https://info.uniswap.org/#/pools/0x5764a6f2212d502bc5970f9f129ffcd61e5d7563) 1% fee tier
 - [RPL/ETH](https://info.uniswap.org/#/pools/0xe42318ea3b998e8355a3da364eb9d48ec725eb45) 0.3% fee tier
 
 EDPR is calculated as the daily percentage return expected from a liquidity position with a price range (set by the liquidity provider) approximately matching the price range of the pair over the preceding week. The price range from the previous week is calculated by taking the minimum and maximum values of the [time-weighted average price](https://tienshaoku.medium.com/a-guide-on-uniswap-v3-twap-oracle-2aa74a4a97c5) from 28 six-hour intervals covering the past week. This approach allows for any extreme outliers in the price movement to be disregarded.

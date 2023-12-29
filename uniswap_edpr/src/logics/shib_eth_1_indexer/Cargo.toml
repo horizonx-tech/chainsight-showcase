@@ -1,5 +1,5 @@
 [package]
-name = "white_eth_0_01_pool_fees"
+name = "shib_eth_1_indexer"
 version.workspace = true
 edition.workspace = true
 
@@ -22,5 +22,5 @@ ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
-
+shib_eth_1_indexer_bindings = { path = "../../bindings/shib_eth_1_indexer_bindings" }
 

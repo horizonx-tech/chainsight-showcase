@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: white_eth_0_01_v3pool
+  label: shib_eth_1_pool_fees
   type: snapshot_indexer_https
-  description: 'Snapshot of WHITE/ETH 0.01% pool'
+  description: '24-hour pool fees'
   tags:
   - Uniswap
-  - WHITE/ETH
-  - WHITE
+  - SHIB/ETH
+  - SHIB
   - ETH
   - Ethereum
 datasource:
@@ -19,8 +19,8 @@ datasource:
     value:
       id: '1'
       jsonrpc: '2.0'
-      method: cush_getV3Pool
-      params: '[%220xc5c134a1f112efa96003f8559dba6fac0ba77692%22,0]'
+      method: cush_getPoolFees
+      params: '[%220x5764a6f2212d502bc5970f9f129ffcd61e5d7563%22]'
 storage:
   with_timestamp: true
 interval: ${INTERVAL}

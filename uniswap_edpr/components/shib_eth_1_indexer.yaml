@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
 version: v1
 metadata:
-  label: white_eth_0_01_indexer
+  label: shib_eth_1_indexer
   type: snapshot_indexer_icp
   description: 'This canister indexes the EDPR of this pair'
   tags:
   - Uniswap
-  - WHITE/ETH
+  - SHIB/ETH
   - EDPR
   - Ethereum
 datasource:
@@ -23,7 +23,7 @@ storage:
 interval: ${INTERVAL}
 lens_targets:
   identifiers:
-    - white_eth_0_01_pool_fees
-    - white_eth_0_01_tcumul_28x6hr
-    - white_eth_0_01_v3pool
+    - shib_eth_1_pool_fees
+    - shib_eth_1_tcumul_28x6hr
+    - shib_eth_1_v3pool
     - eth_usdc_price
