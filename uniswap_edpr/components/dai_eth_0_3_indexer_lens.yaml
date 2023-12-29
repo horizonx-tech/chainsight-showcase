@@ -7,7 +7,6 @@ metadata:
   tags:
   - Uniswap
   - DAI/(W)ETH
-  - Ethereum
 datasource:
   methods:
   - id: dai_eth_0_3_indexer
