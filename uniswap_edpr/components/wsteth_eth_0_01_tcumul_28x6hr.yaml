@@ -6,7 +6,7 @@ metadata:
   description: '6-hourly cumulative ticks wstETH/ETH 0.01%'
   tags:
   - Uniswap
-  - wstETH/(W)ETH
+  - wstETH/ETH
   - Ethereum
 datasource:
   type: contract

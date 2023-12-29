@@ -6,7 +6,7 @@ metadata:
   description: '6-hourly cumulative ticks ETH/RPL 0.3%'
   tags:
   - Uniswap
-  - (W)ETH/RPL
+  - ETH/RPL
   - Ethereum
 datasource:
   type: contract

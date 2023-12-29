@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: wsteth_eth_0_01_v3pool
   type: snapshot_indexer_https
-  description: '24-hour pool fees'
+  description: 'Snapshot of wstETH/ETH 0.01% pool'
   tags:
   - Uniswap
-  - wstETH/(W)ETH
+  - wstETH/ETH
   - wstETH
   - ETH
   - Ethereum

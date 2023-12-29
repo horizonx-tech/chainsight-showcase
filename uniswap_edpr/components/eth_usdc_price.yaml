@@ -3,11 +3,10 @@ version: v1
 metadata:
   label: eth_usdc_price
   type: snapshot_indexer_https
-  description: 'ETH price derived from wstETH/ETH pool'
+  description: 'ETH price derived from USDC/ETH pool'
   tags:
   - Uniswap
-  - wstETH/(W)ETH
-  - wstETH
+  - USDC/ETH
   - ETH
 datasource:
   url: https://omni.oku.zone/ethereum

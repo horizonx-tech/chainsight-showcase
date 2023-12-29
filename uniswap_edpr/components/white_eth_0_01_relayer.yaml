@@ -6,8 +6,8 @@ metadata:
   description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the WHITE/ETH 0.01% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia'
   tags:
   - Uniswap
-  - WHITE/(W)ETH
-  - Oracle
+  - WHITE/ETH
+  - oracle
   - EDPR
   - snapshot
 datasource:

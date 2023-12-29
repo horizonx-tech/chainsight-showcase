@@ -6,7 +6,7 @@ metadata:
   description: "Converts data type for relayer"
   tags:
   - Uniswap
-  - wstETH/(W)ETH
+  - wstETH/ETH
 datasource:
   methods:
   - id: wsteth_eth_0_01_indexer

@@ -6,7 +6,7 @@ metadata:
   description: '6-hourly cumulative ticks DAI/ETH 0.3%'
   tags:
   - Uniswap
-  - DAI/(W)ETH
+  - DAI/ETH
   - Ethereum
 datasource:
   type: contract

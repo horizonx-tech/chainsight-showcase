@@ -3,10 +3,10 @@ version: v1
 metadata:
   label: dai_eth_0_3_v3pool
   type: snapshot_indexer_https
-  description: '24-hour pool fees'
+  description: 'Snapshot of DAI/ETH 0.3% pool'
   tags:
   - Uniswap
-  - DAI/(W)ETH
+  - DAI/ETH
   - DAI
   - ETH
   - Ethereum

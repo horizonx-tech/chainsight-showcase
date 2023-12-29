@@ -6,7 +6,7 @@ metadata:
   description: "Converts data type for relayer"
   tags:
   - Uniswap
-  - DAI/(W)ETH
+  - DAI/ETH
 datasource:
   methods:
   - id: dai_eth_0_3_indexer

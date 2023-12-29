@@ -6,7 +6,7 @@ metadata:
   description: 'This canister indexes the EDPR of this pair'
   tags:
   - Uniswap
-  - WHITE/(W)ETH
+  - WHITE/ETH
   - EDPR
   - Ethereum
 datasource:

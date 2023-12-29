@@ -6,7 +6,7 @@ metadata:
   description: "Converts data type for relayer"
   tags:
   - Uniswap
-  - WHITE/(W)ETH
+  - WHITE/ETH
 datasource:
   methods:
   - id: white_eth_0_01_indexer

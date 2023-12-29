@@ -6,7 +6,7 @@ metadata:
   description: '6-hourly cumulative ticks WHITE/ETH 0.01%'
   tags:
   - Uniswap
-  - WHITE/(W)ETH
+  - WHITE/ETH
   - Ethereum
 datasource:
   type: contract
