@@ -1,6 +1,6 @@
 #!/bin/bash
 # init
-dfx canister  call dai_eth_0_3_relayer init_in '(variant { "LocalDevelopment" }, record {
+dfx canister --network ic call dai_eth_0_3_relayer init_in '(variant { "Production" }, record {
                 refueling_interval = 86400: nat64;
                 vault_intial_supply = 400000000000: nat;
                 indexer = record { 
@@ -18,18 +18,18 @@ dfx canister  call dai_eth_0_3_relayer init_in '(variant { "LocalDevelopment" },
                     refueling_amount = 40000000000: nat;
                     refueling_threshold = 40000000000: nat;
                 };
-        })' --with-cycles 1120000000000 --wallet $(dfx identity get-wallet )
+        })' --with-cycles 1120000000000 --wallet $(dfx identity get-wallet --network ic)
 # setup
-dfx canister  call dai_eth_0_3_relayer setup "(
+dfx canister --network ic call dai_eth_0_3_relayer setup "(
     \"0xB5Ef491939A6dBf17287666768C903F03602c550\",
     record {
         url = \"https://ethereum-sepolia.blockpi.network/v1/rpc/public\";
         from = null;
         chain_id = 11155111;
-        env = variant { LocalDevelopment };
+        env = variant { Production };
     },
-    \"$(dfx canister  id dai_eth_0_3_indexer_lens)\",
-    vec { \"$(dfx canister  id dai_eth_0_3_pool_fees)\"; \"$(dfx canister  id dai_eth_0_3_tcumul_28x6hr)\"; \"$(dfx canister  id dai_eth_0_3_v3pool)\"; \"$(dfx canister  id eth_usdc_price)\" },
+    \"$(dfx canister --network ic id dai_eth_0_3_indexer_lens)\",
+    vec { \"$(dfx canister --network ic id dai_eth_0_3_pool_fees)\"; \"$(dfx canister --network ic id dai_eth_0_3_tcumul_28x6hr)\"; \"$(dfx canister --network ic id dai_eth_0_3_v3pool)\"; \"$(dfx canister --network ic id eth_usdc_price)\" },
 )"
 # set_task
-dfx canister  call dai_eth_0_3_relayer set_task '(7200, 10)'
+dfx canister --network ic call dai_eth_0_3_relayer set_task '(7200, 10)'

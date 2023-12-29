@@ -1,6 +1,6 @@
 #!/bin/bash
 # init
-dfx canister  call wsteth_eth_0_01_indexer_lens init_in '(variant { "LocalDevelopment" }, record {
+dfx canister --network ic call wsteth_eth_0_01_indexer_lens init_in '(variant { "Production" }, record {
                 refueling_interval = 86400: nat64;
                 vault_intial_supply = 400000000000: nat;
                 indexer = record { 
@@ -18,4 +18,4 @@ dfx canister  call wsteth_eth_0_01_indexer_lens init_in '(variant { "LocalDevelo
                     refueling_amount = 40000000000: nat;
                     refueling_threshold = 40000000000: nat;
                 };
-        })' --with-cycles 1120000000000 --wallet $(dfx identity get-wallet )
+        })' --with-cycles 1120000000000 --wallet $(dfx identity get-wallet --network ic)

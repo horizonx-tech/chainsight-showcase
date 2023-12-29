@@ -1,0 +1,26 @@
+{
+  "dai_eth_0_3_indexer": {
+    "ic": "agfzg-6yaaa-aaaag-qczaa-cai"
+  },
+  "dai_eth_0_3_indexer_lens": {
+    "ic": "abe7s-taaaa-aaaag-qczaq-cai"
+  },
+  "dai_eth_0_3_pool_fees": {
+    "ic": "lexrj-sqaaa-aaaag-qcy5q-cai"
+  },
+  "dai_eth_0_3_relayer": {
+    "ic": "aihuo-fiaaa-aaaag-qczba-cai"
+  },
+  "dai_eth_0_3_tcumul_28x6hr": {
+    "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
+  },
+  "dai_eth_0_3_v3pool": {
+    "ic": "l7snm-iiaaa-aaaag-qcy7a-cai"
+  },
+  "eth_usdc_price": {
+    "ic": "lrqae-tyaaa-aaaag-qcy6a-cai"
+  },
+  "shared_algorithm_lens": {
+    "ic": "lytly-fqaaa-aaaag-qcy7q-cai"
+  }
+}
