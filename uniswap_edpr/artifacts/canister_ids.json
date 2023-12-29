@@ -17,6 +17,10 @@
   "dai_eth_0_3_v3pool": {
     "ic": "l7snm-iiaaa-aaaag-qcy7a-cai"
   },
-  "eth_usdc_price": {},
-  "shared_algorithm_lens": {}
+  "eth_usdc_price": {
+    "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
+  },
+  "shared_algorithm_lens": {
+    "ic": "a2bdx-jyaaa-aaaag-qczca-cai"
+  }
 }
