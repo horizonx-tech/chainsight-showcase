@@ -20,7 +20,5 @@
   "eth_usdc_price": {
     "ic": "lrqae-tyaaa-aaaag-qcy6a-cai"
   },
-  "shared_algorithm_lens": {
-    "ic": "lytly-fqaaa-aaaag-qcy7q-cai"
-  }
+  "shared_algorithm_lens": {}
 }
