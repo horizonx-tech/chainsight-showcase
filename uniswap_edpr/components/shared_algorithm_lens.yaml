@@ -7,8 +7,6 @@ metadata:
   tags:
   - Uniswap
   - EDPR
-  - Ethereum
-  - Account
 datasource:
   methods:
   - id: pool_fees
