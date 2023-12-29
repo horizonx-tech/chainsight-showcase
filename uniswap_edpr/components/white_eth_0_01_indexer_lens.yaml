@@ -7,7 +7,6 @@ metadata:
   tags:
   - Uniswap
   - WHITE/(W)ETH
-  - Ethereum
 datasource:
   methods:
   - id: white_eth_0_01_indexer
