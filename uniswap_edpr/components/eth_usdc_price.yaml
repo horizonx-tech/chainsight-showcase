@@ -18,6 +18,6 @@ datasource:
       id: '1'
       jsonrpc: '2.0'
       method: cush_poolUsdPrice
-      params: '[%220x109830a1aaad605bbf02a9dfa7b0b92ec2fb7daa%22,0]'
+      params: '[%220x8ad599c3a0ff1de082011efddc58f1908eb6e6d8%22,0]'
 interval: ${INTERVAL}
 cycles: null
