@@ -12,6 +12,7 @@ contract ProposalSynchronizer is IProposalSynchronizer, Synchronizeable {
         uint256 chainId;
         uint256 startTimestamp;
         uint256 endTimestamp;
+        uint256 proposedBlock;
     }
 
     IProposalManager public proposalManager;
@@ -35,8 +36,55 @@ contract ProposalSynchronizer is IProposalSynchronizer, Synchronizeable {
         address proposer,
         uint256 chainId,
         uint256 startTimestamp,
-        uint256 endTimestamp
+        uint256 endTimestamp,
+        uint256 proposedBlock
     ) external override onlySynchronizer {
+        _synchronize(
+            id,
+            proposer,
+            chainId,
+            startTimestamp,
+            endTimestamp,
+            proposedBlock
+        );
+    }
+
+    /// @inheritdoc IProposalSynchronizer
+    function batchSynchronize(
+        uint256[] calldata ids,
+        address[] calldata proposers,
+        uint256[] calldata chainIds,
+        uint256[] calldata startTimestamps,
+        uint256[] calldata endTimestamps,
+        uint256[] calldata proposedBlocks
+    ) external override onlySynchronizer {
+        require(
+            ids.length == proposers.length &&
+                ids.length == chainIds.length &&
+                ids.length == startTimestamps.length &&
+                ids.length == endTimestamps.length,
+            "ProposalSynchronizer: INVALID_ARRAY_LENGTH"
+        );
+        for (uint256 i = 0; i < ids.length; i++) {
+            _synchronize(
+                ids[i],
+                proposers[i],
+                chainIds[i],
+                startTimestamps[i],
+                endTimestamps[i],
+                proposedBlocks[i]
+            );
+        }
+    }
+
+    function _synchronize(
+        uint256 id,
+        address proposer,
+        uint256 chainId,
+        uint256 startTimestamp,
+        uint256 endTimestamp,
+        uint256 proposedBlock
+    ) internal {
         require(
             address(proposalManager) != address(0),
             "ProposalSynchronizer: PROPOSAL_MANAGER_NOT_SET"
@@ -49,7 +97,8 @@ contract ProposalSynchronizer is IProposalSynchronizer, Synchronizeable {
             proposer: proposer,
             chainId: chainId,
             startTimestamp: startTimestamp,
-            endTimestamp: endTimestamp
+            endTimestamp: endTimestamp,
+            proposedBlock: proposedBlock
         });
         emit ProposalSynchronized(
             id,

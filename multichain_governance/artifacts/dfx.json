@@ -44,6 +44,28 @@
           "visibility": "public"
         }
       ]
+    },
+    "proposal_lens": {
+      "type": "custom",
+      "candid": "./proposal_lens.did",
+      "wasm": "./proposal_lens.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "proposal_relayer_scroll_sepolia": {
+      "type": "custom",
+      "candid": "./proposal_relayer_scroll_sepolia.did",
+      "wasm": "./proposal_relayer_scroll_sepolia.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
     }
   },
   "defaults": {

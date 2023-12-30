@@ -1,5 +1,5 @@
 [package]
-name = "sample_event_indexer"
+name = "proposal_relayer_scroll_sepolia"
 version.workspace = true
 edition.workspace = true
 
@@ -22,5 +22,5 @@ ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
-
+proposal_relayer_scroll_sepolia_bindings = { path = "../../bindings/proposal_relayer_scroll_sepolia_bindings" }
 
