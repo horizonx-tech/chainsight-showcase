@@ -1,5 +1,6 @@
 use shared_algorithm_lens_accessors :: * ;
 use std :: collections :: HashMap;
+use std :: str :: FromStr;
 use serde_json :: Value;
 
 # [derive (Clone , Debug , Default , candid :: CandidType , serde :: Deserialize , serde :: Serialize)]
@@ -32,8 +33,10 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     let eth_price_usd  = eth_usdc_price_result.clone().unwrap().result.t1_price_usd;
 
     let address = v3pool_result.clone().unwrap().result.address;
-    let current_tick_liquidity = v3pool_result.clone().unwrap().result.liquidity;
-    let sqrt_ratio_x96 = v3pool_result.clone().unwrap().result.sqrt_ratio_x96;
+    let current_tick_liquidity_str = v3pool_result.clone().unwrap().result.liquidity;
+    let current_tick_liquidity = u32::from_str_radix(current_tick_liquidity_str.trim_start_matches("0x"), 16).unwrap();
+    let sqrt_ratio_x96_str = v3pool_result.clone().unwrap().result.sqrt_ratio_x96;
+    let sqrt_ratio_x96 = u32::from_str_radix(sqrt_ratio_x96_str.trim_start_matches("0x"), 16).unwrap();
     let tick_current = v3pool_result.clone().unwrap().result.tick_current;
     let tick_spacing = v3pool_result.clone().unwrap().result.tick_spacing;
     let ticks_str = v3pool_result.clone().unwrap().result.ticks;
