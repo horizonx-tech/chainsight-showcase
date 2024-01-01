@@ -14,9 +14,7 @@
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
   },
-  "dai_eth_0_3_v3pool": {
-    "ic": "bznkr-5aaaa-aaaag-qczeq-cai"
-  },
+  "dai_eth_0_3_v3pool": {},
   "eth_usdc_price": {
     "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
   },

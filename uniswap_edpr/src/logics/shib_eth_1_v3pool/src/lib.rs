@@ -20,7 +20,7 @@ pub struct SnapshotValue {
   pub result: _ResultX,
 }
 
-#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
+#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, serde_json::Value, chainsight_cdk_macros::StableMemoryStorable)]
 pub struct _ResultX {
   pub block: u32,
   pub log_index: u32,
