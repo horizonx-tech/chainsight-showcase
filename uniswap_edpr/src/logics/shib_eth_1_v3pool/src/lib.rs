@@ -4,7 +4,6 @@
 use candid::{Decode, Encode};
 use serde::{Deserialize, Deserializer};
 use std::collections::HashMap;
-use serde_json :: Value;
 
 fn deserialize_nested_object<'de, D>(deserializer: D) -> Result<HashMap<String, String>, D::Error>
 where
@@ -20,7 +19,7 @@ pub struct SnapshotValue {
   pub result: _ResultX,
 }
 
-#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, serde_json::Value, chainsight_cdk_macros::StableMemoryStorable)]
+#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
 pub struct _ResultX {
   pub block: u32,
   pub log_index: u32,
@@ -38,7 +37,7 @@ pub struct _ResultX {
   pub tick_current: i32,
   pub tick_spacing: i32,
   #[serde(deserialize_with = "deserialize_nested_object")]
-  pub ticks: HashMap<String, Value>,
+  pub ticks: HashMap<String, String>,
   pub fee_growth_global0_x128: String,
   pub fee_growth_global1_x128: String,
   pub max_liquidity_per_tick: String,
@@ -46,8 +45,8 @@ pub struct _ResultX {
   pub token1_price: String,
   pub token0_amount: String,
   pub token1_amount: String,
-  // pub create_event: Option<HashMap<String, Value>>,
-  // pub positions: HashMap<String, Value>,
+  // pub create_event: Option<HashMap<String, String>>,
+  // pub positions: HashMap<String, String>,
   pub uncollected_fees_token0: String,
   pub uncollected_fees_token1: String,
 }
