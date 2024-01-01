@@ -14,11 +14,13 @@
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
   },
-  "dai_eth_0_3_v3pool": {},
+  "dai_eth_0_3_v3pool": {
+    "ic": "bqobn-liaaa-aaaag-qczfa-cai"
+  },
   "eth_usdc_price": {
     "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
   },
   "shared_algorithm_lens": {
-    "ic": "a2bdx-jyaaa-aaaag-qczca-cai"
+    "ic": "bxphz-gqaaa-aaaag-qczfq-cai"
   }
 }
