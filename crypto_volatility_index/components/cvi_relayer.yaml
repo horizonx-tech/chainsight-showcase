@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Relayer for CVI
+  type: relayer
+  description: "It relays Crypto Volatility Index value to Sepolia"
+  tags:
+    - Oracle
+    - CVI
+datasource:
+  type: canister
+  location:
+    id: lens_cvi_scaler
+    args:
+      id_type: canister_name
+  method:
+    identifier: "get_result : (LensArgs) -> (nat)"
+    interface: src/canisters/lens_cvi_scaler/lens_cvi_scaler.did
+    args: []
+lens_targets:
+  identifiers:
+    - snapshot_cvi_latest_round
+destination:
+  network_id: 11155111
+  type: uint256
+  oracle_address: ${ORACLE_ADDRESS}
+  rpc_url: ${RPC_URL_ETH_SEPOLIA}
+interval: ${INTERVAL_RELAYER}
+cycles: null

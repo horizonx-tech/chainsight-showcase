@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: CVI Latest Round Data (Arbitrum)
+  type: snapshot_indexer_evm
+  description: "Snapshots about Crypto Volatility Index (CVI) from Arbitrum."
+  tags:
+    - CVI
+    - Arbitrum
+datasource:
+  type: contract
+  location:
+    id: 0x649813B6dc6111D67484BaDeDd377D32e4505F85
+    args:
+      network_id: 42161
+      rpc_url: ${RPC_URL_ARBITRUM}
+  method:
+    identifier: getCVILatestRoundData():(uint32,uint80,uint256)
+    interface: CVIOracle.json
+    args: []
+interval: ${INTERVAL_HTTPS}
+cycles: null

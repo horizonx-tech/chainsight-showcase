@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: CVI value scaler
+  type: algorithm_lens
+  description: "It scales the Crypto Volatility Index value according to the argument"
+  tags:
+    - CVI
+datasource:
+  methods:
+    - id: cvi_latest_round
+      identifier: 'get_last_snapshot_value : () -> (record { nat32; nat; text })'
+      func_name_alias: cvi_latest_round
+with_args: true
+cycles: null
