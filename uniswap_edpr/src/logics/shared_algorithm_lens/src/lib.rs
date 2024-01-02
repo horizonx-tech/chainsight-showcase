@@ -14,11 +14,11 @@ pub struct LensValue {
 
 # [derive (Default, serde :: Deserialize)]
 pub struct Tick {
-  // fee_growth_outside_0x128: u128,
-  // fee_growth_outside_1x128: u128,
-  // index: i32,
+  // fee_growth_outside_0x128: String,
+  // fee_growth_outside_1x128: u1String28,
+  // index: String,
   // initialized: bool,
-  // liquidity_gross: u128,
+  // liquidity_gross: String,
   liquidity_net: String
 }
 
@@ -70,7 +70,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   }
 
   fn process_ticks(ticks: &str) -> HashMap<String, String> {
-    let ticks_clone = ticks.clone();
+    let ticks_clone = ticks;
     let parsed_json: Value = serde_json::from_str(&ticks_clone).expect("Failed to parse JSON");
     if let Value::Object(map) = parsed_json {
         let ticks_map: HashMap<String, String> = map.into_iter().filter_map(|(key, value)| {
