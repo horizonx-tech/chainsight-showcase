@@ -1,15 +1,15 @@
 {
   "dai_eth_0_3_indexer": {
-    "ic": "agfzg-6yaaa-aaaag-qczaa-cai"
+    "ic": "drxvu-paaaa-aaaag-qcziq-cai"
   },
   "dai_eth_0_3_indexer_lens": {
-    "ic": "abe7s-taaaa-aaaag-qczaq-cai"
+    "ic": "dyu6i-ziaaa-aaaag-qczja-cai"
   },
   "dai_eth_0_3_pool_fees": {
     "ic": "lexrj-sqaaa-aaaag-qcy5q-cai"
   },
   "dai_eth_0_3_relayer": {
-    "ic": "aihuo-fiaaa-aaaag-qczba-cai"
+    "ic": "d7vy4-uqaaa-aaaag-qczjq-cai"
   },
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
