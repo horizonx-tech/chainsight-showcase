@@ -24,6 +24,6 @@ destination:
   network_id: 11155111
   type: uint256
   oracle_address: ${ORACLE_ADDRESS}
-  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+  rpc_url: ${RPC_URL_ETH_SEPOLIA}
 interval: ${INTERVAL_RELAYER}
 cycles: null
