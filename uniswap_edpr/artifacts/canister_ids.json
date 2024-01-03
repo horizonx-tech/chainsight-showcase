@@ -1,15 +1,11 @@
 {
-  "dai_eth_0_3_indexer": {
-    "ic": "drxvu-paaaa-aaaag-qcziq-cai"
-  },
-  "dai_eth_0_3_indexer_lens": {
-    "ic": "dyu6i-ziaaa-aaaag-qczja-cai"
-  },
+  "dai_eth_0_3_indexer": {},
+  "dai_eth_0_3_indexer_lens": {},
   "dai_eth_0_3_pool_fees": {
     "ic": "lexrj-sqaaa-aaaag-qcy5q-cai"
   },
   "dai_eth_0_3_relayer": {
-    "ic": "d7vy4-uqaaa-aaaag-qczjq-cai"
+    "ic": "ddrcn-dqaaa-aaaag-qczlq-cai"
   },
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
@@ -21,6 +17,6 @@
     "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
   },
   "shared_algorithm_lens": {
-    "ic": "bfjqa-kaaaa-aaaag-qczgq-cai"
+    "ic": "deqez-oiaaa-aaaag-qczla-cai"
   }
 }
