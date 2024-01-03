@@ -31,4 +31,20 @@ interface IVotingSynchronizer {
         uint248 votingPower,
         uint256 chainId
     ) external;
+
+    /**
+     * @dev Synchronize a batch of votes
+     * @param ids The ids of the proposals
+     * @param voters The addresses of the voters
+     * @param _supports Whether to vote for or against the proposals
+     * @param votingPowers The voting powers of the voters
+     * @param chainIds The chain ids of the voters
+     **/
+    function batchSynchronize(
+        uint256[] calldata ids,
+        address[] calldata voters,
+        bool[] calldata _supports,
+        uint248[] calldata votingPowers,
+        uint256[] calldata chainIds
+    ) external;
 }

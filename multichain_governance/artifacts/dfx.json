@@ -23,6 +23,28 @@
         }
       ]
     },
+    "voting_lens": {
+      "type": "custom",
+      "candid": "./voting_lens.did",
+      "wasm": "./voting_lens.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "voting_relayer_sepolia": {
+      "type": "custom",
+      "candid": "./voting_relayer_sepolia.did",
+      "wasm": "./voting_relayer_sepolia.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
     "proposal_factory_event_indexer_scroll_sepolia": {
       "type": "custom",
       "candid": "./proposal_factory_event_indexer_scroll_sepolia.did",

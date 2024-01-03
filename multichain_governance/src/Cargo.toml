@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/voting_event_indexer_sepolia", "logics/voting_event_indexer_sepolia", "canisters/voting_event_indexer_scroll_sepolia", "logics/voting_event_indexer_scroll_sepolia", "canisters/proposal_factory_event_indexer_scroll_sepolia", "logics/proposal_factory_event_indexer_scroll_sepolia", "canisters/proposal_factory_event_indexer_sepolia", "logics/proposal_factory_event_indexer_sepolia", "canisters/proposal_lens", "logics/proposal_lens", "canisters/proposal_relayer_scroll_sepolia", "logics/proposal_relayer_scroll_sepolia", "bindings/*", "accessors/*"]
+members = ["canisters/voting_event_indexer_sepolia", "logics/voting_event_indexer_sepolia", "canisters/voting_event_indexer_scroll_sepolia", "logics/voting_event_indexer_scroll_sepolia", "canisters/voting_lens", "logics/voting_lens", "canisters/voting_relayer_sepolia", "logics/voting_relayer_sepolia", "canisters/proposal_factory_event_indexer_scroll_sepolia", "logics/proposal_factory_event_indexer_scroll_sepolia", "canisters/proposal_factory_event_indexer_sepolia", "logics/proposal_factory_event_indexer_sepolia", "canisters/proposal_lens", "logics/proposal_lens", "canisters/proposal_relayer_scroll_sepolia", "logics/proposal_relayer_scroll_sepolia", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"

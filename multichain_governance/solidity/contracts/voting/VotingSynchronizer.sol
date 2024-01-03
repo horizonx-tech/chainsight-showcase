@@ -31,6 +31,42 @@ contract VotingSynchronizer is IVotingSynchronizer, Synchronizeable {
         uint248 votingPower,
         uint256 chainId
     ) external override onlySynchronizer {
+        _synchronize(id, voter, support, votingPower, chainId);
+    }
+
+    /// @inheritdoc IVotingSynchronizer
+    function batchSynchronize(
+        uint256[] calldata ids,
+        address[] calldata voters,
+        bool[] calldata _supports,
+        uint248[] calldata votingPowers,
+        uint256[] calldata chainIds
+    ) external override onlySynchronizer {
+        require(
+            ids.length == voters.length &&
+                ids.length == _supports.length &&
+                ids.length == votingPowers.length &&
+                ids.length == chainIds.length,
+            "VotingSynchronizer: INVALID_INPUT"
+        );
+        for (uint256 i = 0; i < ids.length; i++) {
+            _synchronize(
+                ids[i],
+                voters[i],
+                _supports[i],
+                votingPowers[i],
+                chainIds[i]
+            );
+        }
+    }
+
+    function _synchronize(
+        uint256 id,
+        address voter,
+        bool support,
+        uint248 votingPower,
+        uint256 chainId
+    ) internal {
         require(
             address(proposalManager) != address(0),
             "VotingSynchronizer: PROPOSAL_MANAGER_NOT_SET"
