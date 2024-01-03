@@ -10,5 +10,5 @@ metadata:
 datasource:
  methods:
  - id: wsteth_eth_0_01_indexer
-  identifier: "get_last_snapshot_value : () -> (LensValue)"
+   identifier: "get_last_snapshot_value : () -> (LensValue)"
 cycles: null

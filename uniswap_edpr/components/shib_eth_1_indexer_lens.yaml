@@ -10,5 +10,5 @@ metadata:
 datasource:
  methods:
  - id: shib_eth_1_indexer
-  identifier: "get_last_snapshot_value : () -> (LensValue)"
+   identifier: "get_last_snapshot_value : () -> (LensValue)"
 cycles: null

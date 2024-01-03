@@ -10,5 +10,5 @@ metadata:
 datasource:
  methods:
  - id: dai_eth_0_3_indexer
-  identifier: "get_last_snapshot_value : () -> (LensValue)"
+   identifier: "get_last_snapshot_value : () -> (LensValue)"
 cycles: null
