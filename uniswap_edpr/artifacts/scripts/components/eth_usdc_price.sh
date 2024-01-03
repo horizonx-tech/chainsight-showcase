@@ -18,6 +18,6 @@ dfx canister --network ic call eth_usdc_price init_in '(variant { "Production" }
                     refueling_amount = 100000000000: nat;
                     refueling_threshold = 100000000000: nat;
                 };
-        })' --with-cycles 2800000000000 --wallet --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 2800000000000 --wallet $(dfx identity get-wallet --network ic)
 # set_task
 dfx canister --network ic call eth_usdc_price set_task '(7200, 10)'

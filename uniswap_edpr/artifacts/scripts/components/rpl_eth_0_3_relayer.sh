@@ -29,7 +29,7 @@ dfx canister --network ic call rpl_eth_0_3_relayer setup "(
         env = variant { Production };
     },
     \"$(dfx canister --network ic id rpl_eth_0_3_indexer_lens)\",
-    vec { \"$(dfx canister --network ic id rpl_eth_0_3_pool_fees)\"; \"$(dfx canister --network ic id rpl_eth_0_3_tcumul_28x6hr)\"; \"$(dfx canister --network ic id rpl_eth_0_3_v3pool)\"; \"$(dfx canister --network ic id eth_usdc_price)\" },
+    vec { \"$(dfx canister --network ic id rpl_eth_0_3_indexer)\" },
 )"
 # set_task
 dfx canister --network ic call rpl_eth_0_3_relayer set_task '(7200, 10)'

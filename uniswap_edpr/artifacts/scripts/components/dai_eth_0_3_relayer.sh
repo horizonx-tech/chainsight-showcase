@@ -1,6 +1,6 @@
 #!/bin/bash
 # init
-dfx canister --network ic call wsteth_eth_0_01_relayer init_in '(variant { "Production" }, record {
+dfx canister --network ic call dai_eth_0_3_relayer init_in '(variant { "Production" }, record {
                 refueling_interval = 86400: nat64;
                 vault_intial_supply = 500000000000: nat;
                 indexer = record {
@@ -20,7 +20,7 @@ dfx canister --network ic call wsteth_eth_0_01_relayer init_in '(variant { "Prod
                 };
         })' --with-cycles 1400000000000 --wallet $(dfx identity get-wallet --network ic)
 # setup
-dfx canister --network ic call wsteth_eth_0_01_relayer setup "(
+dfx canister --network ic call dai_eth_0_3_relayer setup "(
     \"0xB5Ef491939A6dBf17287666768C903F03602c550\",
     record {
         url = \"https://ethereum-sepolia.blockpi.network/v1/rpc/public\";
@@ -28,8 +28,8 @@ dfx canister --network ic call wsteth_eth_0_01_relayer setup "(
         chain_id = 11155111;
         env = variant { Production };
     },
-    \"$(dfx canister --network ic id wsteth_eth_0_01_indexer_lens)\",
-    vec { \"$(dfx canister --network ic id wsteth_eth_0_01_indexer)\" },
+    \"$(dfx canister --network ic id dai_eth_0_3_indexer_lens)\",
+    vec { \"$(dfx canister --network ic id dai_eth_0_3_indexer)\" },
 )"
 # set_task
-dfx canister --network ic call wsteth_eth_0_01_relayer set_task '(7200, 10)'
+dfx canister --network ic call dai_eth_0_3_relayer set_task '(7200, 10)'

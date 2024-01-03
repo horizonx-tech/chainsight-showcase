@@ -29,7 +29,7 @@ dfx canister --network ic call shib_eth_1_relayer setup "(
         env = variant { Production };
     },
     \"$(dfx canister --network ic id shib_eth_1_indexer_lens)\",
-    vec { \"$(dfx canister --network ic id shib_eth_1_pool_fees)\"; \"$(dfx canister --network ic id shib_eth_1_tcumul_28x6hr)\"; \"$(dfx canister --network ic id shib_eth_1_v3pool)\"; \"$(dfx canister --network ic id eth_usdc_price)\" },
+    vec { \"$(dfx canister --network ic id shib_eth_1_indexer)\" },
 )"
 # set_task
 dfx canister --network ic call shib_eth_1_relayer set_task '(7200, 10)'
