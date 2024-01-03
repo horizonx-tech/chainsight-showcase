@@ -1,5 +1,5 @@
 [package]
-name = "proposal_relayer_scroll_sepolia"
+name = "proposal_relayer_sepolia"
 version.workspace = true
 edition.workspace = true
 
@@ -24,3 +24,4 @@ chainsight-cdk.workspace = true
 
 proposal_relayer_sepolia_bindings = { path = "../../bindings/proposal_relayer_sepolia_bindings" }
 
+proposal_relayer_scroll_sepolia = { path = "../proposal_relayer_scroll_sepolia" }

@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/feature/anyrelayer/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Voting Relayer Scroll Sepolia
+  type: relayer
+  description: "TODO"
+  tags:
+    - TODO
+datasource:
+  location:
+    id: voting_lens
+  method:
+    identifier: "get_result :  (LensArgs) -> (record { vec nat; vec text; vec nat; vec nat; vec nat; vec nat })"
+    interface: null
+    args: []
+destination:
+  network_id: 11155111
+  type: custom
+  oracle_address: 0x6B175474E89094C44Da98b954EedeAC495271d0F
+  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+  interface: IVotingSynchronizer.json
+  method_name: batchSynchronize
+interval: 3600
+lens_targets:
+  identifiers:
+    - voting_event_indexer_scroll_sepolia
+cycles: null

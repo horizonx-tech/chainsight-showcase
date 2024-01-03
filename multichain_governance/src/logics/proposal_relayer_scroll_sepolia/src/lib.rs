@@ -5,7 +5,7 @@ use ic_web3_rs::{ethabi::Address, types::U256};
 mod types;
 pub type CallCanisterResponse = types::ResponseType;
 
-pub type LensArgs = proposal_relayer_scroll_sepolia_bindings::LensArgs;
+pub type LensArgs = proposal_relayer_sepolia_bindings::LensArgs;
 
 thread_local! {
     // TODO: handle edge case when tx is not relayed
@@ -51,25 +51,25 @@ pub fn convert(res: &CallCanisterResponse) -> ContractCallArgs {
         .iter()
         .map(|x| Address::from_str(x).unwrap())
         .collect::<Vec<Address>>();
-    let chainIds = res
+    let chain_id = res
         .2
         .clone()
         .iter()
         .map(|x| U256::from(x.clone()))
         .collect::<Vec<U256>>();
-    let startTimestamps = res
+    let start_timestamps = res
         .3
         .clone()
         .iter()
         .map(|x| U256::from(x.clone()))
         .collect::<Vec<U256>>();
-    let endTimestamps = res
+    let end_timestamps = res
         .4
         .clone()
         .iter()
         .map(|x| U256::from(x.clone()))
         .collect::<Vec<U256>>();
-    let proposedBlocks = res
+    let proposed_blocks = res
         .5
         .clone()
         .iter()
@@ -78,9 +78,9 @@ pub fn convert(res: &CallCanisterResponse) -> ContractCallArgs {
     ContractCallArgs {
         ids,
         proposers,
-        chainIds,
-        startTimestamps,
-        endTimestamps,
-        proposedBlocks,
+        chainIds: chain_id,
+        startTimestamps: start_timestamps,
+        endTimestamps: end_timestamps,
+        proposedBlocks: proposed_blocks,
     }
 }
