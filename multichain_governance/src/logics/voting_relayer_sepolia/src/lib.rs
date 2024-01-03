@@ -1,8 +1,6 @@
 mod types;
 use std::str::FromStr;
 
-use crate::ic_web3_rs::ethabi;
-use ic_web3_rs;
 use ic_web3_rs::{ethabi::Address, types::U256};
 pub type CallCanisterResponse = types::ResponseType;
 pub type LensArgs = voting_relayer_sepolia_bindings::LensArgs;
@@ -26,57 +24,47 @@ pub struct ContractCallArgs {
     pub votingPowers: Vec<U256>,
     pub chainIds: Vec<U256>,
 }
-impl ContractCallArgs {
-    pub fn new(
-        ids: Vec<U256>,
-        voters: Vec<ethabi::Address>,
-        _supports: Vec<bool>,
-        voting_powers: Vec<U256>,
-        chain_ids: Vec<U256>,
-    ) -> Self {
-        Self {
-            ids,
-            voters,
-            _supports,
-            votingPowers: voting_powers,
-            chainIds: chain_ids,
-        }
-    }
-}
+
 pub fn convert(res: &CallCanisterResponse) -> ContractCallArgs {
     let ids = res
         .0
         .clone()
         .iter()
         .map(|x| U256::from(x.clone()))
-        .collect::<Vec<ic_web3_rs::types::U256>>();
+        .collect::<Vec<U256>>();
     let voters = res
         .1
         .clone()
         .iter()
         .map(|x| Address::from_str(x).unwrap())
         .collect::<Vec<Address>>();
-    let _supports = res.2.clone();
+    let _supports = res.2.clone().iter().map(|x| x > &0).collect::<Vec<bool>>();
     let voting_powers = res
         .3
         .clone()
         .iter()
         .map(|x| U256::from(x.clone()))
-        .collect::<Vec<ic_web3_rs::types::U256>>();
+        .collect::<Vec<U256>>();
     let chain_ids = res
         .4
         .clone()
         .iter()
         .map(|x| U256::from(x.clone()))
-        .collect::<Vec<ic_web3_rs::types::U256>>();
-    ContractCallArgs::new(ids, voters, _supports, voting_powers, chain_ids)
+        .collect::<Vec<U256>>();
+    ContractCallArgs {
+        ids,
+        voters,
+        _supports,
+        votingPowers: voting_powers,
+        chainIds: chain_ids,
+    }
 }
 
 pub fn filter(res: &CallCanisterResponse) -> bool {
     if res.0.len() == 0 {
         return false;
     }
-    let last_relayed = res.4.iter().max().unwrap().clone();
+    let last_relayed = res.5.iter().max().unwrap().clone();
     LAST_RELAYED.with_borrow_mut(|r| {
         *r = (last_relayed as u64).clone();
     });

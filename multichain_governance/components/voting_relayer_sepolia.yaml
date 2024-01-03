@@ -10,7 +10,7 @@ datasource:
   location:
     id: voting_lens
   method:
-    identifier: "get_result :  (LensArgs) -> (record { vec nat; vec text; vec bool; vec nat; vec nat })"
+    identifier: "get_result :  (LensArgs) -> (record { vec nat; vec text; vec nat; vec nat; vec nat; vec nat })"
     interface: null
     args: []
 destination:
