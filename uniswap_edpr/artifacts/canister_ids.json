@@ -1,10 +1,16 @@
 {
-  "dai_eth_0_3_indexer": {},
-  "dai_eth_0_3_indexer_lens": {},
+  "dai_eth_0_3_indexer": {
+    "ic": "cj6ax-baaaa-aaaag-qczmq-cai"
+  },
+  "dai_eth_0_3_indexer_lens": {
+    "ic": "ca5ll-xiaaa-aaaag-qczna-cai"
+  },
   "dai_eth_0_3_pool_fees": {
     "ic": "lexrj-sqaaa-aaaag-qcy5q-cai"
   },
-  "dai_eth_0_3_relayer": {},
+  "dai_eth_0_3_relayer": {
+    "ic": "ch4n7-2qaaa-aaaag-qcznq-cai"
+  },
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
   },
