@@ -1,5 +1,5 @@
 [package]
-name = "dai_eth_0_3_relayer"
+name = "dai_eth_0_3_relayer_new"
 version.workspace = true
 edition.workspace = true
 
@@ -22,5 +22,5 @@ ic-solidity-bindgen.workspace = true
 chainsight-cdk-macros.workspace = true
 chainsight-cdk.workspace = true
 
-dai_eth_0_3_relayer_bindings = { path = "../../bindings/dai_eth_0_3_relayer_bindings" }
+dai_eth_0_3_relayer_new_bindings = { path = "../../bindings/dai_eth_0_3_relayer_new_bindings" }
 

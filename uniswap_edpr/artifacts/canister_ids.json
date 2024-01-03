@@ -4,9 +4,7 @@
   "dai_eth_0_3_pool_fees": {
     "ic": "lexrj-sqaaa-aaaag-qcy5q-cai"
   },
-  "dai_eth_0_3_relayer": {
-    "ic": "ddrcn-dqaaa-aaaag-qczlq-cai"
-  },
+  "dai_eth_0_3_relayer": {},
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
   },

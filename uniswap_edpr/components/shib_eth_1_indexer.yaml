@@ -1,29 +1,29 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
 version: v1
 metadata:
-  label: shib_eth_1_indexer
-  type: snapshot_indexer_icp
-  description: 'This canister indexes the EDPR of this pair'
-  tags:
-  - Uniswap
-  - SHIB/ETH
-  - EDPR
-  - Ethereum
+ label: shib_eth_1_indexer
+ type: snapshot_indexer_icp
+ description: 'This canister indexes the EDPR of this pair'
+ tags:
+ - Uniswap
+ - DAI/ETH
+ - EDPR
+ - Ethereum
 datasource:
-  type: canister
-  location:
-    id: shared_algorithm_lens
-  method:
-    identifier: 'get_last_snapshot : () -> (record { value : text; timestamp : nat64 })'
-    candid_file_path: src/canisters/shared_algorithm_lens/shared_algorithm_lens.did
-    interface: null
-    args: []
+ type: canister
+ location:
+  id: shared_algorithm_lens
+ method:
+  identifier: 'get_result : (vec text) -> (LensValue)'
+  candid_file_path: src/canisters/shared_algorithm_lens/shared_algorithm_lens.did
+  interface: null
+  args: []
 storage:
-  with_timestamp: true
+ with_timestamp: true
 interval: ${INTERVAL}
 lens_targets:
-  identifiers:
-    - shib_eth_1_pool_fees
-    - shib_eth_1_tcumul_28x6hr
-    - shib_eth_1_v3pool
-    - eth_usdc_price
+ identifiers:
+  - shib_eth_1_pool_fees
+  - shib_eth_1_tcumul_28x6hr
+  - shib_eth_1_v3pool
+  - eth_usdc_price

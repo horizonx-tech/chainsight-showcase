@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: dai_eth_0_3_indexer_lens
-  type: algorithm_lens
-  description: "Converts data type for relayer"
-  tags:
-  - Uniswap
-  - DAI/ETH
+ label: dai_eth_0_3_indexer_lens
+ type: algorithm_lens
+ description: "Converts data type for relayer"
+ tags:
+ - Uniswap
+ - DAI/ETH
 datasource:
-  methods:
-  - id: dai_eth_0_3_indexer
-    identifier: "get_last_snapshot : () -> (Snapshot)"
+ methods:
+ - id: dai_eth_0_3_indexer
+  identifier: "get_last_snapshot_value : () -> (LensValue)"
 cycles: null
