@@ -17,7 +17,7 @@ datasource:
     args:
       id_type: canister_name
   method:
-    identifier: 'get_result: (vec text) → (record {range_top:float32; edpr:float32; current_price:float32; address:text; range_bottom:float32})'
+    identifier: 'get_result : (vec text) -> (LensValue)'
     interface: null
     args: []
 destination:

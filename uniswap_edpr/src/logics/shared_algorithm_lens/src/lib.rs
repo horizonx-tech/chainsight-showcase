@@ -1,7 +1,6 @@
 use shared_algorithm_lens_accessors :: * ;
+use shared_algorithm_lens_bindings::v3pool::Tick;
 use std :: collections :: HashMap;
-// use std :: str :: FromStr;
-use serde_json :: Value;
 
 # [derive (Clone , Debug , Default , candid :: CandidType , serde :: Deserialize , serde :: Serialize)]
 pub struct LensValue {
@@ -13,13 +12,13 @@ pub struct LensValue {
 }
 
 # [derive (Default, serde :: Deserialize)]
-pub struct Tick {
-  // fee_growth_outside_0x128: String,
-  // fee_growth_outside_1x128: u1String28,
+pub struct Tick_ {
   // index: String,
-  // initialized: bool,
   // liquidity_gross: String,
-  liquidity_net: String
+  liquidity_net: String,
+  // fee_growth_outside_0x128: String,
+  // fee_growth_outside_1x128: String,
+  // initialized: bool,
 }
 
 pub async fn calculate (targets : Vec < String >) -> LensValue {
@@ -69,31 +68,12 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     sum_liquidity = current_tick_liquidity as i128;
   }
 
-  fn process_ticks(ticks: &str) -> HashMap<String, String> {
-    let ticks_clone = ticks;
-    let parsed_json: Value = serde_json::from_str(&ticks_clone).expect("Failed to parse JSON");
-    if let Value::Object(map) = parsed_json {
-        let ticks_map: HashMap<String, String> = map.into_iter().filter_map(|(key, value)| {
-            if let Value::String(s) = value {
-                Some((key, s))
-            } else {
-                None
-            }
-        })
-        .collect();
-        ticks_map
-    } else {
-        HashMap::new()
-    }
-  }
-
-  let ticks_map = process_ticks(&ticks);
+  let ticks_map: HashMap<String, Tick> = ticks.clone().into_iter().collect();
 
   for i in (floor + tick_spacing..max_tick).step_by(tick_spacing as usize) {
     match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-      let tick_str = ticks_map.get(i.to_string().as_str());
-      let tick: Tick = serde_json::from_str(tick_str.unwrap()).unwrap();
-      let liquidity_net_str = tick.liquidity_net;
+      let tick = ticks_map.get(i.to_string().as_str());
+      let liquidity_net_str = &tick.unwrap().liquidity_net;
       let liquidity_net_ = i128::from_str_radix(liquidity_net_str.trim_start_matches("0x"), 16).unwrap();
       state += liquidity_net_;
       sum_liquidity += state;
@@ -105,9 +85,8 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   state = current_tick_liquidity as i128;
   for i in (floor + tick_spacing..min_tick).rev().step_by(tick_spacing as usize) {
     match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-      let tick_str = ticks_map.get(i.to_string().as_str());
-      let tick: Tick = serde_json::from_str(tick_str.unwrap()).unwrap();
-      let liquidity_net_str = tick.liquidity_net;
+      let tick = ticks_map.get(i.to_string().as_str());
+      let liquidity_net_str = &tick.unwrap().liquidity_net;
       let liquidity_net_ = i128::from_str_radix(liquidity_net_str.trim_start_matches("0x"), 16).unwrap();
       state -= liquidity_net_;
       sum_liquidity += state;
