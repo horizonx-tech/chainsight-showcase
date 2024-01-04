@@ -20,7 +20,34 @@
   "eth_usdc_price": {
     "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
   },
+  "rpl_eth_0_3_pool_fees": {
+    "ic": "gnmpr-eiaaa-aaaag-qczxa-cai"
+  },
+  "rpl_eth_0_3_tcumul_28x6hr": {
+    "ic": "gknjf-jqaaa-aaaag-qczxq-cai"
+  },
+  "rpl_eth_0_3_v3pool": {
+    "ic": "exqhn-2yaaa-aaaag-qczya-cai"
+  },
   "shared_algorithm_lens": {
     "ic": "deqez-oiaaa-aaaag-qczla-cai"
+  },
+  "shib_eth_1_pool_fees": {
+    "ic": "g7kyi-iyaaa-aaaag-qczua-cai"
+  },
+  "shib_eth_1_tcumul_28x6hr": {
+    "ic": "gyl64-faaaa-aaaag-qczuq-cai"
+  },
+  "shib_eth_1_v3pool": {
+    "ic": "griva-tiaaa-aaaag-qczva-cai"
+  },
+  "wsteth_eth_0_01_pool_fees": {
+    "ic": "gwjtu-6qaaa-aaaag-qczvq-cai"
+  },
+  "wsteth_eth_0_01_tcumul_28x6hr": {
+    "ic": "gdocz-7yaaa-aaaag-qczwa-cai"
+  },
+  "wsteth_eth_0_01_v3pool": {
+    "ic": "gepen-saaaa-aaaag-qczwq-cai"
   }
 }
