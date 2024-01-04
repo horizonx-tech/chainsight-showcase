@@ -3,18 +3,18 @@ version: v1
 metadata:
   label: Voting Event Indexer Scroll
   type: event_indexer
-  description: ''
+  description: ""
   tags:
-  - TODO
+    - TODO
 datasource:
-  id: 0x6B175474E89094C44Da98b954EedeAC495271d0F
+  id: 0x1A0ceb79B5B2bD56c68C3E23A8a41639a7c12ac6
   event:
     identifier: Voted
     interface: IProposalManager.json
   network:
-    rpc_url: https://mainnet.infura.io/v3/${INFURA_MAINNET_RPC_URL_KEY}
-    chain_id: 1
+    rpc_url: https://rpc.ankr.com/scroll_sepolia_testnet
+    chain_id: 534351
   from: 17660942
   contract_type: ERC-20
-interval: 3600
+interval: ${INTERVAL}
 cycles: null

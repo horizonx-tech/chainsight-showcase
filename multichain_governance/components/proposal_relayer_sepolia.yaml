@@ -16,11 +16,11 @@ datasource:
 destination:
   network_id: 11155111
   type: custom
-  oracle_address: 0x6B175474E89094C44Da98b954EedeAC495271d0F
-  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+  oracle_address: 0x02F3aAc2Bb2aC7f8dee3377Ba2dA93fF52b1C4FE
+  rpc_url: https://endpoints.omniatech.io/v1/eth/sepolia/public
   interface: IProposalSynchronizer.json
   method_name: batchSynchronize
-interval: 3600
+interval: ${INTERVAL}
 lens_targets:
   identifiers:
     - proposal_factory_event_indexer_sepolia

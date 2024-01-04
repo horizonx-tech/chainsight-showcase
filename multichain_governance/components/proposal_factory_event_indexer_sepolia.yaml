@@ -3,18 +3,18 @@ version: v1
 metadata:
   label: Proposal Factory Indexer Sepolia
   type: event_indexer
-  description: ''
+  description: ""
   tags:
-  - TODO
+    - TODO
 datasource:
-  id: 0x6B175474E89094C44Da98b954EedeAC495271d0F
+  id: 0xAEB9FBEE52B7272b5c75Bc64E4f82D24Ee2Aaa33
   event:
     identifier: ProposalCreated
     interface: IProposalFactory.json
   network:
-    rpc_url: https://mainnet.infura.io/v3/${INFURA_MAINNET_RPC_URL_KEY}
-    chain_id: 1
+    rpc_url: https://endpoints.omniatech.io/v1/eth/sepolia/public
+    chain_id: 11155111
   from: 17660942
   contract_type: ERC-20
-interval: 3600
+interval: ${INTERVAL}
 cycles: null

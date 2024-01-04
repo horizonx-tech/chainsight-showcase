@@ -7,3 +7,4 @@ src/target
 !/artifacts/dfx.json
 !/artifacts/canister_ids.json
 .env
+chainsight-management-canisters/

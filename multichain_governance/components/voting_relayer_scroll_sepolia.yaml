@@ -14,13 +14,13 @@ datasource:
     interface: null
     args: []
 destination:
-  network_id: 11155111
+  network_id: 534351
   type: custom
-  oracle_address: 0x6B175474E89094C44Da98b954EedeAC495271d0F
-  rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+  oracle_address: 0xE13E832e673dF3588d9a71F67C69826ECC76Cad5
+  rpc_url: https://rpc.ankr.com/scroll_sepolia_testnet
   interface: IVotingSynchronizer.json
   method_name: batchSynchronize
-interval: 3600
+interval: ${INTERVAL}
 lens_targets:
   identifiers:
     - voting_event_indexer_scroll_sepolia
