@@ -9,12 +9,8 @@ import {
   ProposalManager__factory,
   VotingSynchronizer,
 } from "../typechain";
-import { ContractFactory, Provider, Signer } from "ethers";
-import {
-  deploy,
-  verificationRequired,
-  verifyContractsIfNeeded,
-} from "./common";
+import { Provider, Signer } from "ethers";
+import { deploy, isLocalNetwork, verifyContract, waitForTx } from "./common";
 
 task("deploy", "Deploy the contracts", async (_, { ethers }) => {
   // Deployment
@@ -58,48 +54,56 @@ task("deploy", "Deploy the contracts", async (_, { ethers }) => {
   )) as ProposalFactory;
 
   // Configuration
-  await votingSyncronizer.setProposalManager(
-    await porposalManager.getAddress()
+  await waitForTx(
+    await votingSyncronizer.setProposalManager(
+      await porposalManager.getAddress()
+    )
   );
 
-  await proposalSynchronizer.setProposalManager(
-    await porposalManager.getAddress()
+  await waitForTx(
+    await proposalSynchronizer.setProposalManager(
+      await porposalManager.getAddress()
+    )
   );
-  await porposalManager.setProposalFactory(await proposalFactory.getAddress());
+  await waitForTx(
+    await porposalManager.setProposalFactory(await proposalFactory.getAddress())
+  );
 
   // Verification
-  await verifyContractsIfNeeded([
-    { address: await govToken.getAddress(), constructorArguments: [] },
-    {
-      address: await votingSyncronizer.getAddress(),
-      constructorArguments: [],
-    },
-    {
-      address: await proposalSynchronizer.getAddress(),
-      constructorArguments: [],
-    },
-    {
-      address: await porposalManager.getAddress(),
-      constructorArguments: [
-        await govToken.getAddress(),
-        await votingSyncronizer.getAddress(),
-        await proposalSynchronizer.getAddress(),
-      ],
-    },
-    {
-      address: await proposalFactory.getAddress(),
-      constructorArguments: [await porposalManager.getAddress()],
-    },
-  ]);
-  console.log(
-    JSON.stringify([
-      { govToken: await govToken.getAddress() },
-      { votingSyncronizer: await votingSyncronizer.getAddress() },
-      { proposalSynchronizer: await proposalSynchronizer.getAddress() },
-      { porposalManager: await porposalManager.getAddress() },
-      { proposalFactory: await proposalFactory.getAddress() },
-    ])
-  );
+  !isLocalNetwork(networkName) &&
+    (await verifyContract([
+      { address: await govToken.getAddress(), constructorArguments: [] },
+      {
+        address: await votingSyncronizer.getAddress(),
+        constructorArguments: [],
+      },
+      {
+        address: await proposalSynchronizer.getAddress(),
+        constructorArguments: [],
+      },
+      {
+        address: await porposalManager.getAddress(),
+        constructorArguments: [
+          await govToken.getAddress(),
+          await votingSyncronizer.getAddress(),
+          await proposalSynchronizer.getAddress(),
+        ],
+      },
+      {
+        address: await proposalFactory.getAddress(),
+        constructorArguments: [await porposalManager.getAddress()],
+      },
+    ]));
+  !isLocalNetwork(networkName) &&
+    console.log(
+      JSON.stringify([
+        { govToken: await govToken.getAddress() },
+        { votingSyncronizer: await votingSyncronizer.getAddress() },
+        { proposalSynchronizer: await proposalSynchronizer.getAddress() },
+        { porposalManager: await porposalManager.getAddress() },
+        { proposalFactory: await proposalFactory.getAddress() },
+      ])
+    );
   return {
     govToken: govToken,
     votingSyncronizer: votingSyncronizer,
