@@ -11,6 +11,7 @@ import {
 } from "../typechain";
 import { Provider, Signer } from "ethers";
 import { deploy, isLocalNetwork, verifyContract, waitForTx } from "./common";
+import { eContractid } from "./contracts";
 
 task("deploy", "Deploy the contracts", async (_, { ethers }) => {
   // Deployment
@@ -18,25 +19,25 @@ task("deploy", "Deploy the contracts", async (_, { ethers }) => {
   const networkName = (await (ethers.provider as Provider).getNetwork()).name;
   const deployer: Signer = (await ethers.getSigners())[0];
   const govToken = (await deploy(
-    networkName,
+    eContractid.MintableGovernanceToken,
     deployer,
     new MintableGovernanceToken__factory(),
     []
   )) as MintableGovernanceToken;
   const votingSyncronizer = (await deploy(
-    networkName,
+    eContractid.VotingSynchronizer,
     deployer,
     new VotingSynchronizer__factory(),
     []
   )) as VotingSynchronizer;
   const proposalSynchronizer = (await deploy(
-    networkName,
+    eContractid.ProposalSynchronizer,
     deployer,
     new VotingSynchronizer__factory(),
     []
   )) as VotingSynchronizer;
   const porposalManager = (await deploy(
-    networkName,
+    eContractid.ProposalManager,
     deployer,
     new ProposalManager__factory(),
     [
@@ -47,7 +48,7 @@ task("deploy", "Deploy the contracts", async (_, { ethers }) => {
   )) as ProposalManager;
 
   const proposalFactory = (await deploy(
-    networkName,
+    eContractid.ProposalFactory,
     deployer,
     new ProposalFactory__factory(),
     [await porposalManager.getAddress()]
