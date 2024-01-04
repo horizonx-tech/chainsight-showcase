@@ -17,7 +17,7 @@ datasource:
   args:
    id_type: canister_name
  method:
-  identifier: 'get_result : (vec text) -> (nat)'
+  identifier: 'get_result : (vec text) -> (nat64)'
   interface: null
   args: []
 destination:

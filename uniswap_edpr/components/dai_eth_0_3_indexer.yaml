@@ -10,12 +10,10 @@ metadata:
  - EDPR
  - Ethereum
 datasource:
- type: canister
  location:
   id: shared_algorithm_lens
  method:
   identifier: 'get_result : (vec text) -> (LensValue)'
-  candid_file_path: src/canisters/shared_algorithm_lens/shared_algorithm_lens.did
   interface: null
   args: []
 storage:
@@ -23,7 +21,7 @@ storage:
 interval: ${INTERVAL}
 lens_targets:
  identifiers:
-  - dai_eth_0_3_pool_fees
-  - dai_eth_0_3_tcumul_28x6hr
-  - dai_eth_0_3_v3pool
-  - eth_usdc_price
+  - lexrj-sqaaa-aaaag-qcy5q-cai # dai_eth_0_3_pool_fees
+  - lwrgq-6aaaa-aaaag-qcy6q-cai # dai_eth_0_3_tcumul_28x6hr
+  - bciwu-hyaaa-aaaag-qczga-cai # dai_eth_0_3_v3pool
+  - apgs2-iqaaa-aaaag-qczbq-cai # eth_usdc_price

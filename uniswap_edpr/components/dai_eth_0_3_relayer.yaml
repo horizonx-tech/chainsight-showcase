@@ -14,10 +14,8 @@ datasource:
  type: canister
  location:
   id: dai_eth_0_3_indexer_lens
-  args:
-   id_type: canister_name
  method:
-  identifier: 'get_result : (vec text) -> (nat)'
+  identifier: 'get_result : (vec text) -> (nat64)'
   interface: null
   args: []
 destination:
@@ -28,4 +26,4 @@ destination:
 interval: ${INTERVAL}
 lens_targets:
  identifiers:
-  - dai_eth_0_3_indexer
+  - cj6ax-baaaa-aaaag-qczmq-cai # dai_eth_0_3_indexer
