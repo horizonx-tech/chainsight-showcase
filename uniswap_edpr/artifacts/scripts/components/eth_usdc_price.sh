@@ -20,4 +20,4 @@ dfx canister --network ic call eth_usdc_price init_in '(variant { "Production" }
                 };
         })' --with-cycles 2800000000000 --wallet $(dfx identity get-wallet --network ic)
 # set_task
-dfx canister --network ic call eth_usdc_price set_task '(7200, 10)'
+dfx canister --network ic call eth_usdc_price set_task '(14400, 10)'
