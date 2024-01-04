@@ -2,8 +2,8 @@
 This project was built for the [Chainsight](https://chainsight.network/) platform using the [Chainsight CLI](https://github.com/horizonx-tech/chainsight-cli). It is intended to calculate an **Estimated Daily Percentage Return (EDPR)** for trading pairs on [Uniswap V3](https://info.uniswap.org/). The EDPR can be calculated at a pre-set interval by canisters on the [Internet Computer](https://internetcomputer.org/) blockchain and relayed to Chainsight's [Sepolia testnet oracle](https://sepolia.etherscan.io/address/0xB5Ef491939A6dBf17287666768C903F03602c550).
 
 The trading pairs currently included are:
-- [wstETH/ETH](https://info.uniswap.org/#/pools/0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8) 0.3% fee tier
-- [DAI/ETH](https://info.uniswap.org/#/pools/0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8) 0.05% fee tier
+- [wstETH/ETH](https://info.uniswap.org/#/pools/0x109830a1aaad605bbf02a9dfa7b0b92ec2fb7daa) 0.01% fee tier
+- [DAI/ETH](https://info.uniswap.org/#/pools/0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8) 0.3% fee tier
 - [SHIB/ETH](https://info.uniswap.org/#/pools/0x5764a6f2212d502bc5970f9f129ffcd61e5d7563) 1% fee tier
 - [RPL/ETH](https://info.uniswap.org/#/pools/0xe42318ea3b998e8355a3da364eb9d48ec725eb45) 0.3% fee tier
 
