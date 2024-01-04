@@ -109,7 +109,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
 
   let fees_24h_eth = fees_24h_usd / eth_price_usd;
   let edr = fees_24h_eth / tvl_in_range;
-  let edpr = edr / 100.0;
+  let edpr = edr * 100.0;
 
   if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
     current_price = 1.0 / current_price;
