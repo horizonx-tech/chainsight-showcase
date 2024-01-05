@@ -1,5 +1,4 @@
 use voting_lens_accessors::*;
-use voting_lens_bindings::voting_event_indexer_sepolia::RequestArgsType;
 
 pub type LensValue = (
     Vec<u128>,
@@ -12,15 +11,15 @@ pub type LensValue = (
 pub type CalculateArgs = (u64, u64);
 
 pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
-    let results = get_events_from_to_in_voting_event_indexer_sepolia(
+    let r = get_events_from_to_in_voting_event_indexer_sepolia(
         targets.get(0usize).unwrap().clone(),
-        RequestArgsType {
-            0: args.0,
-            1: args.1,
-        },
+        args,
     )
-    .await
-    .unwrap();
+    .await;
+    if r.is_err() {
+        ic_cdk::println!("error: {:?}", r);
+    }
+    let results = r.unwrap();
     results
         .iter()
         .map(|r| {

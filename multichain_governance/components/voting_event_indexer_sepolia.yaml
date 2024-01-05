@@ -12,9 +12,9 @@ datasource:
     identifier: Voted
     interface: IProposalManager.json
   network:
-    rpc_url: https://endpoints.omniatech.io/v1/eth/sepolia/public
+    rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
     chain_id: 11155111
-  from: 17660942
+  from: 2739538
   contract_type: ERC-20
 interval: ${INTERVAL}
 cycles: null

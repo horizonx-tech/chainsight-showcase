@@ -39,7 +39,7 @@ export const getContractAddress = (id: eContractid) => {
   const hre = require("hardhat");
   const network = hre.network.name;
   const db = getDB();
-  db.contracts[id.valueOf()][network];
+  return db.contracts[id.valueOf()][network];
 };
 
 export const waitForTx = async (tx: TransactionResponse) => {

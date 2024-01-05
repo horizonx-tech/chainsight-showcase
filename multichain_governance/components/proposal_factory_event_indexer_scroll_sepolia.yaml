@@ -12,9 +12,9 @@ datasource:
     identifier: ProposalCreated
     interface: IProposalFactory.json
   network:
-    rpc_url: https://rpc.ankr.com/scroll_sepolia_testnet
+    rpc_url: https://sepolia-rpc.scroll.io
     chain_id: 534351
-  from: 17660942
+  from: 0
   contract_type: ERC-20
 interval: ${INTERVAL}
 cycles: null

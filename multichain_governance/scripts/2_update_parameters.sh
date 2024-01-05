@@ -26,3 +26,4 @@ yq e -i '.datasource.id= env(PROPOSAL_MANAGER_SEPOLIA_ADDRESS)' voting_event_ind
 yq e -i '.datasource.id= env(PROPOSAL_MANAGER_SCROLL_SEPOLIA_ADDRESS)' voting_event_indexer_scroll_sepolia.yaml
 yq e -i '.destination.oracle_address= env(VOTING_SYNCHRONIZER_ADDRESS_SEPOLIA)' voting_relayer_sepolia.yaml
 yq e -i '.destination.oracle_address= env(VOTING_SYNCHRONIZER_ADDRESS_SCROLL_SEPOLIA)' voting_relayer_scroll_sepolia.yaml
+

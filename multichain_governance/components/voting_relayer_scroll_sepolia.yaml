@@ -17,7 +17,7 @@ destination:
   network_id: 534351
   type: custom
   oracle_address: 0xE13E832e673dF3588d9a71F67C69826ECC76Cad5
-  rpc_url: https://rpc.ankr.com/scroll_sepolia_testnet
+  rpc_url: https://sepolia-rpc.scroll.io
   interface: IVotingSynchronizer.json
   method_name: batchSynchronize
 interval: ${INTERVAL}
