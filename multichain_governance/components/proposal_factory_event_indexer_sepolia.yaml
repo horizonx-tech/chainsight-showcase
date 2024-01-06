@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/event_indexer.json
+version: v1
+metadata:
+  label: Proposal Factory Indexer Sepolia
+  type: event_indexer
+  description: ""
+  tags:
+    - TODO
+datasource:
+  id: 0xAEB9FBEE52B7272b5c75Bc64E4f82D24Ee2Aaa33
+  event:
+    identifier: ProposalCreated
+    interface: IProposalFactory.json
+  network:
+    rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+    chain_id: 11155111
+  from: 2739538
+  contract_type: ERC-20
+interval: ${INTERVAL}
+cycles: null

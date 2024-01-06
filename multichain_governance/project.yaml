@@ -1,0 +1,13 @@
+version: v1
+label: simple_bridge
+components:
+  - component_path: components/voting_event_indexer_sepolia.yaml
+  - component_path: components/voting_event_indexer_scroll_sepolia.yaml
+  - component_path: components/voting_lens.yaml
+  - component_path: components/voting_relayer_sepolia.yaml
+  - component_path: components/voting_relayer_scroll_sepolia.yaml
+  - component_path: components/proposal_factory_event_indexer_scroll_sepolia.yaml
+  - component_path: components/proposal_factory_event_indexer_sepolia.yaml
+  - component_path: components/proposal_lens.yaml
+  - component_path: components/proposal_relayer_sepolia.yaml
+  - component_path: components/proposal_relayer_scroll_sepolia.yaml

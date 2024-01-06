@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/event_indexer.json
+version: v1
+metadata:
+  label: Voting Event Indexer Scroll Sepolia
+  type: event_indexer
+  description: ""
+  tags:
+    - TODO
+datasource:
+  id: 0x09150c13AC5169Cd17EC35a304832a1E068C3A8D
+  event:
+    identifier: Voted
+    interface: IProposalManager.json
+  network:
+    rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+    chain_id: 11155111
+  from: 2739538
+  contract_type: ERC-20
+interval: ${INTERVAL}
+cycles: null

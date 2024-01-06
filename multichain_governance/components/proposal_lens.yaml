@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Proposal Lens
+  type: algorithm_lens
+  description: "TODO"
+  tags:
+    - TODO
+datasource:
+  methods:
+    - id: proposal_factory_event_indexer_sepolia
+      identifier: "events_from_to : (nat64, nat64) -> (vec record { nat64; vec ProposalCreated })"
+      candid_file_path: null
+with_args: true
+cycles: null

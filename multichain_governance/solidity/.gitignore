@@ -1,0 +1,17 @@
+node_modules
+.env
+yarn-error.log
+
+# Hardhat files
+/cache
+/artifacts
+contracts.json
+
+# TypeChain files
+/typechain
+/typechain-types
+/abi
+
+# solidity-coverage files
+/coverage
+/coverage.json

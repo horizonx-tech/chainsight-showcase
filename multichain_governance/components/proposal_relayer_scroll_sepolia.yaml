@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/feature/anyrelayer/resources/schema/relayer.json
+version: v1
+metadata:
+  label: Proposal Relayer Scroll Sepolia
+  type: relayer
+  description: "TODO"
+  tags:
+    - TODO
+datasource:
+  location:
+    id: proposal_lens
+  method:
+    identifier: "get_result : (LensArgs) -> (record { vec nat; vec text; vec nat; vec nat; vec nat; vec nat })"
+    interface: null
+    args: []
+destination:
+  network_id: 534351
+  type: custom
+  oracle_address: 0x400b306fF82EEBac84946F73826B68241421EA6F
+  rpc_url: https://sepolia-rpc.scroll.io
+  interface: IProposalSynchronizer.json
+  method_name: batchSynchronize
+interval: ${INTERVAL}
+lens_targets:
+  identifiers:
+    - proposal_factory_event_indexer_scroll_sepolia
+cycles: null

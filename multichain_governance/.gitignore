@@ -1,0 +1,10 @@
+src/__interfaces
+src/accessors
+src/bindings
+src/canisters
+src/target
+/artifacts/*
+!/artifacts/dfx.json
+!/artifacts/canister_ids.json
+.env
+chainsight-management-canisters/
