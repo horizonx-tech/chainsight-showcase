@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: shib_eth_1_v3pool
+  type: snapshot_indexer_https
+  description: 'Snapshot of SHIB/ETH 1% pool'
+  tags:
+  - Uniswap
+  - SHIB/ETH
+  - SHIB
+  - ETH
+  - Ethereum
+datasource:
+  url: https://omni.oku.zone/ethereum
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+      id: '1'
+      jsonrpc: '2.0'
+      method: cush_getV3Pool
+      params: '[%220x5764a6f2212d502bc5970f9f129ffcd61e5d7563%22,0]'
+storage:
+  with_timestamp: true
+interval: ${INTERVAL}
