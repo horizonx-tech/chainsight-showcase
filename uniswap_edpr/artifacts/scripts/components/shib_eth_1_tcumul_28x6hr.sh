@@ -18,7 +18,7 @@ dfx canister --network ic call shib_eth_1_tcumul_28x6hr init_in '(variant { "Pro
                     refueling_amount = 50000000000: nat;
                     refueling_threshold = 50000000000: nat;
                 };
-        })' --with-cycles 1400000000000 --wallet --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 1400000000000 --wallet $(dfx identity get-wallet --network ic)
 # setup
 dfx canister --network ic call shib_eth_1_tcumul_28x6hr setup "(
     \"5764a6f2212d502bc5970f9f129ffcd61e5d7563\",

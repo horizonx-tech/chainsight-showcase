@@ -18,7 +18,7 @@ dfx canister --network ic call rpl_eth_0_3_tcumul_28x6hr init_in '(variant { "Pr
                     refueling_amount = 50000000000: nat;
                     refueling_threshold = 50000000000: nat;
                 };
-        })' --with-cycles 1400000000000 --wallet --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 1400000000000 --wallet $(dfx identity get-wallet --network ic)
 # setup
 dfx canister --network ic call rpl_eth_0_3_tcumul_28x6hr setup "(
     \"e42318ea3b998e8355a3da364eb9d48ec725eb45\",

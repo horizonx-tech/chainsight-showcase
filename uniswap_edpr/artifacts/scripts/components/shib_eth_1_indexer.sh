@@ -18,7 +18,7 @@ dfx canister --network ic call shib_eth_1_indexer init_in '(variant { "Productio
                     refueling_amount = 50000000000: nat;
                     refueling_threshold = 50000000000: nat;
                 };
-        })' --with-cycles 1400000000000 --wallet --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 1400000000000 --wallet $(dfx identity get-wallet --network ic)
 # setup
 dfx canister --network ic call shib_eth_1_indexer setup "(
     \"$(dfx canister --network ic id shared_algorithm_lens)\",

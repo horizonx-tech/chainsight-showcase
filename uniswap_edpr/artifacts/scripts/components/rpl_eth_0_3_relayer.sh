@@ -18,7 +18,7 @@ dfx canister --network ic call rpl_eth_0_3_relayer init_in '(variant { "Producti
                     refueling_amount = 50000000000: nat;
                     refueling_threshold = 50000000000: nat;
                 };
-        })' --with-cycles 1400000000000 --wallet --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 1400000000000 --wallet $(dfx identity get-wallet --network ic)
 # setup
 dfx canister --network ic call rpl_eth_0_3_relayer setup "(
     \"0xB5Ef491939A6dBf17287666768C903F03602c550\",

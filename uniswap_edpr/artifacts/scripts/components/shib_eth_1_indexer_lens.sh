@@ -18,4 +18,4 @@ dfx canister --network ic call shib_eth_1_indexer_lens init_in '(variant { "Prod
                     refueling_amount = 50000000000: nat;
                     refueling_threshold = 50000000000: nat;
                 };
-        })' --with-cycles 1400000000000 --wallet --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 1400000000000 --wallet $(dfx identity get-wallet --network ic)
