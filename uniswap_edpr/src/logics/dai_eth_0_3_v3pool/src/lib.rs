@@ -29,6 +29,8 @@ pub struct _ResultX {
   pub liquidity: String,
   pub tick_current: i32,
   pub tick_spacing: i32,
+  #[serde(default)]
+  #[serde(deserialize_with = "deserialize_ticks")]
   pub ticks: HashMap<String, Tick>,
   // pub fee_growth_global0_x128: String,
   // pub fee_growth_global1_x128: String,
@@ -45,10 +47,27 @@ pub struct _ResultX {
 
 #[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
 pub struct Tick {
-  // index: String,
+  #[serde(deserialize_with = "deserialize_index")]
+  index: String,
   // liquidity_gross: String,
   liquidity_net: String,
   // fee_growth_outside_0x128: String,
   // fee_growth_outside_1x128: String,
   // initialized: bool,
+}
+
+fn deserialize_ticks<'de, D>(deserializer: D) -> Result<HashMap<String, Tick>, D::Error>
+where
+  D: serde::Deserializer<'de>,
+{
+  let ticks_map: HashMap<String, Tick> = Deserialize::deserialize(deserializer)?;
+  Ok(ticks_map)
+}
+
+fn deserialize_index<'de, D>(deserializer: D) -> Result<String, D::Error>
+where
+  D: serde::Deserializer<'de>,
+{
+  let index: Result<i32, _> = Deserialize::deserialize(deserializer);
+  Ok(index.map(|i| i.to_string()).unwrap_or_default())
 }
