@@ -16,6 +16,8 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   let eth_usdc_price_result = get_get_last_snapshot_value_in_eth_usdc_price (targets . get (3usize) . unwrap () . clone ()) . await ;
   
   let fees_24h_usd = pool_fees_result.unwrap().result[0].fees_24h_usd;
+  let t0_decimals = pool_fees_result.unwrap().result[0].t0_decimals;
+  let t1_decimals =  pool_fees_result.unwrap().result[0].t1_decimals;
 
   let eth_price_usd  = eth_usdc_price_result.clone().unwrap().result.t1_price_usd;
 
@@ -30,9 +32,8 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
 
   let tick_cumul_28x6h = tc28x6_result.unwrap().0;
 
-  let price_x96 = u128::pow(sqrt_ratio_x96.into(), 2) as f32;
-  let mut current_price = price_x96 / f32::powf(2.0,192.0);
-  current_price = current_price / f32::powf(10.0,12.0);
+  let current_sqrt_price = sqrt_ratio_x96 as f32 / f32::powf(2.0,96.0);
+  let mut current_price = current_sqrt_price * current_sqrt_price;
 
   let mut compressed: i32 = tick_current / tick_spacing;
   if tick_current <0 && tick_current % tick_spacing != 0 {
@@ -42,7 +43,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   let mut min_tick = floor;
   let mut max_tick = floor + tick_spacing;
   for i in (1..29).rev() {
-    let new_tick = (tick_cumul_28x6h[i] as i32 - tick_cumul_28x6h[i-1] as i32) / 21600;
+    let new_tick = ((tick_cumul_28x6h[i] - tick_cumul_28x6h[i-1]) / 21600) as i32;
     if new_tick < min_tick {
       min_tick = new_tick;
     } else if new_tick > max_tick {
@@ -50,23 +51,19 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     }
   }
   
-  let ticks_in_range = (max_tick - min_tick) / tick_spacing;
-  let sum_liquidity: i128 = current_tick_liquidity as i128 * ticks_in_range as i128;
-  
-  let upper_sqrt_price_x96 = f32::powf(1.0001, max_tick as f32);
-  let mut range_top = upper_sqrt_price_x96 / f32::powf(2.0,192.0);
-  range_top = range_top / f32::powf(10.0,12.0);
-  let lower_sqrt_price_x96 = f32::powf(1.0001, max_tick as f32);
-  let mut range_bottom = upper_sqrt_price_x96 / f32::powf(2.0,192.0);
-  range_bottom = range_bottom / f32::powf(10.0,12.0);
-  
-  let est_tvl_in_range = sum_liquidity as f32
-    * ((sqrt_ratio_x96 as f32 / upper_sqrt_price_x96)
-      * (upper_sqrt_price_x96 - sqrt_ratio_x96 as f32)
-      + (sqrt_ratio_x96 as f32 - lower_sqrt_price_x96));
+  let mut range_top = f32::powf(1.0001, max_tick as f32);
+  let mut range_bottom = f32::powf(1.0001, min_tick as f32);
+  let amount0 = current_tick_liquidity as f32
+    * (range_top.sqrt() - current_sqrt_price as f32)
+    / (current_sqrt_price as f32 * range_top.sqrt())
+    / f32::powf(10.0, t0_decimals as f32);
+  let amount1 = current_tick_liquidity as f32
+    * (current_sqrt_price as f32 - range_bottom.sqrt())
+    / f32::powf(10.0, t1_decimals as f32);
+  let est_tvl_in_range = amount0 * current_price + amount1;
 
   let fees_24h_eth = fees_24h_usd / eth_price_usd;
-  let edr = fees_24h_eth / est_tvl_in_range;
+  let edr = fees_24h_eth / est_tvl_in_range as f32;
   let edpr = edr * 100.0;
 
   if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
@@ -78,7 +75,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   }
 
   let result = LensValue {
-    address,
+    address: address.to_string(),
     current_price,
     range_top,
     range_bottom,
