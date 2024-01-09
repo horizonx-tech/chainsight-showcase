@@ -29,7 +29,7 @@ pub struct _ResultX {
   pub liquidity: String,
   pub tick_current: i32,
   pub tick_spacing: i32,
-  pub ticks: HashMap<String, Tick>,
+  // pub ticks: HashMap<String, String>,
   // pub fee_growth_global0_x128: String,
   // pub fee_growth_global1_x128: String,
   // pub max_liquidity_per_tick: String,
@@ -41,14 +41,4 @@ pub struct _ResultX {
   // pub positions: HashMap<String, String>,
   // pub uncollected_fees_token0: String,
   // pub uncollected_fees_token1: String,
-}
-
-#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
-pub struct Tick {
-  // index: String,
-  // liquidity_gross: String,
-  liquidity_net: String,
-  // fee_growth_outside_0x128: String,
-  // fee_growth_outside_1x128: String,
-  // initialized: bool,
 }

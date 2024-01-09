@@ -1,6 +1,4 @@
 use shared_algorithm_lens_accessors :: * ;
-use shared_algorithm_lens_bindings::v3pool::Tick;
-use std :: collections :: HashMap;
 
 # [derive (Clone , Debug , Default , candid :: CandidType , serde :: Deserialize , serde :: Serialize)]
 pub struct LensValue {
@@ -9,16 +7,6 @@ pub struct LensValue {
   pub range_top: f32,
   pub range_bottom: f32,
   pub edpr: f32
-}
-
-# [derive (Default, serde :: Deserialize)]
-pub struct Tick_ {
-  // index: String,
-  // liquidity_gross: String,
-  liquidity_net: String,
-  // fee_growth_outside_0x128: String,
-  // fee_growth_outside_1x128: String,
-  // initialized: bool,
 }
 
 pub async fn calculate (targets : Vec < String >) -> LensValue {
@@ -38,7 +26,6 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   let sqrt_ratio_x96 = u32::from_str_radix(sqrt_ratio_x96_str.trim_start_matches("0x"), 16).unwrap();
   let tick_current = v3pool_result.clone().unwrap().result.tick_current;
   let tick_spacing = v3pool_result.clone().unwrap().result.tick_spacing;
-  let ticks = v3pool_result.clone().unwrap().result.ticks;
   let token0 = v3pool_result.clone().unwrap().result.token0;
 
   let tick_cumul_28x6h = tc28x6_result.unwrap().0;
@@ -62,39 +49,10 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
       max_tick = new_tick;
     }
   }
-  let mut state = current_tick_liquidity as i128;
-  let mut sum_liquidity: i128 = 0;
-  if tick_current >= min_tick && tick_current < max_tick {
-    sum_liquidity = current_tick_liquidity as i128;
-  }
-
-  let ticks_map: HashMap<String, Tick> = ticks.clone().into_iter().collect();
-
-  for i in (floor + tick_spacing..max_tick).step_by(tick_spacing as usize) {
-    match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-      let tick = ticks_map.get(i.to_string().as_str());
-      let liquidity_net_str = &tick.unwrap().liquidity_net;
-      let liquidity_net_ = i128::from_str_radix(liquidity_net_str.trim_start_matches("0x"), 16).unwrap();
-      state += liquidity_net_;
-      sum_liquidity += state;
-    })) {
-      Ok(_) => {}
-      Err(_) => {}
-    }
-  }
-  state = current_tick_liquidity as i128;
-  for i in (floor + tick_spacing..min_tick).rev().step_by(tick_spacing as usize) {
-    match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-      let tick = ticks_map.get(i.to_string().as_str());
-      let liquidity_net_str = &tick.unwrap().liquidity_net;
-      let liquidity_net_ = i128::from_str_radix(liquidity_net_str.trim_start_matches("0x"), 16).unwrap();
-      state -= liquidity_net_;
-      sum_liquidity += state;
-    })) {
-      Ok(_) => {}
-      Err(_) => {}
-    }
-  }
+  
+  let ticks_in_range = (max_tick - min_tick) / tick_spacing;
+  let sum_liquidity: i128 = current_tick_liquidity as i128 * ticks_in_range as i128;
+  
   let upper_sqrt_price_x96 = f32::powf(1.0001, max_tick as f32);
   let mut range_top = upper_sqrt_price_x96 / f32::powf(2.0,192.0);
   range_top = range_top / f32::powf(10.0,12.0);
@@ -102,13 +60,13 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   let mut range_bottom = upper_sqrt_price_x96 / f32::powf(2.0,192.0);
   range_bottom = range_bottom / f32::powf(10.0,12.0);
   
-  let tvl_in_range = sum_liquidity as f32
+  let est_tvl_in_range = sum_liquidity as f32
     * ((sqrt_ratio_x96 as f32 / upper_sqrt_price_x96)
       * (upper_sqrt_price_x96 - sqrt_ratio_x96 as f32)
       + (sqrt_ratio_x96 as f32 - lower_sqrt_price_x96));
 
   let fees_24h_eth = fees_24h_usd / eth_price_usd;
-  let edr = fees_24h_eth / tvl_in_range;
+  let edr = fees_24h_eth / est_tvl_in_range;
   let edpr = edr * 100.0;
 
   if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
