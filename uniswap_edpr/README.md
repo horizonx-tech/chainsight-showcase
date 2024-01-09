@@ -7,7 +7,7 @@ The trading pairs currently included are:
 - [SHIB/ETH](https://info.uniswap.org/#/pools/0x5764a6f2212d502bc5970f9f129ffcd61e5d7563) 1% fee tier
 - [RPL/ETH](https://info.uniswap.org/#/pools/0xe42318ea3b998e8355a3da364eb9d48ec725eb45) 0.3% fee tier
 
-EDPR is calculated as the daily percentage return expected from a liquidity position with a price range (set by the liquidity provider) approximately matching the price range of the pair over the preceding week. The price range from the previous week is calculated by taking the minimum and maximum values of the [time-weighted average price](https://tienshaoku.medium.com/a-guide-on-uniswap-v3-twap-oracle-2aa74a4a97c5) from 28 six-hour intervals covering the past week. This approach allows for any extreme outliers in the price movement to be disregarded.
+EDPR is calculated as the daily percentage return expected from a liquidity position with a price range (set by the liquidity provider) approximately matching the price range of the pair over the preceding week. The price range from the previous week is calculated by taking the minimum and maximum values of the [time-weighted average price](https://tienshaoku.medium.com/a-guide-on-uniswap-v3-twap-oracle-2aa74a4a97c5) from 28 six-hour intervals covering the past week. This approach allows for any extreme outliers in the price movement to be disregarded. Calculation of the total liquidity locked in the selected price range is modified from [this source](https://atiselsts.github.io/pdfs/uniswap-v3-liquidity-math.pdf).
 
 The components of the project for each pair are as follows:
 - **eth_usdc_price snapshot** - Shared between pairs and takes the ETH price in USD, derived from the wstETH/ETH trading pair
