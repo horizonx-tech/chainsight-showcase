@@ -16,8 +16,8 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   let eth_usdc_price_result = get_get_last_snapshot_value_in_eth_usdc_price (targets . get (3usize) . unwrap () . clone ()) . await ;
   
   let fees_24h_usd = pool_fees_result.unwrap().result[0].fees_24h_usd;
-  let t0_decimals = pool_fees_result.unwrap().result[0].t0_decimals;
-  let t1_decimals =  pool_fees_result.unwrap().result[0].t1_decimals;
+  let t0_decimals = pool_fees_result.unwrap().result[0].pool_summary_level_1.t0_decimals;
+  let t1_decimals =  pool_fees_result.unwrap().result[0].pool_summary_level_1.t1_decimals;
 
   let eth_price_usd  = eth_usdc_price_result.clone().unwrap().result.t1_price_usd;
 
