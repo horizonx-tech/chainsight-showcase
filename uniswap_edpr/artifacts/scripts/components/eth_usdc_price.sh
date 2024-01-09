@@ -1,6 +1,6 @@
 #!/bin/bash
 # init
-dfx canister --network ic call eth_usdc_price init_in '(variant { "Production" }, record {
+dfx canister  call eth_usdc_price init_in '(variant { "LocalDevelopment" }, record {
                 refueling_interval = 86400: nat64;
                 vault_intial_supply = 1000000000000: nat;
                 indexer = record { 
@@ -18,6 +18,6 @@ dfx canister --network ic call eth_usdc_price init_in '(variant { "Production" }
                     refueling_amount = 100000000000: nat;
                     refueling_threshold = 100000000000: nat;
                 };
-        })' --with-cycles 2800000000000 --wallet $(dfx identity get-wallet --network ic)
+        })' --with-cycles 2800000000000 --wallet $(dfx identity get-wallet )
 # set_task
-dfx canister --network ic call eth_usdc_price set_task '(14400, 10)'
+dfx canister  call eth_usdc_price set_task '(144, 10)'
