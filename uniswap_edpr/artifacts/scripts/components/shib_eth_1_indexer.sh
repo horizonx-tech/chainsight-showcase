@@ -22,7 +22,7 @@ dfx canister --network ic call shib_eth_1_indexer init_in '(variant { "Productio
 # setup
 dfx canister --network ic call shib_eth_1_indexer setup "(
     \"$(dfx canister --network ic id shared_algorithm_lens)\",
-    vec { \"$(dfx canister --network ic id shib_eth_1_pool_fees)\"; \"$(dfx canister --network ic id shib_eth_1_tcumul_28x6hr)\"; \"$(dfx canister --network ic id shib_eth_1_v3pool)\"; \"$(dfx canister --network ic id eth_usdc_price)\" },
+    vec { \"2oxys-jqaaa-aaaag-qc3xq-cai\"; \"gyl64-faaaa-aaaag-qczuq-cai\"; \"ytkw2-2yaaa-aaaag-qc3ya-cai\"; \"apgs2-iqaaa-aaaag-qczbq-cai\" },
 )"
 # set_task
 dfx canister --network ic call shib_eth_1_indexer set_task '(14400, 5)'

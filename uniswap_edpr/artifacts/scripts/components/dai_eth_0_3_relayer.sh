@@ -29,7 +29,7 @@ dfx canister --network ic call dai_eth_0_3_relayer setup "(
         env = variant { Production };
     },
     \"$(dfx canister --network ic id dai_eth_0_3_indexer_lens)\",
-    vec { \"$(dfx canister --network ic id dai_eth_0_3_indexer)\" },
+    vec { \"2stcd-6qaaa-aaaag-qc3vq-cai\" },
 )"
 # set_task
 dfx canister --network ic call dai_eth_0_3_relayer set_task '(14400, 10)'

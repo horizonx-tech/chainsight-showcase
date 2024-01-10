@@ -22,7 +22,7 @@ dfx canister --network ic call wsteth_eth_0_01_indexer init_in '(variant { "Prod
 # setup
 dfx canister --network ic call wsteth_eth_0_01_indexer setup "(
     \"$(dfx canister --network ic id shared_algorithm_lens)\",
-    vec { \"$(dfx canister --network ic id wsteth_eth_0_01_pool_fees)\"; \"$(dfx canister --network ic id wsteth_eth_0_01_tcumul_28x6hr)\"; \"$(dfx canister --network ic id wsteth_eth_0_01_v3pool)\"; \"$(dfx canister --network ic id eth_usdc_price)\" },
+    vec { \"yulqo-xaaaa-aaaag-qc3yq-cai\"; \"gdocz-7yaaa-aaaag-qczwa-cai\"; \"y5i3s-biaaa-aaaag-qc3za-cai\"; \"apgs2-iqaaa-aaaag-qczbq-cai\" },
 )"
 # set_task
 dfx canister --network ic call wsteth_eth_0_01_indexer set_task '(14400, 5)'

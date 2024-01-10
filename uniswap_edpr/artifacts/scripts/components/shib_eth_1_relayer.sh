@@ -29,7 +29,7 @@ dfx canister --network ic call shib_eth_1_relayer setup "(
         env = variant { Production };
     },
     \"$(dfx canister --network ic id shib_eth_1_indexer_lens)\",
-    vec { \"$(dfx canister --network ic id shib_eth_1_indexer)\" },
+    vec { \"yipk7-aaaaa-aaaag-qc32q-cai\" },
 )"
 # set_task
 dfx canister --network ic call shib_eth_1_relayer set_task '(14400, 10)'

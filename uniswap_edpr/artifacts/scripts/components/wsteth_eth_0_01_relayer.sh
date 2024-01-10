@@ -29,7 +29,7 @@ dfx canister --network ic call wsteth_eth_0_01_relayer setup "(
         env = variant { Production };
     },
     \"$(dfx canister --network ic id wsteth_eth_0_01_indexer_lens)\",
-    vec { \"$(dfx canister --network ic id wsteth_eth_0_01_indexer)\" },
+    vec { \"zmcfn-zaaaa-aaaag-qc34q-cai\" },
 )"
 # set_task
 dfx canister --network ic call wsteth_eth_0_01_relayer set_task '(14400, 10)'
