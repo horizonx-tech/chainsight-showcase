@@ -1,21 +1,21 @@
 {
   "dai_eth_0_3_indexer": {
-    "ic": "fpzso-uyaaa-aaaag-qcz4a-cai"
+    "ic": "2stcd-6qaaa-aaaag-qc3vq-cai"
   },
   "dai_eth_0_3_indexer_lens": {
-    "ic": "fiyu2-zaaaa-aaaag-qcz4q-cai"
+    "ic": "2huto-7yaaa-aaaag-qc3wa-cai"
   },
   "dai_eth_0_3_pool_fees": {
-    "ic": "rlewj-iaaaa-aaaag-qc2kq-cai"
+    "ic": "23qj7-iyaaa-aaaag-qc3ua-cai"
   },
   "dai_eth_0_3_relayer": {
-    "ic": "fb37g-piaaa-aaaag-qcz5a-cai"
+    "ic": "2avv2-saaaa-aaaag-qc3wq-cai"
   },
   "dai_eth_0_3_tcumul_28x6hr": {
     "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
   },
   "dai_eth_0_3_v3pool": {
-    "ic": "rch5v-6iaaa-aaaag-qc2la-cai"
+    "ic": "24rpl-faaaa-aaaag-qc3uq-cai"
   },
   "eth_usdc_price": {
     "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
@@ -30,7 +30,7 @@
     "ic": "exqhn-2yaaa-aaaag-qczya-cai"
   },
   "shared_algorithm_lens": {
-    "ic": "rfg3b-tqaaa-aaaag-qc2lq-cai"
+    "ic": "2vsex-tiaaa-aaaag-qc3va-cai"
   },
   "shib_eth_1_pool_fees": {
     "ic": "g7kyi-iyaaa-aaaag-qczua-cai"

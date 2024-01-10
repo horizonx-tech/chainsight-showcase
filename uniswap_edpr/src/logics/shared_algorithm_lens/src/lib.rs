@@ -62,17 +62,18 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     / f32::powf(10.0, t1_decimals as f32);
   let est_tvl_in_range = amount0 * current_price + amount1;
 
-  let fees_24h_eth = fees_24h_usd / eth_price_usd;
-  let edr = fees_24h_eth / est_tvl_in_range as f32;
-  let edpr = edr * 100.0;
-
   if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
     current_price = 1.0 / current_price;
+    let est_tvl_in_range = amount0 + amount1 * current_price;
     let new_range_top = 1.0 / range_bottom;
     let new_range_bottom = 1.0 / range_top;
     range_top = new_range_top;
     range_bottom = new_range_bottom;
   }
+  
+  let fees_24h_eth = fees_24h_usd / eth_price_usd;
+  let edr = fees_24h_eth / est_tvl_in_range as f32;
+  let edpr = edr * 100.0;
 
   let result = LensValue {
     address: address.to_string(),

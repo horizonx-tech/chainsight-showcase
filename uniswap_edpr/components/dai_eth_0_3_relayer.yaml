@@ -26,4 +26,4 @@ destination:
 interval: ${INTERVAL}
 lens_targets:
  identifiers:
-  - cj6ax-baaaa-aaaag-qczmq-cai # dai_eth_0_3_indexer
+  - 2stcd-6qaaa-aaaag-qc3vq-cai # dai_eth_0_3_indexer
