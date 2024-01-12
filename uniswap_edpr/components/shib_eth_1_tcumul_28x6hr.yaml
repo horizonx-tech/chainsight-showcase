@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
 version: v1
 metadata:
-  label: shib_eth_1_tcumul_28x6hr
+  label: EDPR SHIB/ETH Cumulative Tick Snapshot
   type: snapshot_indexer_evm
-  description: '6-hourly cumulative ticks SHIB/ETH 1%'
+  description: '6-hourly cumulative ticks for the SHIB/ETH 1% pair on Uniswap V3'
   tags:
   - Uniswap
   - SHIB/ETH

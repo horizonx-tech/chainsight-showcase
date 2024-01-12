@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: rpl_eth_0_3_pool_fees
+  label: EDPR RPL/ETH Pool Fees Snapshot
   type: snapshot_indexer_https
-  description: '24-hour pool fees'
+  description: '24-hour pool fees for the RPL/ETH 0.3% pair on Uniswap V3'
   tags:
   - Uniswap
-  - ETH/RPL
+  - RPL/ETH
   - RPL
   - ETH
   - Ethereum

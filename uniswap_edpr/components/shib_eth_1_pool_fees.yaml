@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: shib_eth_1_pool_fees
+  label: EDPR SHIB/ETH Pool Fees Snapshot
   type: snapshot_indexer_https
-  description: '24-hour pool fees'
+  description: '24-hour pool fees for the SHIB/ETH 1% pair on Uniswap V3'
   tags:
   - Uniswap
   - SHIB/ETH

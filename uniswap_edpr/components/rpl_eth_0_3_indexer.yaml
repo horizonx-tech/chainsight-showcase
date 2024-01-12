@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
 version: v1
 metadata:
- label: rpl_eth_0_3_indexer
+ label: EDPR RPL/ETH Indexer
  type: snapshot_indexer_icp
- description: 'This canister indexes the EDPR of this pair'
+ description: 'This canister indexes the EDPR for the RPL/ETH 0.3% pair on Uniswap V3'
  tags:
  - Uniswap
  - DAI/ETH

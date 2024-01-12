@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: shared_algorithm_lens
+  label: EDPR Algorithm Lens
   type: algorithm_lens
-  description: ''
+  description: 'This canister calculates Estimated Daily Percentage Return (EDPR) for various trading pairs on Uniswap V3. See EDPR Relayer descriptions for further explanation.'
   tags:
   - Uniswap
   - EDPR

@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/relayer.json
 version: v1
 metadata:
- label: shib_eth_1_relayer
+ label: EDPR SHIB/ETH Sepolia Relayer
  type: relayer
- description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the SHIB/ETH 1% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia. The raw output is expressed as EDPR * 1_000_000.'
+ description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the SHIB/ETH 1% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia. The raw output is expressed as EDPR * 1_000_000. Note that this metric does not account for losses due to price fluctuations and various other factors that may affect the profitability of a liquidity position.'
  tags:
  - Uniswap
  - SHIB/ETH

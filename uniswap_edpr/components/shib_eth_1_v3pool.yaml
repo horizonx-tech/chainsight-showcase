@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: shib_eth_1_v3pool
+  label: EDPR SHIB/ETH Pool Data Snapshot
   type: snapshot_indexer_https
-  description: 'Snapshot of SHIB/ETH 1% pool'
+  description: 'Snapshot of data for the SHIB/ETH 1% pair on Uniswap V3'
   tags:
   - Uniswap
   - SHIB/ETH

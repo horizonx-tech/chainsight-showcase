@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: eth_usdc_price
+  label: ETH/USDC Price Snapshot
   type: snapshot_indexer_https
-  description: 'ETH price derived from USDC/ETH pool'
+  description: 'ETH price derived from the USDC/ETH 0.3% pool on Uniswap V3'
   tags:
   - Uniswap
   - USDC/ETH

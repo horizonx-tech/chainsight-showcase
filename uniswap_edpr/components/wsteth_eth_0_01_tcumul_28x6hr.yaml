@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
 version: v1
 metadata:
-  label: wsteth_eth_0_01_tcumul_28x6hr
+  label: EDPR wstETH/ETH Cumulative Tick Snapshot
   type: snapshot_indexer_evm
-  description: '6-hourly cumulative ticks wstETH/ETH 0.01%'
+  description: '6-hourly cumulative ticks for the wstETH/ETH 0.01% pair on Uniswap V3'
   tags:
   - Uniswap
   - wstETH/ETH

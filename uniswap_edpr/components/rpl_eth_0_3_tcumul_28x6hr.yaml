@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
 version: v1
 metadata:
-  label: rpl_eth_0_3_tcumul_28x6hr
+  label: EDPR RPL/ETH Cumulative Tick Snapshot
   type: snapshot_indexer_evm
-  description: '6-hourly cumulative ticks ETH/RPL 0.3%'
+  description: '6-hourly cumulative ticks for the RPL/ETH 0.3% pair on Uniswap V3'
   tags:
   - Uniswap
-  - ETH/RPL
+  - RPL/ETH
   - Ethereum
 datasource:
   type: contract

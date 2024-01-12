@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
 version: v1
 metadata:
- label: shib_eth_1_indexer
+ label: EDPR SHIB/ETH Indexer
  type: snapshot_indexer_icp
- description: 'This canister indexes the EDPR of this pair'
+ description: 'This canister indexes the EDPR for the SHIB/ETH 1% pair on Uniswap V3'
  tags:
  - Uniswap
  - DAI/ETH

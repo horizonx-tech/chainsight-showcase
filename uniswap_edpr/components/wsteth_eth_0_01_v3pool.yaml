@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: wsteth_eth_0_01_v3pool
+  label: EDPR wstETH/ETH Pool Data Snapshot
   type: snapshot_indexer_https
-  description: 'Snapshot of wstETH/ETH 0.01% pool'
+  description: 'Snapshot of data for the wstETH/ETH 0.01% pair on Uniswap V3'
   tags:
   - Uniswap
   - wstETH/ETH
