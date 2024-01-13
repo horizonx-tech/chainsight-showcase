@@ -60,11 +60,11 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
   let amount1 = current_tick_liquidity as f32
     * (current_sqrt_price as f32 - range_bottom.sqrt())
     / f32::powf(10.0, t1_decimals as f32);
-  let est_tvl_in_range = amount0 * current_price + amount1;
+  let mut est_tvl_in_range = amount0 * current_price + amount1;
 
   if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
     current_price = 1.0 / current_price;
-    let est_tvl_in_range = amount0 + amount1 * current_price;
+    est_tvl_in_range = amount0 + amount1 * current_price;
     let new_range_top = 1.0 / range_bottom;
     let new_range_bottom = 1.0 / range_top;
     range_top = new_range_top;
