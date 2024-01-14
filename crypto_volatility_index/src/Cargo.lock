@@ -289,8 +289,9 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "chainsight-cdk"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=6e55b5e8a38d1d853f4217614555f7ec7eaeb92b#6e55b5e8a38d1d853f4217614555f7ec7eaeb92b"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=1d48be70770d20d7b2ec40c02e60ce49a9dcc191#1d48be70770d20d7b2ec40c02e60ce49a9dcc191"
 dependencies = [
+ "Inflector",
  "anyhow",
  "async-trait",
  "candid 0.9.11",
@@ -315,7 +316,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk-macros"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=6e55b5e8a38d1d853f4217614555f7ec7eaeb92b#6e55b5e8a38d1d853f4217614555f7ec7eaeb92b"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=1d48be70770d20d7b2ec40c02e60ce49a9dcc191#1d48be70770d20d7b2ec40c02e60ce49a9dcc191"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -335,6 +336,33 @@ dependencies = [
  "serde",
  "serde_json",
  "syn 2.0.39",
+]
+
+[[package]]
+name = "ciborium"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "effd91f6c78e5a4ace8a5d3c0b6bfaec9e2baaef55f3efc00e45fb2e477ee926"
+dependencies = [
+ "ciborium-io",
+ "ciborium-ll",
+ "serde",
+]
+
+[[package]]
+name = "ciborium-io"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cdf919175532b369853f5d5e20b26b43112613fd6fe7aee757e35f7a44642656"
+
+[[package]]
+name = "ciborium-ll"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "defaa24ecc093c77630e6c15e17c51f5e187bf35ee514f4e2d67baaa96dae22b"
+dependencies = [
+ "ciborium-io",
+ "half",
 ]
 
 [[package]]
@@ -469,6 +497,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "cvi_relayer",
  "cvi_relayer_bindings",
  "hex",
@@ -918,6 +947,12 @@ dependencies = [
  "libc",
  "wasi",
 ]
+
+[[package]]
+name = "half"
+version = "1.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eabb4a44450da02c90444cf74558da904edde8fb4e9035a9a6a4e15445af0bd7"
 
 [[package]]
 name = "hashbrown"
@@ -1376,6 +1411,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2146,6 +2182,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
