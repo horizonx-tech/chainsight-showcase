@@ -3,7 +3,7 @@ version: v1
 metadata:
  label: EDPR DAI/ETH Sepolia Relayer
  type: relayer
- description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the DAI/ETH 0.3% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia. The raw output is expressed as EDPR * 1_000_000. Note that this metric does not account for losses due to price fluctuations and various other factors that may affect the profitability of a liquidity position.'
+ description: 'This canister relays the Estimated Daily Percentage Return (EDPR) of the DAI/ETH 0.3% pair on UniSwap V3, using a price range based on the previous week''s prices, to Sepolia. The raw output is expressed as EDPR * 1_000_000. To obtain a decimal Estimated Daily Return (EDR), divide the raw output by 100_000_000. Note that this metric does not account for losses due to price fluctuations and various other factors that may affect the profitability of a liquidity position.'
  tags:
  - Uniswap
  - DAI/ETH
