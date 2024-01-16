@@ -2,11 +2,11 @@ use shared_algorithm_lens_accessors :: * ;
 
 # [derive (Clone , Debug , Default , candid :: CandidType , serde :: Deserialize , serde :: Serialize)]
 pub struct LensValue {
-  pub address: String,
-  pub current_price: f32,
-  pub range_top: f32,
-  pub range_bottom: f32,
-  pub edpr: f32
+  pub address: String, // The contract address for the trading pair
+  pub current_price: f32, // The current price of the token of interest, expressed in ETH
+  pub range_top: f32, // Approximate highest price (in ETH) over the preceding week
+  pub range_bottom: f32, // Approximate lowest price (in ETH) over the preceding week
+  pub edpr: f32 // Estimated Daily Percentage Return
 }
 
 pub async fn calculate (targets : Vec < String >) -> LensValue {
@@ -62,11 +62,13 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     / f32::powf(10.0, t1_decimals as f32);
   let mut est_tvl_in_range = amount0 * current_price + amount1;
 
-  if token0 == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
-    current_price = 1.0 / current_price;
-    est_tvl_in_range = amount0 + amount1 * current_price;
+  if token0.to_lowercase() == "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" {
+    let new_current_price = 1.0 / current_price;
+    let new_est_tvl_in_range = amount0 + amount1 * new_current_price;
     let new_range_top = 1.0 / range_bottom;
     let new_range_bottom = 1.0 / range_top;
+    current_price = new_current_price;
+    est_tvl_in_range = new_est_tvl_in_range;
     range_top = new_range_top;
     range_bottom = new_range_bottom;
   }
