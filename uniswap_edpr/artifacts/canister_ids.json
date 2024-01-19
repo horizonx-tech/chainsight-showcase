@@ -1,80 +1,28 @@
 {
-  "dai_eth_0_3_indexer": {
-    "ic": "2stcd-6qaaa-aaaag-qc3vq-cai"
-  },
-  "dai_eth_0_3_indexer_lens": {
-    "ic": "2huto-7yaaa-aaaag-qc3wa-cai"
-  },
-  "dai_eth_0_3_pool_fees": {
-    "ic": "23qj7-iyaaa-aaaag-qc3ua-cai"
-  },
-  "dai_eth_0_3_relayer": {
-    "ic": "ztrg6-wyaaa-aaaag-qc4dq-cai"
-  },
-  "dai_eth_0_3_tcumul_28x6hr": {
-    "ic": "lwrgq-6aaaa-aaaag-qcy6q-cai"
-  },
-  "dai_eth_0_3_v3pool": {
-    "ic": "24rpl-faaaa-aaaag-qc3uq-cai"
-  },
-  "eth_usdc_price": {
-    "ic": "apgs2-iqaaa-aaaag-qczbq-cai"
-  },
-  "rpl_eth_0_3_indexer": {
-    "ic": "ygnhx-3qaaa-aaaag-qc33q-cai"
-  },
-  "rpl_eth_0_3_indexer_lens": {
-    "ic": "zlddz-uyaaa-aaaag-qc34a-cai"
-  },
-  "rpl_eth_0_3_pool_fees": {
-    "ic": "ypoml-nyaaa-aaaag-qc32a-cai"
-  },
-  "rpl_eth_0_3_relayer": {
-    "ic": "y67cq-zqaaa-aaaag-qc4ea-cai"
-  },
-  "rpl_eth_0_3_tcumul_28x6hr": {
-    "ic": "gknjf-jqaaa-aaaag-qczxq-cai"
-  },
-  "rpl_eth_0_3_v3pool": {
-    "ic": "y2j5g-mqaaa-aaaag-qc3zq-cai"
-  },
-  "shared_algorithm_lens": {
-    "ic": "2vsex-tiaaa-aaaag-qc3va-cai"
-  },
-  "shib_eth_1_indexer": {
-    "ic": "yipk7-aaaaa-aaaag-qc32q-cai"
-  },
-  "shib_eth_1_indexer_lens": {
-    "ic": "ybmbd-wiaaa-aaaag-qc33a-cai"
-  },
-  "shib_eth_1_pool_fees": {
-    "ic": "2oxys-jqaaa-aaaag-qc3xq-cai"
-  },
-  "shib_eth_1_relayer": {
-    "ic": "zbxrh-2iaaa-aaaag-qc4aq-cai"
-  },
-  "shib_eth_1_tcumul_28x6hr": {
-    "ic": "gyl64-faaaa-aaaag-qczuq-cai"
-  },
-  "shib_eth_1_v3pool": {
-    "ic": "ytkw2-2yaaa-aaaag-qc3ya-cai"
-  },
-  "wsteth_eth_0_01_indexer": {
-    "ic": "zmcfn-zaaaa-aaaag-qc34q-cai"
-  },
-  "wsteth_eth_0_01_indexer_lens": {
-    "ic": "zfbor-piaaa-aaaag-qc35a-cai"
-  },
-  "wsteth_eth_0_01_pool_fees": {
-    "ic": "yulqo-xaaaa-aaaag-qc3yq-cai"
-  },
-  "wsteth_eth_0_01_relayer": {
-    "ic": "zcaif-cqaaa-aaaag-qc35q-cai"
-  },
-  "wsteth_eth_0_01_tcumul_28x6hr": {
-    "ic": "gdocz-7yaaa-aaaag-qczwa-cai"
-  },
-  "wsteth_eth_0_01_v3pool": {
-    "ic": "y5i3s-biaaa-aaaag-qc3za-cai"
-  }
+  "dai_eth_0_3_indexer": {},
+  "dai_eth_0_3_indexer_lens": {},
+  "dai_eth_0_3_pool_fees": {},
+  "dai_eth_0_3_relayer": {},
+  "dai_eth_0_3_tcumul_28x6hr": {},
+  "dai_eth_0_3_v3pool": {},
+  "eth_usdc_price": {},
+  "rpl_eth_0_3_indexer": {},
+  "rpl_eth_0_3_indexer_lens": {},
+  "rpl_eth_0_3_pool_fees": {},
+  "rpl_eth_0_3_relayer": {},
+  "rpl_eth_0_3_tcumul_28x6hr": {},
+  "rpl_eth_0_3_v3pool": {},
+  "shared_algorithm_lens": {},
+  "shib_eth_1_indexer": {},
+  "shib_eth_1_indexer_lens": {},
+  "shib_eth_1_pool_fees": {},
+  "shib_eth_1_relayer": {},
+  "shib_eth_1_tcumul_28x6hr": {},
+  "shib_eth_1_v3pool": {},
+  "wsteth_eth_0_01_indexer": {},
+  "wsteth_eth_0_01_indexer_lens": {},
+  "wsteth_eth_0_01_pool_fees": {},
+  "wsteth_eth_0_01_relayer": {},
+  "wsteth_eth_0_01_tcumul_28x6hr": {},
+  "wsteth_eth_0_01_v3pool": {}
 }
