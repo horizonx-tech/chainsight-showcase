@@ -13,7 +13,7 @@ metadata:
 datasource:
  type: canister
  location:
-  id: shib_eth_1_indexer_lens
+  id: shared_indexer_lens
   args:
    id_type: canister_name
  method:

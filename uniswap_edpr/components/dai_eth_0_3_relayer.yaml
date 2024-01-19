@@ -13,7 +13,7 @@ metadata:
 datasource:
  type: canister
  location:
-  id: dai_eth_0_3_indexer_lens
+  id: shared_indexer_lens
  method:
   identifier: 'get_result : (vec text) -> (nat64)'
   interface: null

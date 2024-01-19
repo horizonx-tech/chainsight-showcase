@@ -13,7 +13,7 @@ metadata:
 datasource:
  type: canister
  location:
-  id: wsteth_eth_0_01_indexer_lens
+  id: shared_indexer_lens
   args:
    id_type: canister_name
  method:
