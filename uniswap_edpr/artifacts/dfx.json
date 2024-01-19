@@ -67,10 +67,10 @@
         }
       ]
     },
-    "dai_eth_0_3_indexer_lens": {
+    "shared_indexer_lens": {
       "type": "custom",
-      "candid": "./dai_eth_0_3_indexer_lens.did",
-      "wasm": "./dai_eth_0_3_indexer_lens.wasm",
+      "candid": "./shared_indexer_lens.did",
+      "wasm": "./shared_indexer_lens.wasm",
       "metadata": [
         {
           "name": "candid:service",
@@ -133,17 +133,6 @@
         }
       ]
     },
-    "shib_eth_1_indexer_lens": {
-      "type": "custom",
-      "candid": "./shib_eth_1_indexer_lens.did",
-      "wasm": "./shib_eth_1_indexer_lens.wasm",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "visibility": "public"
-        }
-      ]
-    },
     "shib_eth_1_relayer": {
       "type": "custom",
       "candid": "./shib_eth_1_relayer.did",
@@ -199,17 +188,6 @@
         }
       ]
     },
-    "wsteth_eth_0_01_indexer_lens": {
-      "type": "custom",
-      "candid": "./wsteth_eth_0_01_indexer_lens.did",
-      "wasm": "./wsteth_eth_0_01_indexer_lens.wasm",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "visibility": "public"
-        }
-      ]
-    },
     "wsteth_eth_0_01_relayer": {
       "type": "custom",
       "candid": "./wsteth_eth_0_01_relayer.did",
@@ -258,17 +236,6 @@
       "type": "custom",
       "candid": "./rpl_eth_0_3_indexer.did",
       "wasm": "./rpl_eth_0_3_indexer.wasm",
-      "metadata": [
-        {
-          "name": "candid:service",
-          "visibility": "public"
-        }
-      ]
-    },
-    "rpl_eth_0_3_indexer_lens": {
-      "type": "custom",
-      "candid": "./rpl_eth_0_3_indexer_lens.did",
-      "wasm": "./rpl_eth_0_3_indexer_lens.wasm",
       "metadata": [
         {
           "name": "candid:service",

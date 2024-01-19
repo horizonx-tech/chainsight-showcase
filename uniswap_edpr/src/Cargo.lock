@@ -512,80 +512,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dai_eth_0_3_indexer_lens"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "dai_eth_0_3_indexer_lens_accessors",
- "dai_eth_0_3_indexer_lens_bindings",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "serde_json",
-]
-
-[[package]]
-name = "dai_eth_0_3_indexer_lens_accessors"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "dai_eth_0_3_indexer_lens_bindings",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "dai_eth_0_3_indexer_lens_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "dai_eth_0_3_indexer_lens_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ciborium",
- "dai_eth_0_3_indexer_lens",
- "dai_eth_0_3_indexer_lens_bindings",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
 name = "dai_eth_0_3_pool_fees"
 version = "0.1.0"
 dependencies = [
@@ -2265,80 +2191,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rpl_eth_0_3_indexer_lens"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "rpl_eth_0_3_indexer_lens_accessors",
- "rpl_eth_0_3_indexer_lens_bindings",
- "serde",
- "serde_bytes",
- "serde_json",
-]
-
-[[package]]
-name = "rpl_eth_0_3_indexer_lens_accessors"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "rpl_eth_0_3_indexer_lens_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "rpl_eth_0_3_indexer_lens_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "rpl_eth_0_3_indexer_lens_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ciborium",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "rpl_eth_0_3_indexer_lens",
- "rpl_eth_0_3_indexer_lens_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
 name = "rpl_eth_0_3_pool_fees"
 version = "0.1.0"
 dependencies = [
@@ -2721,6 +2573,80 @@ dependencies = [
 ]
 
 [[package]]
+name = "shared_indexer_lens"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+ "shared_indexer_lens_accessors",
+ "shared_indexer_lens_bindings",
+]
+
+[[package]]
+name = "shared_indexer_lens_accessors"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "shared_indexer_lens_bindings",
+]
+
+[[package]]
+name = "shared_indexer_lens_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.11.3",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "shared_indexer_lens_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ciborium",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "shared_indexer_lens",
+ "shared_indexer_lens_bindings",
+]
+
+[[package]]
 name = "shib_eth_1_indexer"
 version = "0.1.0"
 dependencies = [
@@ -2772,80 +2698,6 @@ dependencies = [
  "serde_bytes",
  "shib_eth_1_indexer",
  "shib_eth_1_indexer_bindings",
-]
-
-[[package]]
-name = "shib_eth_1_indexer_lens"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "serde_json",
- "shib_eth_1_indexer_lens_accessors",
- "shib_eth_1_indexer_lens_bindings",
-]
-
-[[package]]
-name = "shib_eth_1_indexer_lens_accessors"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "shib_eth_1_indexer_lens_bindings",
-]
-
-[[package]]
-name = "shib_eth_1_indexer_lens_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "shib_eth_1_indexer_lens_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ciborium",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "shib_eth_1_indexer_lens",
- "shib_eth_1_indexer_lens_bindings",
 ]
 
 [[package]]
@@ -3503,80 +3355,6 @@ dependencies = [
  "serde_bytes",
  "wsteth_eth_0_01_indexer",
  "wsteth_eth_0_01_indexer_bindings",
-]
-
-[[package]]
-name = "wsteth_eth_0_01_indexer_lens"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "serde_json",
- "wsteth_eth_0_01_indexer_lens_accessors",
- "wsteth_eth_0_01_indexer_lens_bindings",
-]
-
-[[package]]
-name = "wsteth_eth_0_01_indexer_lens_accessors"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "wsteth_eth_0_01_indexer_lens_bindings",
-]
-
-[[package]]
-name = "wsteth_eth_0_01_indexer_lens_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "wsteth_eth_0_01_indexer_lens_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ciborium",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "wsteth_eth_0_01_indexer_lens",
- "wsteth_eth_0_01_indexer_lens_bindings",
 ]
 
 [[package]]
