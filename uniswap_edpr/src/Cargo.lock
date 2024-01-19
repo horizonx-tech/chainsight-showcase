@@ -289,8 +289,9 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "chainsight-cdk"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=6e55b5e8a38d1d853f4217614555f7ec7eaeb92b#6e55b5e8a38d1d853f4217614555f7ec7eaeb92b"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=38467b931c936ccf672c0bf7dc4080d11fd51264#38467b931c936ccf672c0bf7dc4080d11fd51264"
 dependencies = [
+ "Inflector",
  "anyhow",
  "async-trait",
  "candid 0.9.11",
@@ -315,7 +316,7 @@ dependencies = [
 [[package]]
 name = "chainsight-cdk-macros"
 version = "0.1.0"
-source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=6e55b5e8a38d1d853f4217614555f7ec7eaeb92b#6e55b5e8a38d1d853f4217614555f7ec7eaeb92b"
+source = "git+https://github.com/horizonx-tech/chainsight-sdk.git?rev=38467b931c936ccf672c0bf7dc4080d11fd51264#38467b931c936ccf672c0bf7dc4080d11fd51264"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -335,6 +336,33 @@ dependencies = [
  "serde",
  "serde_json",
  "syn 2.0.39",
+]
+
+[[package]]
+name = "ciborium"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "effd91f6c78e5a4ace8a5d3c0b6bfaec9e2baaef55f3efc00e45fb2e477ee926"
+dependencies = [
+ "ciborium-io",
+ "ciborium-ll",
+ "serde",
+]
+
+[[package]]
+name = "ciborium-io"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cdf919175532b369853f5d5e20b26b43112613fd6fe7aee757e35f7a44642656"
+
+[[package]]
+name = "ciborium-ll"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "defaa24ecc093c77630e6c15e17c51f5e187bf35ee514f4e2d67baaa96dae22b"
+dependencies = [
+ "ciborium-io",
+ "half",
 ]
 
 [[package]]
@@ -469,6 +497,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "dai_eth_0_3_indexer",
  "dai_eth_0_3_indexer_bindings",
  "hex",
@@ -542,6 +571,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "dai_eth_0_3_indexer_lens",
  "dai_eth_0_3_indexer_lens_bindings",
  "hex",
@@ -581,6 +611,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "dai_eth_0_3_pool_fees",
  "hex",
  "ic-cdk 0.11.3",
@@ -633,6 +664,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "dai_eth_0_3_relayer",
  "dai_eth_0_3_relayer_bindings",
  "hex",
@@ -672,6 +704,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "dai_eth_0_3_tcumul_28x6hr",
  "hex",
  "ic-cdk 0.11.3",
@@ -710,6 +743,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "dai_eth_0_3_v3pool",
  "hex",
  "ic-cdk 0.11.3",
@@ -945,6 +979,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "eth_usdc_price",
  "hex",
  "ic-cdk 0.11.3",
@@ -1198,6 +1233,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "half"
+version = "1.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eabb4a44450da02c90444cf74558da904edde8fb4e9035a9a6a4e15445af0bd7"
+
+[[package]]
 name = "hashbrown"
 version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1306,9 +1347,9 @@ dependencies = [
 
 [[package]]
 name = "ic-solidity-bindgen"
-version = "0.1.9"
+version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a6c744a9b30e73b1524e1918220304a192f5aaf3ff51245e15840f5fe853d70"
+checksum = "1220e7a27963c0dc956f337f0f8227bcd785ef6096d459599365fdb9d03577d0"
 dependencies = [
  "async-trait",
  "derive_builder",
@@ -1321,9 +1362,9 @@ dependencies = [
 
 [[package]]
 name = "ic-solidity-bindgen-macros"
-version = "0.1.9"
+version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "48309f2d8da903805c45757bef9ab1e977d515e194c99e41ee4a5f5e81816013"
+checksum = "3fb1688b2bf2f51078028dad137dc0bddcf8383bd82b878449e345c6d3e92e6d"
 dependencies = [
  "Inflector",
  "ic-web3-rs",
@@ -1369,9 +1410,9 @@ checksum = "95dce29e3ceb0e6da3e78b305d95365530f2efd2146ca18590c0ef3aa6038568"
 
 [[package]]
 name = "ic-web3-rs"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1913731fd8edf367a99acb98cb09b36b65f2bd7bcd3e20e647cc3132da3edf3b"
+checksum = "9b23578071bac0242a85743d0da96d48b755eb53a101e3c9c080ca1dc3a28cb8"
 dependencies = [
  "arrayvec 0.7.4",
  "candid 0.9.11",
@@ -1386,6 +1427,7 @@ dependencies = [
  "ic-cdk-macros 0.8.1",
  "jsonrpc-core",
  "libsecp256k1",
+ "num-bigint",
  "parking_lot",
  "pin-project",
  "rlp",
@@ -2208,6 +2250,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2281,6 +2324,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2320,6 +2364,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2372,6 +2417,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2411,6 +2457,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2449,6 +2496,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2658,6 +2706,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2711,6 +2760,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2784,6 +2834,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2823,6 +2874,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2875,6 +2927,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2914,6 +2967,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -2952,6 +3006,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -3436,6 +3491,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -3509,6 +3565,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -3548,6 +3605,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -3600,6 +3658,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -3639,6 +3698,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
@@ -3677,6 +3737,7 @@ dependencies = [
  "candid 0.9.11",
  "chainsight-cdk",
  "chainsight-cdk-macros",
+ "ciborium",
  "hex",
  "ic-cdk 0.11.3",
  "ic-cdk-macros 0.8.1",
