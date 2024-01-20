@@ -39,6 +39,53 @@ pub async fn calculate(targets: Vec<String>) -> LensValue {
 
     let tick_cumul_28x6h = tc28x6_result.unwrap().0;
 
+    let params = get_params(
+        sqrt_ratio_x96,
+        tick_current,
+        current_tick_liquidity,
+        token0,
+        t0_decimals,
+        t1_decimals,
+        tick_cumul_28x6h,
+    );
+    let est_tvl_in_range = params.0;
+    let current_price = params.1;
+    let range_top = params.2;
+    let range_bottom = params.3;
+
+    if range_top == range_bottom {
+        return LensValue {
+            address: address.to_string(),
+            current_price,
+            range_top,
+            range_bottom,
+            edpr: 0.0,
+        };
+    }
+
+    let fees_24h_eth = fees_24h_usd / eth_price_usd;
+    let edr = fees_24h_eth / est_tvl_in_range as f32;
+    let edpr = edr * 100.0;
+
+    let result = LensValue {
+        address: address.to_string(),
+        current_price,
+        range_top,
+        range_bottom,
+        edpr,
+    };
+    result
+}
+
+fn get_params(
+    sqrt_ratio_x96: u128,
+    tick_current: i32,
+    current_tick_liquidity: i128,
+    token0: String,
+    t0_decimals: i64,
+    t1_decimals: i64,
+    tick_cumul_28x6h: Vec<i64>,
+) -> (f32, f32, f32, f32) {
     let current_sqrt_price = sqrt_ratio_x96 as f32 / f32::powf(2.0, 96.0);
     let mut current_price = current_sqrt_price * current_sqrt_price;
 
@@ -73,28 +120,7 @@ pub async fn calculate(targets: Vec<String>) -> LensValue {
         range_bottom = new_range_bottom;
     }
 
-    if tick_current == min_tick && tick_current == max_tick {
-        return LensValue {
-            address: address.to_string(),
-            current_price,
-            range_top,
-            range_bottom,
-            edpr: 0.0,
-        };
-    }
-
-    let fees_24h_eth = fees_24h_usd / eth_price_usd;
-    let edr = fees_24h_eth / est_tvl_in_range as f32;
-    let edpr = edr * 100.0;
-
-    let result = LensValue {
-        address: address.to_string(),
-        current_price,
-        range_top,
-        range_bottom,
-        edpr,
-    };
-    result
+    (est_tvl_in_range, current_price, range_top, range_bottom)
 }
 
 #[cfg(test)]
@@ -117,41 +143,36 @@ pub mod tests {
         let tick_spacing = 60;
         let sqrt_ratio_x96: i128 = 1590062295482777098773356604;
         let current_tick_liquidity: i128 = 1251982834387423730840398;
-        
+
         // https://omni.oku.zone/ethereum?id=1&jsonrpc=2.0&method=cush_getPoolFees&params=["0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8"]
         let t0_decimals = 18;
         let t1_decimals = 18;
-        
+
         // https://info.uniswap.org/#/pools/0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8
         let eth_in_current_tick = 75.47;
-        
-        let current_sqrt_price = sqrt_ratio_x96 as f32 / f32::powf(2.0, 96.0);
-        let current_price = current_sqrt_price * current_sqrt_price;
-        
+
         // calculation to be tested
-        let mut min_tick = tick_current;
-        let mut max_tick = tick_current;
-        for i in (1..29).rev() {
-            let new_tick = ((tick_cumul_28x6h[i] - tick_cumul_28x6h[i - 1]) / 21600) as i32;
-            if new_tick < min_tick {
-                min_tick = new_tick;
-            } else if new_tick > max_tick {
-                max_tick = new_tick;
-            }
-        }
-        let range_top = f32::powf(1.0001, max_tick as f32);
-        let range_bottom = f32::powf(1.0001, min_tick as f32);
-        let amount0 = current_tick_liquidity as f32 * (range_top.sqrt() - current_sqrt_price as f32)
-            / (current_sqrt_price as f32 * range_top.sqrt())
-            / f32::powf(10.0, t0_decimals as f32);
-        let amount1 = current_tick_liquidity as f32 * (current_sqrt_price as f32 - range_bottom.sqrt())
-            / f32::powf(10.0, t1_decimals as f32);
-        let est_tvl_in_range = amount0 * current_price + amount1;
-        
+        let params = get_params(
+            sqrt_ratio_x96,
+            tick_current,
+            current_tick_liquidity,
+            token0,
+            t0_decimals,
+            t1_decimals,
+            tick_cumul_28x6h,
+        );
+        let est_tvl_in_range = params.0;
+
         // comparator
-        let expected_tvl_in_range = eth_in_current_tick * (max_tick as f32 - min_tick as f32) / tick_spacing as f32;
-        
+        let min_tick = -78844;
+        let max_tick = -78062;
+        let expected_tvl_in_range =
+            eth_in_current_tick * (max_tick as f32 - min_tick as f32) / tick_spacing as f32;
+
         // data sources are not identical, so 5% error is allowed in testing
-        assert!(est_tvl_in_range > expected_tvl_in_range * 0.95 && est_tvl_in_range < expected_tvl_in_range * 1.05);
+        assert!(
+            est_tvl_in_range > expected_tvl_in_range * 0.95
+                && est_tvl_in_range < expected_tvl_in_range * 1.05
+        );
     }
 }
