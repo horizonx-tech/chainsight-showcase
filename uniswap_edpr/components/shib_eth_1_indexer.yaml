@@ -23,7 +23,7 @@ storage:
 interval: ${INTERVAL}
 lens_targets:
  identifiers:
-  - asrmz-lmaaa-aaaaa-qaaeq-cai # shib_eth_1_pool_fees
-  - a3shf-5eaaa-aaaaa-qaafa-cai # shib_eth_1_tcumul_28x6hr
-  - a4tbr-q4aaa-aaaaa-qaafq-cai # shib_eth_1_v3pool
-  - br5f7-7uaaa-aaaaa-qaaca-cai # eth_usdc_price
+  - qx344-taaaa-aaaag-qc5ta-cai # shib_eth_1_pool_fees
+  - qq22i-6yaaa-aaaag-qc5tq-cai # shib_eth_1_tcumul_28x6hr
+  - r5u6g-rqaaa-aaaag-qc5ua-cai # shib_eth_1_v3pool
+  - ql7gn-eaaaa-aaaag-qc5ra-cai # eth_usdc_price
