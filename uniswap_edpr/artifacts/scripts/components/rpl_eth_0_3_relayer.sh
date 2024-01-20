@@ -28,8 +28,8 @@ dfx canister  call rpl_eth_0_3_relayer setup "(
         chain_id = 11155111;
         env = variant { LocalDevelopment };
     },
-    \"$(dfx canister  id rpl_eth_0_3_indexer_lens)\",
-    vec { \"ygnhx-3qaaa-aaaag-qc33q-cai\" },
+    \"$(dfx canister  id shared_indexer_lens)\",
+    vec { \"cpmcr-yeaaa-aaaaa-qaala-cai\" },
 )"
 # set_task
 dfx canister  call rpl_eth_0_3_relayer set_task '(144, 10)'

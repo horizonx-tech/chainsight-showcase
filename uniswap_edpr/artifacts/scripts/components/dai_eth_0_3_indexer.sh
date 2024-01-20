@@ -22,7 +22,7 @@ dfx canister  call dai_eth_0_3_indexer init_in '(variant { "LocalDevelopment" },
 # setup
 dfx canister  call dai_eth_0_3_indexer setup "(
     \"$(dfx canister  id shared_algorithm_lens)\",
-    vec { \"23qj7-iyaaa-aaaag-qc3ua-cai\"; \"lwrgq-6aaaa-aaaag-qcy6q-cai\"; \"24rpl-faaaa-aaaag-qc3uq-cai\"; \"apgs2-iqaaa-aaaag-qczbq-cai\" },
+    vec { \"b77ix-eeaaa-aaaaa-qaada-cai\"; \"by6od-j4aaa-aaaaa-qaadq-cai\"; \"avqkn-guaaa-aaaaa-qaaea-cai\"; \"br5f7-7uaaa-aaaaa-qaaca-cai\" },
 )"
 # set_task
 dfx canister  call dai_eth_0_3_indexer set_task '(144, 5)'

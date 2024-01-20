@@ -22,7 +22,7 @@ dfx canister  call shib_eth_1_indexer init_in '(variant { "LocalDevelopment" }, 
 # setup
 dfx canister  call shib_eth_1_indexer setup "(
     \"$(dfx canister  id shared_algorithm_lens)\",
-    vec { \"2oxys-jqaaa-aaaag-qc3xq-cai\"; \"gyl64-faaaa-aaaag-qczuq-cai\"; \"ytkw2-2yaaa-aaaag-qc3ya-cai\"; \"apgs2-iqaaa-aaaag-qczbq-cai\" },
+    vec { \"asrmz-lmaaa-aaaaa-qaaeq-cai\"; \"a3shf-5eaaa-aaaaa-qaafa-cai\"; \"a4tbr-q4aaa-aaaaa-qaafq-cai\"; \"br5f7-7uaaa-aaaaa-qaaca-cai\" },
 )"
 # set_task
 dfx canister  call shib_eth_1_indexer set_task '(144, 5)'

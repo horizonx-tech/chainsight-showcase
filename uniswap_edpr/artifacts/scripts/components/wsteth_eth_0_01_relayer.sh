@@ -28,8 +28,8 @@ dfx canister  call wsteth_eth_0_01_relayer setup "(
         chain_id = 11155111;
         env = variant { LocalDevelopment };
     },
-    \"$(dfx canister  id wsteth_eth_0_01_indexer_lens)\",
-    vec { \"zmcfn-zaaaa-aaaag-qc34q-cai\" },
+    \"$(dfx canister  id shared_indexer_lens)\",
+    vec { \"cbopz-duaaa-aaaaa-qaaka-cai\" },
 )"
 # set_task
 dfx canister  call wsteth_eth_0_01_relayer set_task '(144, 10)'

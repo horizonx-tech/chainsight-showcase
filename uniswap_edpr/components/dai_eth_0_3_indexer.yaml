@@ -21,7 +21,7 @@ storage:
 interval: ${INTERVAL}
 lens_targets:
  identifiers:
-  - 23qj7-iyaaa-aaaag-qc3ua-cai # dai_eth_0_3_pool_fees
-  - lwrgq-6aaaa-aaaag-qcy6q-cai # dai_eth_0_3_tcumul_28x6hr
-  - 24rpl-faaaa-aaaag-qc3uq-cai # dai_eth_0_3_v3pool
-  - apgs2-iqaaa-aaaag-qczbq-cai # eth_usdc_price
+  - b77ix-eeaaa-aaaaa-qaada-cai # dai_eth_0_3_pool_fees
+  - by6od-j4aaa-aaaaa-qaadq-cai # dai_eth_0_3_tcumul_28x6hr
+  - avqkn-guaaa-aaaaa-qaaea-cai # dai_eth_0_3_v3pool
+  - br5f7-7uaaa-aaaaa-qaaca-cai # eth_usdc_price

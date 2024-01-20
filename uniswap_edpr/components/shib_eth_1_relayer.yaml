@@ -28,4 +28,4 @@ destination:
 interval: ${INTERVAL}
 lens_targets:
  identifiers:
-  - yipk7-aaaaa-aaaag-qc32q-cai # shib_eth_1_indexer
+  - cgpjn-omaaa-aaaaa-qaakq-cai # shib_eth_1_indexer

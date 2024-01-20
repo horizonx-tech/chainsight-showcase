@@ -22,7 +22,7 @@ dfx canister  call wsteth_eth_0_01_indexer init_in '(variant { "LocalDevelopment
 # setup
 dfx canister  call wsteth_eth_0_01_indexer setup "(
     \"$(dfx canister  id shared_algorithm_lens)\",
-    vec { \"yulqo-xaaaa-aaaag-qc3yq-cai\"; \"gdocz-7yaaa-aaaag-qczwa-cai\"; \"y5i3s-biaaa-aaaag-qc3za-cai\"; \"apgs2-iqaaa-aaaag-qczbq-cai\" },
+    vec { \"ajuq4-ruaaa-aaaaa-qaaga-cai\"; \"aovwi-4maaa-aaaaa-qaagq-cai\"; \"y5i3s-biaaa-aaaag-qc3za-cai\"; \"ahw5u-keaaa-aaaaa-qaaha-cai\" },
 )"
 # set_task
 dfx canister  call wsteth_eth_0_01_indexer set_task '(144, 5)'

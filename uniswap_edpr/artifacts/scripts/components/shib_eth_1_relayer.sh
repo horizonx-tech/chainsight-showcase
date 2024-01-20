@@ -28,8 +28,8 @@ dfx canister  call shib_eth_1_relayer setup "(
         chain_id = 11155111;
         env = variant { LocalDevelopment };
     },
-    \"$(dfx canister  id shib_eth_1_indexer_lens)\",
-    vec { \"yipk7-aaaaa-aaaag-qc32q-cai\" },
+    \"$(dfx canister  id shared_indexer_lens)\",
+    vec { \"cgpjn-omaaa-aaaaa-qaakq-cai\" },
 )"
 # set_task
 dfx canister  call shib_eth_1_relayer set_task '(144, 10)'
