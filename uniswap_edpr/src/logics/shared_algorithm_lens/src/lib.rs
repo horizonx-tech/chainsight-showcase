@@ -131,7 +131,7 @@ pub mod tests {
     #[test]
     fn test_est_tvl_in_range() {
         // https://etherscan.io/address/0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8#readContract#F8
-        let tick_cumul_28x6h: [i64; 29] = [-6490142419541,-6491845467521,-6493539867881,-6495232991945,
+        let tick_cumul_28x6h: Vec<i64> = vec![-6490142419541,-6491845467521,-6493539867881,-6495232991945,
             -6496926846521,-6498621135269,-6500317175945,-6502012511933,-6503706680753,
             -6505399692125,-6507090767129,-6508780873901,-6510472590869,-6512164927985,
             -6513857329301,-6515549074157,-6517241925473,-6518935812965,-6520632937889,
@@ -141,8 +141,9 @@ pub mod tests {
         // https://omni.oku.zone/ethereum?id=1&jsonrpc=2.0&method=cush_getV3Pool&params=["0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8",19040779]
         let tick_current = -78176;
         let tick_spacing = 60;
-        let sqrt_ratio_x96: i128 = 1590062295482777098773356604;
+        let sqrt_ratio_x96: u128 = 1590062295482777098773356604;
         let current_tick_liquidity: i128 = 1251982834387423730840398;
+        let token0 = "0x6b175474e89094c44da98b954eedeac495271d0f";
 
         // https://omni.oku.zone/ethereum?id=1&jsonrpc=2.0&method=cush_getPoolFees&params=["0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8"]
         let t0_decimals = 18;
@@ -156,7 +157,7 @@ pub mod tests {
             sqrt_ratio_x96,
             tick_current,
             current_tick_liquidity,
-            token0,
+            token0.to_string(),
             t0_decimals,
             t1_decimals,
             tick_cumul_28x6h,
