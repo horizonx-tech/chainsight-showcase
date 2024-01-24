@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: ETH/USDC Price Snapshot
+  type: snapshot_indexer_https
+  description: 'ETH price derived from the USDC/ETH 0.3% pool on Uniswap V3'
+  tags:
+  - Uniswap
+  - USDC/ETH
+  - ETH
+datasource:
+  url: https://omni.oku.zone/ethereum
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+      id: '1'
+      jsonrpc: '2.0'
+      method: cush_poolUsdPrice
+      params: '[%220x8ad599c3a0ff1de082011efddc58f1908eb6e6d8%22,0]'
+interval: ${INTERVAL}
+cycles: null

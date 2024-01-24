@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: EDPR DAI/ETH Pool Fees Snapshot
+  type: snapshot_indexer_https
+  description: '24-hour pool fees for the DAI/ETH 0.3% pair on Uniswap V3'
+  tags:
+  - Uniswap
+  - DAI/ETH
+  - DAI
+  - ETH
+  - Ethereum
+datasource:
+  url: https://omni.oku.zone/ethereum
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+      id: '1'
+      jsonrpc: '2.0'
+      method: cush_getPoolFees
+      params: '[%220xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8%22]'
+storage:
+  with_timestamp: true
+interval: ${INTERVAL}

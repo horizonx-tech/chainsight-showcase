@@ -1,0 +1,22 @@
+[workspace]
+members = ["canisters/eth_usdc_price", "logics/eth_usdc_price", "canisters/dai_eth_0_3_pool_fees", "logics/dai_eth_0_3_pool_fees", "canisters/dai_eth_0_3_tcumul_28x6hr", "logics/dai_eth_0_3_tcumul_28x6hr", "canisters/dai_eth_0_3_v3pool", "logics/dai_eth_0_3_v3pool", "canisters/shared_algorithm_lens", "logics/shared_algorithm_lens", "canisters/dai_eth_0_3_indexer", "logics/dai_eth_0_3_indexer", "canisters/shared_indexer_lens", "logics/shared_indexer_lens", "canisters/dai_eth_0_3_relayer", "logics/dai_eth_0_3_relayer", "canisters/shib_eth_1_pool_fees", "logics/shib_eth_1_pool_fees", "canisters/shib_eth_1_tcumul_28x6hr", "logics/shib_eth_1_tcumul_28x6hr", "canisters/shib_eth_1_v3pool", "logics/shib_eth_1_v3pool", "canisters/shib_eth_1_indexer", "logics/shib_eth_1_indexer", "canisters/shib_eth_1_relayer", "logics/shib_eth_1_relayer", "canisters/wsteth_eth_0_01_pool_fees", "logics/wsteth_eth_0_01_pool_fees", "canisters/wsteth_eth_0_01_tcumul_28x6hr", "logics/wsteth_eth_0_01_tcumul_28x6hr", "canisters/wsteth_eth_0_01_v3pool", "logics/wsteth_eth_0_01_v3pool", "canisters/wsteth_eth_0_01_indexer", "logics/wsteth_eth_0_01_indexer", "canisters/wsteth_eth_0_01_relayer", "logics/wsteth_eth_0_01_relayer", "canisters/rpl_eth_0_3_pool_fees", "logics/rpl_eth_0_3_pool_fees", "canisters/rpl_eth_0_3_tcumul_28x6hr", "logics/rpl_eth_0_3_tcumul_28x6hr", "canisters/rpl_eth_0_3_v3pool", "logics/rpl_eth_0_3_v3pool", "canisters/rpl_eth_0_3_indexer", "logics/rpl_eth_0_3_indexer", "canisters/rpl_eth_0_3_relayer", "logics/rpl_eth_0_3_relayer", "bindings/*", "accessors/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+candid = "0.9.6"
+ic-cdk = "0.11.3"
+ic-cdk-macros = "0.8.1"
+ic-cdk-timers = "0.5.0"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+serde_json = "1.0.108"
+hex = "0.4.3"
+
+ic-web3-rs = "0.1.3"
+ic-solidity-bindgen = "0.1.9"
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev= "38467b931c936ccf672c0bf7dc4080d11fd51264" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev= "38467b931c936ccf672c0bf7dc4080d11fd51264" }

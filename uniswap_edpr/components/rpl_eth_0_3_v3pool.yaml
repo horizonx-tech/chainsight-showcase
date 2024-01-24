@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: EDPR RPL/ETH Pool Data Snapshot
+  type: snapshot_indexer_https
+  description: 'Snapshot of data for the RPL/ETH 0.3% pair on Uniswap V3'
+  tags:
+  - Uniswap
+  - RPL/ETH
+  - RPL
+  - ETH
+  - Ethereum
+datasource:
+  url: https://omni.oku.zone/ethereum
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+      id: '1'
+      jsonrpc: '2.0'
+      method: cush_getV3Pool
+      params: '[%220xe42318ea3b998e8355a3da364eb9d48ec725eb45%22,0]'
+storage:
+  with_timestamp: true
+interval: ${INTERVAL}

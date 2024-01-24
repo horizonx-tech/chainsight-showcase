@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+ label: EDPR DAI/ETH Indexer
+ type: snapshot_indexer_icp
+ description: 'This canister indexes the EDPR for the DAI/ETH 0.3% pair on Uniswap V3'
+ tags:
+ - Uniswap
+ - DAI/ETH
+ - EDPR
+ - Ethereum
+datasource:
+ location:
+  id: shared_algorithm_lens
+ method:
+  identifier: 'get_result : (vec text) -> (LensValue)'
+  interface: null
+  args: []
+storage:
+ with_timestamp: true
+interval: ${INTERVAL}
+lens_targets:
+ identifiers:
+  - qm6az-jyaaa-aaaag-qc5rq-cai # dai_eth_0_3_pool_fees
+  - qzzru-iqaaa-aaaag-qc5sa-cai # dai_eth_0_3_tcumul_28x6hr
+  - q6yxa-fiaaa-aaaag-qc5sq-cai # dai_eth_0_3_v3pool
+  - ql7gn-eaaaa-aaaag-qc5ra-cai # eth_usdc_price
