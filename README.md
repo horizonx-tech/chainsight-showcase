@@ -50,6 +50,12 @@ https://beta.chainsight.network/
   - A multi-chain voting is a voting that takes place on multiple chains. The idea is to submit a proposal on one chain and vote on it on another chain.
   - [To learn more...](https://dev.to/hide_yoshi/creating-a-multi-chain-voting-in-30-minutes-with-chainsight-486h)
 
+### Others
+
+- [UniswapV3 EDPR](/uniswap_edpr/)
+  - Calculate an Estimated Daily Percentage Return (EDPR) for trading pairs on Uniswap V3.
+  - It was developed from the community by Chainsight's bounty project.
+
 ## Appendix
 
 ### Oracle Address
