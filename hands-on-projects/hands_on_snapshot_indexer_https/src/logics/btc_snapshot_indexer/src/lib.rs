@@ -4,12 +4,11 @@
 use candid::{Decode, Encode};
 #[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
 pub struct SnapshotValue {
-    #[serde(rename = "internet-computer")]
-    pub internet_computer: InternetComputer,
+    pub bitcoin: Bitcoin,
 }
 
 #[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
-pub struct InternetComputer {
+pub struct Bitcoin {
     pub usd: f64,
     pub usd_market_cap: f64,
     pub usd_24h_vol: f64,
