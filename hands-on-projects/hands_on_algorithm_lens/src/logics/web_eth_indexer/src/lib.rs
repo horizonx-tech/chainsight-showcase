@@ -1,0 +1,17 @@
+// Auto-generated code from manifest.
+// You update the structure as needed.
+// The existence of the SnapshotValue structure must be maintained.
+use candid::{Decode, Encode};
+#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
+pub struct SnapshotValue {
+    pub ethereum: Ethereum,
+}
+
+#[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
+pub struct Ethereum {
+    pub usd: f64,
+    pub usd_market_cap: f64,
+    pub usd_24h_vol: f64,
+    pub usd_24h_change: f64,
+    pub last_updated_at: i64,
+}

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: Bandprotocol Eth Indexer
+  type: snapshot_indexer_evm
+  description: ''
+  tags:
+datasource:
+  location:
+    id: DA7a001b254CD22e46d3eAB04d937489c93174C3
+    args:
+      network_id: 10
+      rpc_url: https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_OPTIMISM_KEY}
+  method:
+    identifier: getReferenceData(string,string):((uint256,uint256,uint256)[])
+    interface: StdReference.json
+    args: ["ETH","USD"]
+    # identifier: getReferenceDataBulk(string[],string[]):((uint256,uint256,uint256)[])
+    # args: [["ETH"],["USD"]] # not supported in ic-solidity-bindgen
+interval: ${INTERVAL}
+cycles: null

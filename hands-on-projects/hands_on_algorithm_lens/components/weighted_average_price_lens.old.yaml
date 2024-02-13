@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Weighted Average Price Lens
+  type: algorithm_lens
+  description: ''
+  tags:
+  - Ethereum
+  - Account
+datasource:
+  methods:
+  - id: chainlink_eth_indexer
+    identifier: 'get_last_snapshot_value : () -> (record { nat; text; text; text; nat })'
+    func_name_alias: chainlink_eth_indexer
+  - id: api3_eth_indexer
+    identifier: 'get_last_snapshot_value : () -> (record { text; nat32 })'
+    func_name_alias: api3_eth_indexer
+  - id: web_eth_indexer
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
+    func_name_alias: web_eth_indexer
+cycles: null

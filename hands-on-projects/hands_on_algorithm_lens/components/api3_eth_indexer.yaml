@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: API3 Eth Indexer
+  type: snapshot_indexer_evm
+  description: ''
+  tags:
+datasource:
+  location:
+    id: 709944a48caf83535e43471680fda4905fb3920a
+    args:
+      network_id: 42161
+      rpc_url: https://arb-mainnet.g.alchemy.com/v2/${ALCHEMY_ARBITRUM_ONE_KEY}
+  method:
+    identifier: dataFeeds(bytes32):(int224,uint32)
+    interface: Api3ServerV1.json
+    args: [0x4385954e058fbe6b6a744f32a4f89d67aad099f8fb8b23e7ea8dd366ae88151d]
+interval: ${INTERVAL}
+cycles: null
