@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: ICP Snapshot Indexer by handson
+  type: snapshot_indexer_icp
+  description: 'Collect ICP prices. This is a sample of the components that will be built in the Hands-on article.'
+  tags:
+  - Price Snapshot Indexer
+  - ICP
+  - "Hands-on Sample"
+datasource:
+  location:
+    # ICPSwap canister
+    id: 2ixw4-taaaa-aaaag-qcpdq-cai
+  method:
+    identifier: 'get_exchange_rates: () -> (vec ExchangeRate__1)'
+    interface: interfaces/target_interface.did
+    args: []
+is_target_component: false
+lens_targets: null
+interval: 21600
+cycles: null

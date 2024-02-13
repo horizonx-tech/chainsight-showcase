@@ -1,0 +1,58 @@
+type ExchangeRate__1 = 
+ record {
+   base_class: text;
+   base_symbol: text;
+   decimals: nat32;
+   error: opt Error;
+   quote_class: text;
+   quote_symbol: text;
+   rate: nat64;
+   timestamp: nat64;
+ };
+type ExchangeRateError = 
+ variant {
+   AnonymousPrincipalNotAllowed;
+   CryptoBaseAssetNotFound;
+   CryptoQuoteAssetNotFound;
+   FailedToAcceptCycles;
+   ForexAssetsNotFound;
+   ForexBaseAssetNotFound;
+   ForexInvalidTimestamp;
+   ForexQuoteAssetNotFound;
+   InconsistentRatesReceived;
+   NotEnoughCycles;
+   Other: record {
+            code: nat32;
+            description: text;
+          };
+   Pending;
+   RateLimited;
+   StablecoinRateNotFound;
+   StablecoinRateTooFewRates;
+   StablecoinRateZeroRate;
+ };
+type Error = 
+ record {
+   message: ExchangeRateError;
+   timestamp: int;
+ };
+type AssetClass = 
+ variant {
+   Cryptocurrency;
+   FiatCurrency;
+ };
+type Asset = 
+ record {
+   class: AssetClass;
+   symbol: text;
+ };
+service : {
+  add_asset: (Asset, Asset) -> ();
+  force_update_rate: () -> ();
+  get_assets: () -> (vec record {
+                           Asset;
+                           Asset;
+                         }) query;
+  get_exchange_rate: (text) -> (ExchangeRate__1) query;
+  get_exchange_rates: () -> (vec ExchangeRate__1) query;
+}
