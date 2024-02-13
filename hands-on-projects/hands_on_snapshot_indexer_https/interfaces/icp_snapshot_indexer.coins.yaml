@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: Icp Snapshot Indexer
+  type: snapshot_indexer_https
+  description: ''
+  tags:
+  - coingecko
+  - ICP
+  - "Hands-on Sample"
+datasource:
+  url: https://api.coingecko.com/api/v3/coins/internet-computer
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+      tickers: false
+      market_data: false
+      localization: false
+      community_data: false
+      developer_data: false
+      sparkline: false
+interval: 3600
+cycles: null

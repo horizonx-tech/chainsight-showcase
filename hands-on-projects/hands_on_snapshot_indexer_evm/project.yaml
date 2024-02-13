@@ -1,0 +1,4 @@
+version: v1
+label: hands_on_snapshot_indexer_evm
+components:
+- component_path: components/eth_snapshot_indexer.yaml

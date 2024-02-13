@@ -1,0 +1,7 @@
+version: v1
+label: hands_on_algorithm_lens
+components:
+- component_path: components/chainlink_eth_indexer.yaml
+- component_path: components/api3_eth_indexer.yaml
+- component_path: components/web_eth_indexer.yaml
+- component_path: components/eth_average_price_calculator.yaml

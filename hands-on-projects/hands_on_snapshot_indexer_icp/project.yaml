@@ -1,0 +1,4 @@
+version: v1
+label: hands_on_snapshot_indexer_icp
+components:
+- component_path: components/icp_snapshot_indexer.yaml

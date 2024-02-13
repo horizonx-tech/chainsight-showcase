@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "canisters": {
+    "eth_snapshot_indexer": {
+      "type": "custom",
+      "candid": "./eth_snapshot_indexer.did",
+      "wasm": "./eth_snapshot_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}

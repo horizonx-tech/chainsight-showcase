@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "canisters": {
+    "icp_snapshot_indexer": {
+      "type": "custom",
+      "candid": "./icp_snapshot_indexer.did",
+      "wasm": "./icp_snapshot_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "canisters": {
+    "chainlink_eth_indexer": {
+      "type": "custom",
+      "candid": "./chainlink_eth_indexer.did",
+      "wasm": "./chainlink_eth_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "api3_eth_indexer": {
+      "type": "custom",
+      "candid": "./api3_eth_indexer.did",
+      "wasm": "./api3_eth_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "web_eth_indexer": {
+      "type": "custom",
+      "candid": "./web_eth_indexer.did",
+      "wasm": "./web_eth_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "eth_average_price_calculator": {
+      "type": "custom",
+      "candid": "./eth_average_price_calculator.did",
+      "wasm": "./eth_average_price_calculator.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}
