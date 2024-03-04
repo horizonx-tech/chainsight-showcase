@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "canisters": {
+    "snapshot_chainlink_ethusd": {
+      "type": "custom",
+      "candid": "./snapshot_chainlink_ethusd.did",
+      "wasm": "./snapshot_chainlink_ethusd.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "relayer": {
+      "type": "custom",
+      "candid": "./relayer.did",
+      "wasm": "./relayer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}

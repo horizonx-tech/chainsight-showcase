@@ -1,0 +1,22 @@
+[workspace]
+members = ["canisters/snapshot_chainlink_ethusd", "logics/snapshot_chainlink_ethusd", "canisters/relayer", "logics/relayer", "bindings/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+candid = "0.9.6"
+ic-cdk = "0.11.3"
+ic-cdk-macros = "0.8.1"
+ic-cdk-timers = "0.5.0"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+serde_json = "1.0.108"
+hex = "0.4.3"
+
+ic-web3-rs = "0.1.4"
+ic-solidity-bindgen = "0.1.11"
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev= "c4f357163c8b0382b95d574a44679450fac62c58" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev= "c4f357163c8b0382b95d574a44679450fac62c58" }
