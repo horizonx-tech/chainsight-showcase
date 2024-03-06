@@ -56,6 +56,24 @@ https://beta.chainsight.network/
   - Calculate an Estimated Daily Percentage Return (EDPR) for trading pairs on Uniswap V3.
   - It was developed from the community by Chainsight's bounty project.
 
+#### Hands-on article artifacts
+
+- [Collecting Data from Onchain](/hands-on-projects/hands_on_snapshot_indexer_evm/)
+  - Example for `Snapshot Indexer EVM`
+  - Article: [Chainsight Hands-on: Collecting Data from Onchain - DEV Community](https://dev.to/megared05/chainsight-hands-on-collecting-data-from-onchain-1d31)
+- [Collecting Data from Web](/hands-on-projects/hands_on_snapshot_indexer_https/)
+  - Example for `Snapshot Indexer HTTPS`
+  - Article: [Chainsight Hands-on: Collecting Data from Web - DEV Community](https://dev.to/megared05/chainsight-hands-on-collecting-data-from-web-1o00)
+- [Collecting Data from Internet Computer](/hands-on-projects/hands_on_snapshot_indexer_icp/)
+  - Example for `Snapshot Indexer ICP`
+  - Article: [Chainsight Hands-on: Collecting Data from Internet Computer - DEV Community](https://dev.to/megared05/chainsight-hands-on-collecting-data-from-internet-computer-7oa)
+- [Generate original indicators from data in indexers](/hands-on-projects/hands_on_algorithm_lens/)
+  - Example for `Algorithm Lens`
+  - Article: [Chainsight Hands-on: Generate original indicators from data in indexers - DEV Community](https://dev.to/megared05/chainsight-hands-on-generate-original-indicators-from-data-in-indexers-23h0)
+- [Subscribe to On-Chain Events & Collect](/hands-on-projects/hands_on_event_indexer/)
+  - Example for `Event Indexer`
+  - Article: [Chainsight Hands-on: Subscribe to On-Chain Events & Collect - DEV Community](https://dev.to/megared05/chainsight-hands-on-subscribe-to-on-chain-events-collect-4a3k)
+
 ## Appendix
 
 ### Oracle Address
