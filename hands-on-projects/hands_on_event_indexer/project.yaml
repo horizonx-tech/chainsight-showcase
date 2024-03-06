@@ -1,0 +1,4 @@
+version: v1
+label: hands_on_event_indexer
+components:
+- component_path: components/dai_transfer_subscriber.yaml

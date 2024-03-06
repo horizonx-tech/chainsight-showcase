@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "canisters": {
+    "dai_transfer_subscriber": {
+      "type": "custom",
+      "candid": "./dai_transfer_subscriber.did",
+      "wasm": "./dai_transfer_subscriber.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}
