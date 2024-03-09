@@ -25,5 +25,6 @@ destination:
   type: uint256
   oracle_address: ${ORACLE_ADDRESS}
   rpc_url: ${RPC_URL_ETH_SEPOLIA}
-interval: ${INTERVAL_RELAYER}
+timer_settings:
+  interval_sec: ${INTERVAL_RELAYER}
 cycles: null

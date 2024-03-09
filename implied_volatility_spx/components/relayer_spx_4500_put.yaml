@@ -23,5 +23,6 @@ destination:
 lens_targets:
   identifiers:
     - snapshots_iv_for_spx_4500_put
-interval: ${INTERVAL_FOR_IV}
+timer_settings:
+  interval_sec: ${INTERVAL_FOR_IV}
 cycles: null

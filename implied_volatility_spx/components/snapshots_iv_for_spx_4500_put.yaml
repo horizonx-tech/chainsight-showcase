@@ -18,5 +18,6 @@ lens_targets:
   identifiers:
     - https_spx_for_option
     - https_spx_4500_put
-interval: ${INTERVAL_FOR_OPTION}
+timer_settings:
+  interval_sec: ${INTERVAL_FOR_OPTION}
 cycles: null

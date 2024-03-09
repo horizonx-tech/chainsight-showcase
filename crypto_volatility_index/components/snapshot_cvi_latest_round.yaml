@@ -18,5 +18,6 @@ datasource:
     identifier: getCVILatestRoundData():(uint32,uint80,uint256)
     interface: CVIOracle.json
     args: []
-interval: ${INTERVAL_HTTPS}
+timer_settings:
+  interval_sec: ${INTERVAL_HTTPS}
 cycles: null

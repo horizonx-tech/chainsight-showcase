@@ -15,5 +15,6 @@ datasource:
     Content-Type: application/json
   queries:
     type: dynamic
-interval: ${INTERVAL_FOR_OPTION}
+timer_settings:
+  interval_sec: ${INTERVAL_FOR_OPTION}
 cycles: null

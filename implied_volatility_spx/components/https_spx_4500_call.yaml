@@ -15,5 +15,6 @@ datasource:
   queries:
     type: static
     value:
-interval: ${INTERVAL_FOR_OPTION}
+timer_settings:
+  interval_sec: ${INTERVAL_FOR_OPTION}
 cycles: null
