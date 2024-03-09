@@ -1,4 +1,6 @@
 mod types;
+mod canister;
+mod config;
 
 use ic_web3_rs::{self, types::U256};
 pub type CallCanisterResponse = types::ResponseType;
