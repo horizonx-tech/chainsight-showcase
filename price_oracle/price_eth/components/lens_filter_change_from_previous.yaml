@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: "Filter: change from previous"
+  type: algorithm_lens
+  description: ''
+  tags:
+    - Filter
+datasource:
+  methods:
+    - id: snapshot_chainlink_ethusd
+      identifier: 'get_last_snapshot_value : () -> (text)'
+with_args: true

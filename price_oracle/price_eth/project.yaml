@@ -2,4 +2,6 @@ version: v1
 label: price_eth
 components:
 - component_path: components/snapshot_chainlink_ethusd.yaml
+- component_path: components/lens_filter_change_from_previous.yaml
+- component_path: components/lens_evm_encoder_u256.yaml
 - component_path: components/relayer.yaml

@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/snapshot_chainlink_ethusd", "logics/snapshot_chainlink_ethusd", "canisters/relayer", "logics/relayer", "bindings/*"]
+members = ["canisters/snapshot_chainlink_ethusd", "logics/snapshot_chainlink_ethusd", "canisters/lens_filter_change_from_previous", "logics/lens_filter_change_from_previous", "canisters/lens_evm_encoder_u256", "logics/lens_evm_encoder_u256", "canisters/relayer", "logics/relayer", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"

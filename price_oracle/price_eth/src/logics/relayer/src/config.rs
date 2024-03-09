@@ -4,6 +4,8 @@ use ic_web3_rs::signing::keccak256;
 use serde::Deserialize;
 use std::{borrow::Cow, collections::HashMap};
 
+use crate::canister::Plugin;
+
 #[derive(CandidType, Deserialize, Default, Clone)]
 pub struct RelayConfig {
     pub destination: Destination,
@@ -20,9 +22,9 @@ pub struct Destination {
 #[derive(CandidType, Deserialize, Default, Clone)]
 pub struct RelayItem {
     pub requester_id: String,
-    pub detination_type: String,
+    pub encoder: String,
     pub source: DataSource,
-    pub plugins: Vec<(Principal, HashMap<String, String>)>,
+    pub plugins: Vec<Plugin>,
 }
 
 #[derive(CandidType, Deserialize, Clone)]

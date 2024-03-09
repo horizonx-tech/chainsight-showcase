@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: "EVM Encoder: u256"
+  type: algorithm_lens
+  description: ''
+  tags:
+    - Encoder
+datasource:
+  methods:
+    - id: snapshot_chainlink_ethusd
+      identifier: 'get_last_snapshot_value : () -> (text)'
+    - id: lens_filter_change_from_previous
+      identifier: 'filter : () -> (text)'
+with_args: true

@@ -1,15 +1,21 @@
 use std::collections::HashMap;
 
+use crate::config::{DataSource, Destination, RelayConfig, RelayItem};
 use candid::Principal;
 use chainsight_cdk::rpc::{CallProvider, Caller, Message};
-use crate::config::{DataSource, Destination, RelayConfig, RelayItem};
-
-#[derive(candid::CandidType, candid::Deserialize, serde::Serialize)]
+#[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
 struct EncodeRequest {
-    source_canister_id: Principal,
+    source_canister_id: String,
     method_name: String,
     args: HashMap<String, String>,
-    plugins: Vec<(Principal, HashMap<String, String>)>,
+    plugins: Vec<Plugin>,
+}
+
+#[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
+pub struct Plugin {
+    canister_id: String,
+    method_name: String,
+    args: HashMap<String, String>,
 }
 
 type EncodeResponse = Option<Vec<u8>>;
@@ -24,7 +30,7 @@ async fn index() {
 
     for item in config.items {
         let content = EncodeRequest {
-            source_canister_id: item.source.canister_id.clone(),
+            source_canister_id: item.source.canister_id.to_string(),
             method_name: item.source.method_name.clone(),
             args: item.source.args.clone(),
             plugins: item.plugins.clone(),
@@ -113,7 +119,7 @@ fn get_relay_config() -> RelayConfig {
 
     let item = RelayItem {
         requester_id: "requester".to_string(),
-        detination_type: "uint256".to_string(),
+        encoder: "uint256".to_string(),
         source: DataSource {
             canister_id: Principal::from_text("filter").unwrap(),
             method_name: "encode".to_string(),

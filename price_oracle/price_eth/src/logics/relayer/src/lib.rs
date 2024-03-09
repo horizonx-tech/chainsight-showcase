@@ -6,6 +6,11 @@ use ic_web3_rs::{self, types::U256};
 pub type CallCanisterResponse = types::ResponseType;
 pub type CallCanisterArgs = ();
 
+pub struct OracleValues {
+    pub values: Vec<Vec<u8>>,
+    pub keys: Vec<[u8; 32usize]>,
+}
+
 #[derive(Default, Clone)]
 struct Data {
     value: U256,
@@ -22,6 +27,14 @@ const INTERVAL_SECS: u64 = 3600;
 
 pub fn call_args() -> CallCanisterArgs {
     ()
+}
+
+pub fn convert(res: &CallCanisterResponse) -> OracleValues {
+    // TODO from res
+    OracleValues {
+        values: Vec::new(),
+        keys: Vec::new(),
+    }
 }
 
 pub fn filter(res: &CallCanisterResponse) -> bool {
