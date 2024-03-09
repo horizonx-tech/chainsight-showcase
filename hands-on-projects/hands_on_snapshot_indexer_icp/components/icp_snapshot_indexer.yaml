@@ -18,5 +18,6 @@ datasource:
     args: []
 is_target_component: false
 lens_targets: null
-interval: 21600
+timer_settings:
+  interval_sec: 21600
 cycles: null

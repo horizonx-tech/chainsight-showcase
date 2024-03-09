@@ -18,5 +18,6 @@ datasource:
     identifier: latestAnswer():(int256)
     interface: Aggregator.json
     args: []
-interval: 86400
+timer_settings:
+  interval_sec: 86400
 cycles: null

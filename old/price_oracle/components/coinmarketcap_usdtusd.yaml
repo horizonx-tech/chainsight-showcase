@@ -17,4 +17,5 @@ datasource:
     slug: tether
 storage:
   with_timestamp: true
-interval: 20
+timer_settings:
+  interval_sec: 20
