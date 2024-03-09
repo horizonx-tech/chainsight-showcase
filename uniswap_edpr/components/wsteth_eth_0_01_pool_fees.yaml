@@ -23,4 +23,5 @@ datasource:
       params: '[%220x109830a1aaad605bbf02a9dfa7b0b92ec2fb7daa%22]'
 storage:
   with_timestamp: true
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}

@@ -27,4 +27,5 @@ destination:
   type: uint256
   oracle_address: ${ORACLE_ADDRESS}
   rpc_url: https://rpc.testnet.oasys.games/
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}

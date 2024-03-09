@@ -21,5 +21,6 @@ datasource:
       community_data: false
       developer_data: false
       sparkline: false
-interval: 3600
+timer_settings:
+  interval_sec: 3600
 cycles: null

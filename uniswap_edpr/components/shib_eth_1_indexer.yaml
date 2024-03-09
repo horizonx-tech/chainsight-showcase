@@ -20,7 +20,8 @@ datasource:
   args: []
 storage:
  with_timestamp: true
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 lens_targets:
  identifiers:
   - qx344-taaaa-aaaag-qc5ta-cai # shib_eth_1_pool_fees

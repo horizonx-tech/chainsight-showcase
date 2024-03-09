@@ -22,5 +22,6 @@ destination:
 lens_targets:
   identifiers:
     - indexer_spx_vix
-interval: ${INTERVAL_FOR_VIX_RELAYER}
+timer_settings:
+  interval_sec: ${INTERVAL_FOR_VIX_RELAYER}
 cycles: null

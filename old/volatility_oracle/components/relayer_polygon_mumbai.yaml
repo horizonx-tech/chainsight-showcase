@@ -22,7 +22,8 @@ destination:
   type: uint256
   oracle_address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
   rpc_url: https://${LOCAL_RPC_URL}
-interval: 3600
+timer_settings:
+  interval_sec: 3600
 lens_targets:
   identifiers:
     - asrmz-lmaaa-aaaaa-qaaeq-cai

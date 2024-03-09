@@ -16,4 +16,5 @@ datasource:
     id: 825
 storage:
   with_timestamp: true
-interval: 20
+timer_settings:
+  interval_sec: 20

@@ -17,5 +17,6 @@ datasource:
     args: ["ETH","USD"]
     # identifier: getReferenceDataBulk(string[],string[]):((uint256,uint256,uint256)[])
     # args: [["ETH"],["USD"]] # not supported in ic-solidity-bindgen
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

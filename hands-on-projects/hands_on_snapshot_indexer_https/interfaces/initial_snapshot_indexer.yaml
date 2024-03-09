@@ -17,5 +17,6 @@ datasource:
     value:
       ids: dai
       vs_currencies: usd
-interval: 3600
+timer_settings:
+  interval_sec: 3600
 cycles: null

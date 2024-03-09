@@ -15,5 +15,6 @@ datasource:
     identifier: dataFeeds(bytes32):(int224,uint32)
     interface: Api3ServerV1.json
     args: [0x4385954e058fbe6b6a744f32a4f89d67aad099f8fb8b23e7ea8dd366ae88151d]
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

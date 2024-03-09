@@ -20,7 +20,8 @@ datasource:
   args: []
 storage:
  with_timestamp: true
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 lens_targets:
  identifiers:
   - r2vys-4iaaa-aaaag-qc5uq-cai # wsteth_eth_0_01_pool_fees

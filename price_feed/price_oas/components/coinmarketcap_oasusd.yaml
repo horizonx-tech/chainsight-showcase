@@ -21,4 +21,5 @@ datasource:
       slug: oasys
 storage:
   with_timestamp: true
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}

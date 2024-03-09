@@ -19,7 +19,8 @@ destination:
   type: uint256
   oracle_address: "0x3e0E4CD1684Be08BFA06cb12c1809E3f6a3E1Fe9" # TODO: update this
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 lens_targets:
   identifiers:
     - sp_global_reit_indexer_https

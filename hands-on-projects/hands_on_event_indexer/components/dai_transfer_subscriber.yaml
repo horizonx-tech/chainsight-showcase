@@ -19,5 +19,6 @@ datasource:
   from: 17660942
   contract_type: ERC-20
   batch_size: null
-interval: 1800 # 30min
+timer_settings:
+  interval_sec: 1800 # 30min
 cycles: null

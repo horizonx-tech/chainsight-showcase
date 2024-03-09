@@ -24,7 +24,8 @@ destination:
   oracle_address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
   # must be https
   rpc_url: https://3c6d-240f-77-2850-3117-a1d5-f465-ee68-f75b.ngrok-free.app
-interval: 30
+timer_settings:
+  interval_sec: 30
 lens_targets:
   identifiers:
     # binance_usdtusd

@@ -27,4 +27,5 @@ destination:
   type: uint256
   oracle_address: ${ORACLE_ADDRESS}
   rpc_url: https://sepolia-rpc.scroll.io
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}

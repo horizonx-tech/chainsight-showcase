@@ -21,4 +21,5 @@ datasource:
     args: []
 storage:
   with_timestamp: true
-interval: 3600
+timer_settings:
+  interval_sec: 3600

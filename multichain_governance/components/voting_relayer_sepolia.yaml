@@ -20,7 +20,8 @@ destination:
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
   interface: IVotingSynchronizer.json
   method_name: batchSynchronize
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 lens_targets:
   identifiers:
     - voting_event_indexer_sepolia

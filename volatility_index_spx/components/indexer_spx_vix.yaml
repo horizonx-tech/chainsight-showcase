@@ -19,5 +19,6 @@ lens_targets:
     - spx_near_term_for_vix
     - spx_next_term_for_vix
     - us_treasury_yield_curve_indexer
-interval: ${INTERVAL_FOR_VIX}
+timer_settings:
+  interval_sec: ${INTERVAL_FOR_VIX}
 cycles: null

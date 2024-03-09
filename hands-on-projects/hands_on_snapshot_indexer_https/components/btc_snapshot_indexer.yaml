@@ -23,5 +23,6 @@ datasource:
       include_24hr_change: true
       include_last_updated_at: true
       precision: 18
-interval: 86400
+timer_settings:
+  interval_sec: 86400
 cycles: null

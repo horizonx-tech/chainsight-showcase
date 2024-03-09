@@ -25,7 +25,8 @@ destination:
   type: uint256
   oracle_address: 0x02Bbb202eF0b44d44e9DC5c10C4F6174F1E92b37
   rpc_url: https://sepolia-rpc.scroll.io
-interval: 3600
+timer_settings:
+  interval_sec: 3600
 lens_targets:
   identifiers:
     - asrmz-lmaaa-aaaaa-qaaeq-cai
