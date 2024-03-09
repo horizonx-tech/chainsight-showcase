@@ -19,5 +19,6 @@ datasource:
       jsonrpc: '2.0'
       method: cush_poolUsdPrice
       params: '[%220x8ad599c3a0ff1de082011efddc58f1908eb6e6d8%22,0]'
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

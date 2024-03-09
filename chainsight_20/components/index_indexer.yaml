@@ -17,5 +17,6 @@ datasource:
 lens_targets:
   identifiers:
     - market_indexer_coinmarketcap
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

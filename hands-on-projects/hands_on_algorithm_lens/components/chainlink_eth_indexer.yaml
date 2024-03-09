@@ -15,5 +15,6 @@ datasource:
     identifier: latestRoundData():(uint80,int256,uint256,uint256,uint80)
     interface: EACAggregator.json
     args: []
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

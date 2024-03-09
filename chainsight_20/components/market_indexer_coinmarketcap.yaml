@@ -17,5 +17,6 @@ datasource:
     type: static
     value:
       slug: avalanche,cardano,bitcoin-cash,bnb,bitcoin,multi-collateral-dai,dogecoin,polkadot,ethereum,chainlink,litecoin,matic-network,shiba-inu,solana,toncoin,tron,uniswap,usd-coin,tether,ripple
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

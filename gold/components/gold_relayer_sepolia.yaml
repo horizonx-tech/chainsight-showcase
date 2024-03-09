@@ -20,7 +20,8 @@ destination:
   type: uint256
   oracle_address: ${ORACLE_ADDRESS}
   rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 lens_targets:
   identifiers:
     - gold_snapshot_indexer_https

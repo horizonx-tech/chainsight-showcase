@@ -16,5 +16,6 @@ datasource:
     chain_id: 11155111
   from: 2739538
   contract_type: ERC-20
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null

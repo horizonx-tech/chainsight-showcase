@@ -19,5 +19,6 @@ datasource:
       sparkline: false
       locale: en
       precision: 0
-interval: ${INTERVAL}
+timer_settings:
+  interval_sec: ${INTERVAL}
 cycles: null
