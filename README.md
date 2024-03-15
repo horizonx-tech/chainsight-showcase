@@ -82,10 +82,5 @@ Chainsight exposes Oracle Contract as pipeline destinations for propagating data
 
 [horizonx-tech/chainsight-management-oracle: Oracles supported by Chainsight](https://github.com/horizonx-tech/chainsight-management-oracle)
 
-These are the deployed addresses. If you have a network you would like to add, please use that repository or send us an add request.
-
-| Network | Address |
-| --- | --- |
-| Sepolia (Ethereum) | [0xB5Ef491939A6dBf17287666768C903F03602c550](https://sepolia.etherscan.io/address/0xB5Ef491939A6dBf17287666768C903F03602c550) |
-| Scroll Sepolia | [0xB5Ef491939A6dBf17287666768C903F03602c550](https://sepolia.scrollscan.dev/address/0xB5Ef491939A6dBf17287666768C903F03602c550) | 
-| Taiko Jolnir | [0xB5Ef491939A6dBf17287666768C903F03602c550](https://explorer.jolnir.taiko.xyz/address/0xB5Ef491939A6dBf17287666768C903F03602c550) |
+Check the README in the above repository for the addresses of available oracle contracts that have been deployed.
+If you have a network you would like to add, please use that repository or send us an add request.
