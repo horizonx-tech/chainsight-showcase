@@ -12,10 +12,10 @@
         }
       ]
     },
-    "relayer_jolnir": {
+    "relayer_taiko_katla": {
       "type": "custom",
-      "candid": "./relayer_jolnir.did",
-      "wasm": "./relayer_jolnir.wasm",
+      "candid": "./relayer_taiko_katla.did",
+      "wasm": "./relayer_taiko_katla.wasm",
       "metadata": [
         {
           "name": "candid:service",

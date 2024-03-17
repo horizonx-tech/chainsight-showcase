@@ -2,10 +2,10 @@
   "lens_vol_ethusd": {
     "ic": "b53cd-riaaa-aaaal-qcomq-cai"
   },
-  "relayer_jolnir": {
-    "ic": "buyj7-haaaa-aaaal-qcona-cai"
-  },
   "relayer_scroll_sepolia": {
     "ic": "btzpl-kyaaa-aaaal-qconq-cai"
+  },
+  "relayer_taiko_katla": {
+    "ic": "aqbga-7aaaa-aaaal-qdulq-cai"
   }
 }
