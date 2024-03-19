@@ -25,7 +25,7 @@ lens_targets:
 destination:
   network_id: 167008 # Katla (Taiko Testnet)
   type: uint256
-  oracle_address: ${ORACLE_ADDRESS}
-  rpc_url: https://taiko-jolnir.blockpi.network/v1/rpc/public
+  oracle_address: ${ORACLE_ADDRESS_TAIKO_TESTNET}
+  rpc_url: https://taiko-katla.blockpi.network/v1/rpc/public
 timer_settings:
   interval_sec: ${INTERVAL}
