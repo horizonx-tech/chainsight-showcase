@@ -1,0 +1,6 @@
+version: v1
+label: realized_volatility
+components:
+- component_path: components/snapshot_chainlink_ethusd.yaml # example for local
+- component_path: components/realized_volatility_from_u256.yaml
+- component_path: components/realized_volatility_snapshots_ethusd.yaml # example for local
