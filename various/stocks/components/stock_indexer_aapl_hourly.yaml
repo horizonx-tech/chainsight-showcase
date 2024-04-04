@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: "AAPL/Apple (Hourly)"
+  type: snapshot_indexer_https
+  description: 'Indexer to take snapshots of AAPL stock price from Yahoo Finance every hour.'
+  tags:
+  - Stock
+  - AAPL/Apple
+  - "Yahoo Finance"
+  - Hourly
+datasource:
+  url: ${BASE_URL}/AAPL
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+timer_settings:
+  interval_sec: ${INTERVAL_HOURLY}
+  delay_sec: 0
+  is_round_start_timing: true
+cycles: null
