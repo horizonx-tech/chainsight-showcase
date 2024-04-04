@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: Realized Volatility Snapshots ETHUSD
+  type: snapshot_indexer_icp
+  description: ''
+  tags:
+    - ERC-20
+    - "ETH/USD"
+    - Realized Volatility
+datasource:
+  location:
+    id: realized_volatility_from_u256
+  method:
+    identifier: 'get_result : (LensArgs) -> (float64)'
+    interface: null
+    args: []
+lens_targets:
+  identifiers:
+    - snapshot_chainlink_ethusd
+timer_settings:
+  interval_sec: ${INTERVAL}
+  delay_sec: 10
+  is_round_start_timing: true
+cycles: null

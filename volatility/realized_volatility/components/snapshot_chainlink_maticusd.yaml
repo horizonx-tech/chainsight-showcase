@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: "MATIC/USD: Chainlink"
+  type: snapshot_indexer_evm
+  description: "Indexer to take snapshots of MATIC/USD price from Chainlink every hour."
+  tags:
+    - ERC-20
+    - "MATIC/USD"
+    - Price
+    - Chainlink
+    - Ethereum Mainnet
+    - Hourly
+datasource:
+  location:
+    id: "0x7bAC85A8a13A4BcD8abb3eB7d6b4d632c5a57676"
+    args:
+      network_id: 1
+      rpc_url: "${RPC_URL_ETHEREUM}"
+  method:
+    identifier: latestAnswer():(uint256)
+    interface: AggregatorWrapper.json
+    args: []
+timer_settings:
+  interval_sec: ${INTERVAL}
+  is_round_start_timing: true
+cycles: null
