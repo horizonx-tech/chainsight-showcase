@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "canisters": {
+    "stock_indexer_aapl_daily": {
+      "type": "custom",
+      "candid": "./stock_indexer_aapl_daily.did",
+      "wasm": "./stock_indexer_aapl_daily.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_aapl_hourly": {
+      "type": "custom",
+      "candid": "./stock_indexer_aapl_hourly.did",
+      "wasm": "./stock_indexer_aapl_hourly.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_amzn_daily": {
+      "type": "custom",
+      "candid": "./stock_indexer_amzn_daily.did",
+      "wasm": "./stock_indexer_amzn_daily.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_amzn_hourly": {
+      "type": "custom",
+      "candid": "./stock_indexer_amzn_hourly.did",
+      "wasm": "./stock_indexer_amzn_hourly.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_goog_daily": {
+      "type": "custom",
+      "candid": "./stock_indexer_goog_daily.did",
+      "wasm": "./stock_indexer_goog_daily.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_goog_hourly": {
+      "type": "custom",
+      "candid": "./stock_indexer_goog_hourly.did",
+      "wasm": "./stock_indexer_goog_hourly.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_meta_daily": {
+      "type": "custom",
+      "candid": "./stock_indexer_meta_daily.did",
+      "wasm": "./stock_indexer_meta_daily.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_meta_hourly": {
+      "type": "custom",
+      "candid": "./stock_indexer_meta_hourly.did",
+      "wasm": "./stock_indexer_meta_hourly.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_msft_daily": {
+      "type": "custom",
+      "candid": "./stock_indexer_msft_daily.did",
+      "wasm": "./stock_indexer_msft_daily.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_msft_hourly": {
+      "type": "custom",
+      "candid": "./stock_indexer_msft_hourly.did",
+      "wasm": "./stock_indexer_msft_hourly.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_nvda_daily": {
+      "type": "custom",
+      "candid": "./stock_indexer_nvda_daily.did",
+      "wasm": "./stock_indexer_nvda_daily.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    },
+    "stock_indexer_nvda_hourly": {
+      "type": "custom",
+      "candid": "./stock_indexer_nvda_hourly.did",
+      "wasm": "./stock_indexer_nvda_hourly.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}

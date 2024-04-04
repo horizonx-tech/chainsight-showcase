@@ -1,0 +1,15 @@
+version: v1
+label: stocks
+components:
+- component_path: components/stock_indexer_aapl_daily.yaml
+- component_path: components/stock_indexer_aapl_hourly.yaml
+- component_path: components/stock_indexer_amzn_daily.yaml
+- component_path: components/stock_indexer_amzn_hourly.yaml
+- component_path: components/stock_indexer_goog_daily.yaml
+- component_path: components/stock_indexer_goog_hourly.yaml
+- component_path: components/stock_indexer_meta_daily.yaml
+- component_path: components/stock_indexer_meta_hourly.yaml
+- component_path: components/stock_indexer_msft_daily.yaml
+- component_path: components/stock_indexer_msft_hourly.yaml
+- component_path: components/stock_indexer_nvda_daily.yaml
+- component_path: components/stock_indexer_nvda_hourly.yaml

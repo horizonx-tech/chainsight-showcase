@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: "MSFT/Microsoft (Daily)"
+  type: snapshot_indexer_https
+  description: 'Indexer to take snapshots of MSFT stock price from Yahoo Finance every day.'
+  tags:
+  - Stock
+  - MSFT/Microsoft
+  - "Yahoo Finance"
+  - Hourly
+datasource:
+  url: ${BASE_URL}/MSFT
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+timer_settings:
+  interval_sec: ${INTERVAL_DAILY}
+  delay_sec: 80
+  is_round_start_timing: true
+cycles: null

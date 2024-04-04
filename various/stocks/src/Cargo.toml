@@ -1,0 +1,22 @@
+[workspace]
+members = ["canisters/stock_indexer_aapl_daily", "logics/stock_indexer_aapl_daily", "canisters/stock_indexer_aapl_hourly", "logics/stock_indexer_aapl_hourly", "canisters/stock_indexer_amzn_daily", "logics/stock_indexer_amzn_daily", "canisters/stock_indexer_amzn_hourly", "logics/stock_indexer_amzn_hourly", "canisters/stock_indexer_goog_daily", "logics/stock_indexer_goog_daily", "canisters/stock_indexer_goog_hourly", "logics/stock_indexer_goog_hourly", "canisters/stock_indexer_meta_daily", "logics/stock_indexer_meta_daily", "canisters/stock_indexer_meta_hourly", "logics/stock_indexer_meta_hourly", "canisters/stock_indexer_msft_daily", "logics/stock_indexer_msft_daily", "canisters/stock_indexer_msft_hourly", "logics/stock_indexer_msft_hourly", "canisters/stock_indexer_nvda_daily", "logics/stock_indexer_nvda_daily", "canisters/stock_indexer_nvda_hourly", "logics/stock_indexer_nvda_hourly"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+candid = "0.9.6"
+ic-cdk = "0.11.3"
+ic-cdk-macros = "0.8.1"
+ic-cdk-timers = "0.5.0"
+ic-stable-structures = "0.5.5"
+serde = "1.0.163"
+serde_bytes = "0.11.12"
+serde_json = "1.0.108"
+hex = "0.4.3"
+
+ic-web3-rs = "0.1.4"
+ic-solidity-bindgen = "0.1.12"
+chainsight-cdk-macros = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev= "a006f4fbfc384a407c0fccdc2c97edd0f060c051" }
+chainsight-cdk = { git = "https://github.com/horizonx-tech/chainsight-sdk.git", rev= "a006f4fbfc384a407c0fccdc2c97edd0f060c051" }

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: "AMZN/Amazon (Hourly)"
+  type: snapshot_indexer_https
+  description: 'Indexer to take snapshots of AMZN stock price from Yahoo Finance every hour.'
+  tags:
+  - Stock
+  - AMZN/Amazon
+  - "Yahoo Finance"
+  - Hourly
+datasource:
+  url: ${BASE_URL}/AMZN
+  headers:
+    Content-Type: application/json
+  queries:
+    type: static
+    value:
+timer_settings:
+  interval_sec: ${INTERVAL_HOURLY}
+  delay_sec: 20
+  is_round_start_timing: true
+cycles: null

@@ -1,0 +1,38 @@
+{
+  "stock_indexer_aapl_daily": {
+    "ic": "fvkhn-tyaaa-aaaal-qiusq-cai"
+  },
+  "stock_indexer_aapl_hourly": {
+    "ic": "e7ffx-riaaa-aaaal-qiuvq-cai"
+  },
+  "stock_indexer_amzn_daily": {
+    "ic": "gz5x2-yyaaa-aaaal-qiuyq-cai"
+  },
+  "stock_indexer_amzn_hourly": {
+    "ic": "gl3ad-uiaaa-aaaal-qiu3q-cai"
+  },
+  "stock_indexer_goog_daily": {
+    "ic": "h5qyi-byaaa-aaaal-qiu6q-cai"
+  },
+  "stock_indexer_goog_hourly": {
+    "ic": "mehmc-xiaaa-aaaal-qivbq-cai"
+  },
+  "stock_indexer_meta_daily": {
+    "ic": "nsmuj-cyaaa-aaaal-qiveq-cai"
+  },
+  "stock_indexer_meta_hourly": {
+    "ic": "nakdq-oiaaa-aaaal-qivhq-cai"
+  },
+  "stock_indexer_msft_daily": {
+    "ic": "pgsr5-hyaaa-aaaal-qivkq-cai"
+  },
+  "stock_indexer_msft_hourly": {
+    "ic": "om5th-fiaaa-aaaal-qivnq-cai"
+  },
+  "stock_indexer_nvda_daily": {
+    "ic": "lldvh-uyaaa-aaaal-qivqq-cai"
+  },
+  "stock_indexer_nvda_hourly": {
+    "ic": "lzfc6-yiaaa-aaaal-qivtq-cai"
+  }
+}
