@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Realized Volatility Collector
+  type: algorithm_lens
+  description: "Bundle RVOLs calculated from the Realized Volatility Calculator for given tokens"
+  tags:
+    - Realized Volatility
+datasource:
+  methods:
+    - id: realized_volatility_from_u256
+      identifier: 'get_result : (LensArgs) -> (float64)'
+      candid_file_path: null
+      func_name_alias: rvol
+with_args: true
+cycles: null

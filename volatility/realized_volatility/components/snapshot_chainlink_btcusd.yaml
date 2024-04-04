@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_evm.json
+version: v1
+metadata:
+  label: "BTC/USD: Chainlink"
+  type: snapshot_indexer_evm
+  description: "Indexer to take snapshots of BTC/USD price from Chainlink every hour."
+  tags:
+    - ERC-20
+    - "BTC/USD"
+    - Price
+    - Chainlink
+    - Ethereum Mainnet
+    - Hourly
+datasource:
+  location:
+    id: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+    args:
+      network_id: 1
+      rpc_url: "${RPC_URL_ETHEREUM}"
+  method:
+    identifier: latestAnswer():(uint256)
+    interface: AggregatorWrapper.json
+    args: []
+timer_settings:
+  interval_sec: ${INTERVAL}
+  is_round_start_timing: true
+cycles: null

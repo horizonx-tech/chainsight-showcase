@@ -1798,6 +1798,80 @@ dependencies = [
 ]
 
 [[package]]
+name = "realized_volatility_collector"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "realized_volatility_collector_accessors",
+ "realized_volatility_collector_bindings",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+]
+
+[[package]]
+name = "realized_volatility_collector_accessors"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "realized_volatility_collector_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "realized_volatility_collector_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.11.3",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "realized_volatility_collector_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ciborium",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "realized_volatility_collector",
+ "realized_volatility_collector_bindings",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
 name = "realized_volatility_from_u256"
 version = "0.1.0"
 dependencies = [
@@ -1867,60 +1941,6 @@ dependencies = [
  "ic-web3-rs",
  "realized_volatility_from_u256",
  "realized_volatility_from_u256_bindings",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "realized_volatility_snapshots_ethusd"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "realized_volatility_snapshots_ethusd_bindings",
- "serde",
- "serde_bytes",
- "serde_json",
-]
-
-[[package]]
-name = "realized_volatility_snapshots_ethusd_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "realized_volatility_snapshots_ethusd_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ciborium",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "realized_volatility_snapshots_ethusd",
- "realized_volatility_snapshots_ethusd_bindings",
  "serde",
  "serde_bytes",
 ]
@@ -2164,6 +2184,45 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4dccd0940a2dcdf68d092b8cbab7dc0ad8fa938bf95787e1b916b0e3d0e8e970"
 
 [[package]]
+name = "snapshot_chainlink_btcusd"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+]
+
+[[package]]
+name = "snapshot_chainlink_btcusd_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ciborium",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "snapshot_chainlink_btcusd",
+]
+
+[[package]]
 name = "snapshot_chainlink_ethusd"
 version = "0.1.0"
 dependencies = [
@@ -2200,6 +2259,45 @@ dependencies = [
  "serde",
  "serde_bytes",
  "snapshot_chainlink_ethusd",
+]
+
+[[package]]
+name = "snapshot_chainlink_maticusd"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+]
+
+[[package]]
+name = "snapshot_chainlink_maticusd_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ciborium",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "snapshot_chainlink_maticusd",
 ]
 
 [[package]]

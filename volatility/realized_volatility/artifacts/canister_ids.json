@@ -1,4 +1,7 @@
 {
+  "realized_volatility_collector": {
+    "ic": "kpo2v-nyaaa-aaaal-qivwq-cai"
+  },
   "realized_volatility_from_u256": {
     "ic": "ahtqa-daaaa-aaaal-qiuma-cai"
   }
