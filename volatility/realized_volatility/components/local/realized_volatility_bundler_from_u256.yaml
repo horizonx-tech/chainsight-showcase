@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: Realized Volatility Calculator for Single U256 Value With Multi Tokens
+  type: algorithm_lens
+  description: "It calculates Realized Volatility, Multiple tokens can be specified and calculated simultaneously"
+  tags:
+    - Realized Volatility
+    - Volatility Calculator
+datasource:
+  methods:
+    - id: snapshot_chainlink_ethusd
+      identifier: 'get_top_snapshot_values : (nat64) -> (vec text)'
+      candid_file_path: null
+      func_name_alias: snapshots
+with_args: true
+cycles: null

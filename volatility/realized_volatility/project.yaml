@@ -1,9 +1,19 @@
 version: v1
 label: realized_volatility
 components:
-- component_path: components/snapshot_chainlink_ethusd.yaml # example for local
-- component_path: components/snapshot_chainlink_btcusd.yaml # example for local
-- component_path: components/snapshot_chainlink_maticusd.yaml # example for local
+# - component_path: components/snapshot_chainlink_ethusd.yaml # example for local
+# - component_path: components/snapshot_chainlink_btcusd.yaml # example for local
+# - component_path: components/snapshot_chainlink_maticusd.yaml # example for local
 - component_path: components/realized_volatility_from_u256.yaml
-- component_path: components/realized_volatility_collector.yaml
-# - component_path: components/realized_volatility_snapshots_ethusd.yaml # example for local
+- component_path: components/rvol_snapshots_arbusd.yaml
+- component_path: components/rvol_snapshots_avaxusd.yaml
+- component_path: components/rvol_snapshots_btcusd.yaml
+- component_path: components/rvol_snapshots_dotusd.yaml
+- component_path: components/rvol_snapshots_ethusd.yaml
+- component_path: components/rvol_snapshots_icpusd.yaml
+- component_path: components/rvol_snapshots_maticusd.yaml
+- component_path: components/rvol_snapshots_opusd.yaml
+- component_path: components/rvol_snapshots_solusd.yaml
+- component_path: components/rvol_snapshots_suiusd.yaml
+- component_path: components/realized_volatility_for_chainsight20.yaml
+- component_path: components/rvol_snapshots_chainsight20.yaml
