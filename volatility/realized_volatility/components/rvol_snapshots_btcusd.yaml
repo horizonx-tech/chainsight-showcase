@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: "BTC/USD Realized Volatility Snapshots (Daily)"
+  type: snapshot_indexer_icp
+  description: 'Indexer to collect BTC/USD Realized Volatility every day.'
+  tags:
+    - ERC-20
+    - "BTC/USD"
+    - Realized Volatility
+datasource:
+  location:
+    id: realized_volatility_from_u256
+  method:
+    identifier: 'get_result : (LensArgs) -> (float64)'
+    interface: null
+    args: []
+lens_targets:
+  identifiers:
+    - ${INDEXER_BTCUSD}
+timer_settings:
+  interval_sec: ${INTERVAL}
+  delay_sec: 30
+  is_round_start_timing: false
+cycles: null

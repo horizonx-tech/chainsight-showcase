@@ -4,7 +4,7 @@ use ic_web3_rs::futures;
 use realized_volatility_collector_accessors::*;
 use realized_volatility_collector_bindings::realized_volatility_from_u256;
 
-pub type LensValue = BTreeMap<String, Option<f64>>;
+pub type LensValue = BTreeMap<String, Result<f64, String>>;
 pub type CalculateArgs = Vec<String>;
 
 const COUNT: u64 = 24; // Hourly
@@ -23,7 +23,7 @@ pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     
     let res_vec = args.iter().enumerate().map(|(i, target)| {
         let result = results.get(i).unwrap();
-        (target.clone(), result.clone().ok())
-    }).collect::<Vec<(String, Option<f64>)>>();
+        (target.clone(), result.clone())
+    }).collect::<Vec<(String, Result<f64, String>)>>();
     res_vec.into_iter().collect()
 }

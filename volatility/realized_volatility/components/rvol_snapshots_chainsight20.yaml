@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: "Chainsight20 Realized Volatility Snapshots (Daily)"
+  type: snapshot_indexer_icp
+  description: 'Indexer to collect Chainsight20 Realized Volatility every day.'
+  tags:
+    - Index
+    - Chainsight20
+    - Realized Volatility
+datasource:
+  location:
+    id: realized_volatility_for_chainsight20
+  method:
+    identifier: 'get_result : (LensArgs) -> (float64)'
+    interface: null
+    args: []
+lens_targets:
+  identifiers:
+    - ${INDEXER_CHAINSIGHT20}
+timer_settings:
+  interval_sec: ${INTERVAL}
+  delay_sec: 0
+  is_round_start_timing: false
+cycles: null

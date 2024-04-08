@@ -1,8 +1,50 @@
 {
+  "realized_volatility_bundler_from_u256": {
+    "ic": "6cqvo-hiaaa-aaaal-qiwbq-cai"
+  },
   "realized_volatility_collector": {
+    "ic": "j75qt-ryaaa-aaaal-qiv6q-cai"
+  },
+  "realized_volatility_collector_old_1": {
     "ic": "kpo2v-nyaaa-aaaal-qivwq-cai"
+  },
+  "realized_volatility_for_chainsight20": {
+    "ic": "buzlf-syaaa-aaaal-qiyfq-cai"
   },
   "realized_volatility_from_u256": {
     "ic": "ahtqa-daaaa-aaaal-qiuma-cai"
+  },
+  "rvol_snapshots_arbusd": {
+    "ic": "r7voc-uqaaa-aaaal-qixfa-cai"
+  },
+  "rvol_snapshots_avaxusd": {
+    "ic": "tciak-hyaaa-aaaal-qixkq-cai"
+  },
+  "rvol_snapshots_btcusd": {
+    "ic": "sihcq-fiaaa-aaaal-qixnq-cai"
+  },
+  "rvol_snapshots_chainsight20": {
+    "ic": "dsbzi-3iaaa-aaaal-qiyiq-cai"
+  },
+  "rvol_snapshots_dotusd": {
+    "ic": "xpzeq-uyaaa-aaaal-qixqq-cai"
+  },
+  "rvol_snapshots_ethusd": {
+    "ic": "x57tj-yiaaa-aaaal-qixtq-cai"
+  },
+  "rvol_snapshots_icpusd": {
+    "ic": "wlulc-nyaaa-aaaal-qixwq-cai"
+  },
+  "rvol_snapshots_maticusd": {
+    "ic": "urid6-tiaaa-aaaal-qixzq-cai"
+  },
+  "rvol_snapshots_opusd": {
+    "ic": "vhd3v-gyaaa-aaaal-qix4q-cai"
+  },
+  "rvol_snapshots_solusd": {
+    "ic": "vvfmm-kiaaa-aaaal-qix7q-cai"
+  },
+  "rvol_snapshots_suiusd": {
+    "ic": "a6wj7-qiaaa-aaaal-qiycq-cai"
   }
 }
