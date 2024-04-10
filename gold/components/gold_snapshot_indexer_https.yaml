@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
 version: v1
 metadata:
-  label: Gold Snnapshot Indexer
+  label: Gold Snapshot Indexer
   type: snapshot_indexer_https
-  description: 'Gold Snnapshot Indexer. Get the latest price of SPDR Gold Shares (GLD) in USD from yahoo.finance.'
+  description: "Gold Snapshot Indexer. Get the latest price of SPDR Gold Shares (GLD) in USD from yahoo.finance."
   tags:
-  - SPDR Gold Shares
-  - Gold
-  - yahoo.finance
+    - SPDR Gold Shares
+    - Gold
+    - yahoo.finance
 datasource:
   url: https://query2.finance.yahoo.com/v8/finance/chart/GLD
   headers:
