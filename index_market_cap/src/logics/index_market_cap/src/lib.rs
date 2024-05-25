@@ -24,10 +24,11 @@ fn calc_score(source: HashMap<String, Option<Snapshot>>) -> f64 {
     let mut count = 0;
     for (_, snapshot) in source {
         if let Some(snapshot) = snapshot {
-            let value = snapshot.value.raw;
-            let value: f64 = bincode::deserialize(&value).unwrap();
-            sum += value;
-            count += 1;
+            let value = snapshot.value();
+            if let Some(value) = value {
+                sum += value;
+                count += 1;
+            }
         }
     }
     sum / count as f64

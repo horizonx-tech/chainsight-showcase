@@ -49,6 +49,7 @@ type Sources = record {
 };
 type TransformArgs = record { context : vec nat8; response : HttpResponse };
 service : {
+  batch_get_value : (vec text) -> (vec record { text; opt Snapshot }) query;
   batch_query_between : (BatchQueryParams) -> (
       vec record { text; vec Snapshot },
     ) query;
@@ -65,6 +66,7 @@ service : {
   index : () -> ();
   init_in : (Env, CycleManagements) -> (Result);
   max_count : () -> (nat64) query;
+  proxy_batch_get_value : (vec nat8) -> (vec nat8);
   proxy_batch_query_between : (vec nat8) -> (vec nat8);
   proxy_get_last_snapshot : () -> (vec nat8);
   proxy_get_last_snapshot_value : () -> (vec nat8);
