@@ -1,0 +1,4 @@
+version: v1
+label: index_market_cap
+components:
+  - component_path: components/index_market_cap.yaml

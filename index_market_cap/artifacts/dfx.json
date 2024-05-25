@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "canisters": {
+    "index_market_cap": {
+      "gzip": true,
+      "type": "custom",
+      "candid": "./index_market_cap.did",
+      "wasm": "./index_market_cap.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}
