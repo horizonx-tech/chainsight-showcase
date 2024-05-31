@@ -5,17 +5,28 @@ use candid::Principal;
 use types::Snapshot;
 pub type CalculateArgs = Vec<String>;
 use crate::types::BulkSnapshotIndexerHttps;
-#[derive(Clone, Debug, Default, candid :: CandidType, serde :: Deserialize, serde :: Serialize)]
+#[derive(Clone, Debug, Default, candid::CandidType, serde::Deserialize, serde::Serialize)]
 pub struct LensValue {
     pub value: f64,
+    pub prices: HashMap<String, f64>,
 }
 
 pub async fn calculate(targets: Vec<String>, args: CalculateArgs) -> LensValue {
     let target = Principal::from_str(&targets[0]).unwrap();
     let indexer = BulkSnapshotIndexerHttps::new(target);
-    let results = indexer.batch_get(args).await.unwrap();
+    let results: HashMap<String, Option<Snapshot>> = indexer.batch_get(args).await.unwrap();
     LensValue {
-        value: calc_score(results),
+        value: calc_score(results.clone()),
+        prices: results
+            .iter()
+            .map(|(k, v)| {
+                if let Some(snapshot) = v {
+                    (k.clone(), snapshot.value().unwrap())
+                } else {
+                    (k.clone(), 0.0)
+                }
+            })
+            .collect(),
     }
 }
 

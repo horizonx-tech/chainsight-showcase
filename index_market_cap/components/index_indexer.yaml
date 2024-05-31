@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_icp.json
+version: v1
+metadata:
+  label: Index Indexer
+  type: snapshot_indexer_icp
+  description: ""
+  tags:
+    - Index
+    - Market cap
+datasource:
+  location:
+    id: index_market_cap
+  method:
+    identifier: "get_result : (LensArgs) -> (LensValue)"
+    interface: null
+    args: []
+is_target_component: null
+lens_targets: null
+timer_settings:
+  interval_sec: 21600 # 6 hours
+cycles: null

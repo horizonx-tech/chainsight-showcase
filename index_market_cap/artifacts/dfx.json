@@ -12,6 +12,18 @@
           "visibility": "public"
         }
       ]
+    },
+    "index_indexer": {
+      "gzip": true,
+      "type": "custom",
+      "candid": "./index_indexer.did",
+      "wasm": "./index_indexer.wasm",
+      "metadata": [
+        {
+          "name": "candid:service",
+          "visibility": "public"
+        }
+      ]
     }
   },
   "defaults": {

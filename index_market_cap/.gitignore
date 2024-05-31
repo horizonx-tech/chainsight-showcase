@@ -1,9 +1,8 @@
-src/__interfaces
-src/accessors
-src/bindings
-src/canisters
+.vscode
+artifacts/.dfx
+artifacts/scripts
+arfifacts/.env
+artifacts/*.did
+artifacts/*.wasm
 src/target
-/artifacts/*
-!/artifacts/dfx.json
-!/artifacts/canister_ids.json
 .env

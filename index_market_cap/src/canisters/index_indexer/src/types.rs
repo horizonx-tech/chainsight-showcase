@@ -21,7 +21,7 @@ impl Snapshot {
         let id = SnapshotId::new().await;
         let value = values
             .into_iter()
-            .map(|(k, v)| (k, v.value.parse::<f64>().unwrap()))
+            .map(|(k, v)| (k, v.value))
             .collect::<HashMap<AggregationKey, f64>>();
         Self { id, value }
     }

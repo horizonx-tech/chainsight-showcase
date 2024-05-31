@@ -1,5 +1,5 @@
 [workspace]
-members = ["canisters/index_market_cap", "logics/index_market_cap", "bindings/*", "accessors/*"]
+members = ["canisters/index_market_cap", "logics/index_market_cap", "canisters/index_indexer", "logics/index_indexer", "bindings/*", "accessors/*"]
 
 [workspace.package]
 version = "0.1.0"

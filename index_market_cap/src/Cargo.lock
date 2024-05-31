@@ -1160,6 +1160,62 @@ dependencies = [
 ]
 
 [[package]]
+name = "index_indexer"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_indexer_bindings",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+]
+
+[[package]]
+name = "index_indexer_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.11.3",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "index_indexer_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ciborium",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "index_indexer",
+ "index_indexer_bindings",
+ "index_market_cap",
+ "serde",
+ "serde_bytes",
+ "ulid_lib",
+]
+
+[[package]]
 name = "index_market_cap"
 version = "0.1.0"
 dependencies = [
@@ -2276,6 +2332,11 @@ dependencies = [
  "hex",
  "static_assertions",
 ]
+
+[[package]]
+name = "ulid_lib"
+version = "0.0.1"
+source = "git+https://github.com/horizonx-tech/ulid-lib.git#4587a1c752b6b2e566009a65988a6d890753fe1c"
 
 [[package]]
 name = "unicode-ident"
